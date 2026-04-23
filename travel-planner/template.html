@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trip_Plan_Template</title>
-    <link rel="stylesheet" href="./vendor/leaflet.css" />
-    <script src="./vendor/leaflet.js"></script>
-    <script src="./vendor/gcoord.global.prod.js"></script>
-    <script src="./vendor/marked.min.js"></script>
+    <title>Trip Plan</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/gcoord@0.3.2/dist/gcoord.js"></script>
+    <script src="https://unpkg.com/marked@12.0.0/marked.min.js"></script>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; display: flex; height: 100vh; overflow: hidden; }
-        .left-panel { width: 50%; height: 100%; overflow-y: auto; background: white; padding: 30px; box-sizing: border-box; border-right: 1px solid #e0e0e0; }
-        .right-panel { width: 50%; height: 100%; position: relative; }
+        .left-panel { width: 45%; height: 100%; overflow-y: auto; background: white; padding: 30px; box-sizing: border-box; border-right: 1px solid #e0e0e0; }
+        .right-panel { width: 55%; height: 100%; position: relative; }
         #map { width: 100%; height: 100%; background: #eef3f7; }
 
         .markdown-body { font-size: 15px; line-height: 1.6; color: #333; }
@@ -25,11 +25,7 @@
 
         .loading { position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.95); padding: 8px 10px; border-radius: 6px; font-size: 14px; z-index: 1000; box-shadow: 0 1px 6px rgba(0,0,0,0.15); display: none; max-width: calc(100% - 24px); }
         .issues { position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(255,255,255,0.95); border-radius: 8px; padding: 10px 12px; box-shadow: 0 1px 10px rgba(0,0,0,0.12); z-index: 1000; display: none; max-height: 30vh; overflow-y: auto;}
-        .issues-title { font-weight: 600; margin-bottom: 6px; color: #e74c3c;}
-        .issues ul { margin: 0; padding-left: 18px; }
-        .issues li { margin: 4px 0; font-size: 13px;}
-        .issues a { font-weight: 600; color: #0366d6; text-decoration: none;}
-
+        
         #fatal-error { position: fixed; inset: 0; background: rgba(255,255,255,0.96); display: none; z-index: 9999; padding: 24px; box-sizing: border-box; }
         #fatal-error pre { white-space: pre-wrap; word-break: break-word; background: #111827; color: #f9fafb; padding: 16px; border-radius: 8px; overflow: auto; }
     </style>
@@ -46,205 +42,350 @@
 
     <div id="fatal-error">
         <h2>页面加载失败</h2>
-        <p>资源加载被拦截或出现脚本错误。</p>
         <pre id="fatal-error-text"></pre>
     </div>
 
     <script>
-const markdownContent = `MARKDOWN_CONTENT_PLACEHOLDER`;
-// initialDays 格式：[["Day1景点A", "Day1景点B"], ["Day2景点C"]]
-const initialDays = INITIAL_DAYS_PLACEHOLDER;
+(function() {
+    const markdownContent = MARKDOWN_CONTENT_JSON;
+    const initialDays = INITIAL_DAYS_JSON;
 
-try {
-    document.getElementById('content').innerHTML = marked.parse(markdownContent);
-} catch (e) {
-    showFatalError(e);
-}
+    let locationBias = null;
+    let cityToken = null;
+    let biasMode = 'none';
+    let hardBbox = null;
+    let hardAnchor = null;
+    const DEBUG = (() => {
+        try { return new URLSearchParams(location.search).get('debug') === '1'; } catch { return false; }
+    })();
 
-const map = L.map('map').setView([39.9, 116.4], 4);
-L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
-    subdomains: ["1", "2", "3", "4"],
-    maxZoom: 18,
-    attribution: '© 高德地图'
-}).addTo(map);
-
-const dayColors = ['#2ecc71', '#3498db', '#9b59b6', '#f1c40f', '#e67e22', '#e74c3c', '#1abc9c', '#34495e'];
-
-function createDayIcon(dayIndex, color) {
-    return L.divIcon({
-        className: 'custom-div-icon',
-        html: `<div style="background-color:${color}; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:12px; border:2px solid white; box-shadow:0 2px 5px rgba(0,0,0,0.3);">D${dayIndex + 1}</div>`,
-        iconSize: [30, 30],
-        iconAnchor: [15, 15]
-    });
-}
-
-const cacheKey = 'travel-planner:geo-cache:v2';
-const cache = (() => {
-    try { return JSON.parse(localStorage.getItem(cacheKey) || '{}') || {}; } 
-    catch { return {}; }
-})();
-
-function saveCache() {
-    try { localStorage.setItem(cacheKey, JSON.stringify(cache)); } 
-    catch {}
-}
-
-const markersMap = {};
-const allLatlngs = [];
-let pendingTasks = 0;
-
-function setLoading(text) {
-    const el = document.getElementById('loading');
-    el.style.display = 'block';
-    el.textContent = text;
-}
-function clearLoading() {
-    if (pendingTasks <= 0) document.getElementById('loading').style.display = 'none';
-}
-function showIssues(unresolved) {
-    const el = document.getElementById('issues');
-    if (!unresolved.length) {
-        el.style.display = 'none';
-        return;
+    function showFatalError(e) {
+        const fatal = document.getElementById('fatal-error');
+        if (!fatal) return;
+        fatal.style.display = 'block';
+        document.getElementById('fatal-error-text').textContent = e && e.stack ? e.stack : String(e);
     }
-    const items = unresolved.map((name) => {
-        const q = encodeURIComponent(name.replace(/\s+/g, '+'));
-        const href = `https://ditu.amap.com/search?query=${q}`;
-        return `<li>${name}（<a href="${href}" target="_blank" rel="noopener noreferrer">在高德打开</a>）</li>`;
-    }).join('');
-    el.innerHTML = `<div class="issues-title">以下景点未能自动定位：</div><ul>${items}</ul>`;
-    el.style.display = 'block';
-}
-function showFatalError(e) {
-    const fatal = document.getElementById('fatal-error');
-    if (!fatal) return;
-    fatal.style.display = 'block';
-    document.getElementById('fatal-error-text').textContent = e && e.stack ? e.stack : String(e);
-}
 
-function normalizeQuery(q) {
-    return String(q || '').replace(/\+/g, ' ').replace(/\s+/g, ' ').trim();
-}
-
-function candidateQueries(queryName) {
-    const q = normalizeQuery(queryName);
-    const variants = [q];
-    variants.push(q.replace(/历史文化街区|文化旅游区|风情区|风景名胜区|风景区|旅游区|遗址/g, ''));
-    let pureMatch = q.match(/.*?(区|县|市)\s+(.*)/);
-    if(pureMatch && pureMatch[2]) variants.push(pureMatch[2].trim());
-    const unique = [];
-    for (const item of variants) {
-        const v = normalizeQuery(item);
-        if (v && !unique.includes(v)) unique.push(v);
-    }
-    return unique;
-}
-
-async function fetchPhoton(q) {
-    try {
-        const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=1`;
-        const res = await fetch(url);
-        if (!res.ok) return null;
-        const data = await res.json();
-        if (!data.features || !data.features.length) return null;
-        const coords = data.features[0].geometry.coordinates;
-        return { lon: coords[0], lat: coords[1] };
-    } catch { return null; }
-}
-
-async function resolveToGcj02(queryName) {
-    const q = normalizeQuery(queryName);
-    if (cache[q] && cache[q].lon && cache[q].lat) return cache[q];
-    const candidates = candidateQueries(q);
-    for (const c of candidates) {
-        const hit = await fetchPhoton(c);
-        if (hit) {
-            const gcj = gcoord.transform([hit.lon, hit.lat], gcoord.WGS84, gcoord.GCJ02);
-            cache[q] = { lon: gcj[0], lat: gcj[1] };
-            saveCache();
-            return cache[q];
-        }
-    }
-    return null;
-}
-
-async function loadInitialRoute() {
-    if (!Array.isArray(initialDays) || initialDays.length === 0) return;
-    const unresolved = [];
-    pendingTasks++;
-    setLoading('正在检索地图坐标…');
-    
-    for (let d = 0; d < initialDays.length; d++) {
-        const dayPlaces = initialDays[d];
-        const dayLatlngs = [];
-        const color = dayColors[d % dayColors.length];
-        
-        for (const placeName of dayPlaces) {
-            const r = await resolveToGcj02(placeName);
-            if (!r) {
-                unresolved.push(placeName);
-                continue;
+    async function init() {
+        try {
+            if (typeof L === 'undefined' || typeof gcoord === 'undefined' || typeof marked === 'undefined') {
+                throw new Error('缺少关键资源。请确保联网以访问 CDN。');
             }
-            const pos = [r.lat, r.lon];
-            const marker = L.marker(pos, { icon: createDayIcon(d, color) }).addTo(map);
-            marker.bindPopup(`<b>Day ${d+1}: ${placeName.replace(/.*?(区|县|市)\s+/, '').trim()}</b>`);
-            markersMap[normalizeQuery(placeName)] = marker;
-            dayLatlngs.push(pos);
-            allLatlngs.push(pos);
-        }
-        
-        if (dayLatlngs.length > 1) {
-            L.polyline(dayLatlngs, { color: color, weight: 4, opacity: 0.8 }).addTo(map);
-        }
-    }
-    
-    if (allLatlngs.length > 0) {
-        map.fitBounds(L.latLngBounds(allLatlngs), { padding: [50, 50] });
-    }
-    showIssues(unresolved);
-    pendingTasks--;
-    clearLoading();
-}
 
-async function focusAndPlotPlace(queryName) {
-    const normalized = normalizeQuery(queryName);
-    if (markersMap[normalized]) {
-        map.flyTo(markersMap[normalized].getLatLng(), 16, {duration: 1.5});
-        setTimeout(() => markersMap[normalized].openPopup(), 1500);
-        return;
-    }
-    pendingTasks++;
-    setLoading(`正在定位：${normalized.replace(/.*?(区|县|市)\s+/, '').trim()}…`);
-    const r = await resolveToGcj02(normalized);
-    pendingTasks--;
-    clearLoading();
-    if (!r) {
-        window.open(`https://ditu.amap.com/search?query=${encodeURIComponent(normalized.replace(/\s+/g, '+'))}`, '_blank');
-        return;
-    }
-    const pos = [r.lat, r.lon];
-    const marker = L.marker(pos).addTo(map);
-    marker.bindPopup(`<b>${normalized.replace(/.*?(区|县|市)\s+/, '').trim()}</b>`);
-    markersMap[normalized] = marker;
-    map.flyTo(pos, 16, {duration: 1.5});
-    setTimeout(() => marker.openPopup(), 1500);
-}
+            document.getElementById('content').innerHTML = marked.parse(markdownContent);
 
-document.querySelectorAll('.markdown-body a').forEach((a) => {
-    if (!a.href.includes('amap.com') && !a.href.includes('google.com/maps')) return;
-    a.addEventListener('click', function (e) {
-        e.preventDefault();
-        const urlObj = new URL(this.href);
-        const q = urlObj.searchParams.get('query') || urlObj.searchParams.get('q');
-        if (q) focusAndPlotPlace(q);
-        else window.open(this.href, '_blank');
-    });
-});
+            const map = L.map('map').setView([39.9, 116.4], 4);
+            L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
+                subdomains: ["1", "2", "3", "4"],
+                maxZoom: 18,
+                attribution: '© 高德地图'
+            }).addTo(map);
 
-window.addEventListener('error', (event) => showFatalError(event.error || event));
-window.addEventListener('unhandledrejection', (event) => showFatalError(event.reason || event));
-loadInitialRoute();
+            const dayColors = ['#2ecc71', '#3498db', '#9b59b6', '#f1c40f', '#e67e22', '#e74c3c', '#1abc9c', '#34495e'];
+            const markersMap = {};
+            const allLatlngs = [];
+            const cacheKey = 'travel-planner:geo-cache:v18';
+            const cache = (() => {
+                try { return JSON.parse(localStorage.getItem(cacheKey) || '{}') || {}; } catch { return {}; }
+            })();
+            const districtBiases = {};
+
+            function saveCache() {
+                try { localStorage.setItem(cacheKey, JSON.stringify(cache)); } catch {}
+            }
+
+            function normalize(s) {
+                return String(s || '').replace(/\+/g, ' ').replace(/\s+/g, '').replace(/福建省|泉州市|鲤城区|晋江市|市|区|县|历史文化街区|文化旅游区|风景区|遗址|传统街区/g, '').toLowerCase().trim();
+            }
+
+            const CITY_RULES = {
+                '泉州': {
+                    anchor: { lat: 24.87389, lon: 118.67584 },
+                    bbox: { minLat: 24.35, maxLat: 25.65, minLon: 117.40, maxLon: 119.20 }
+                }
+            };
+
+            function extractCityToken(days) {
+                if (!Array.isArray(days)) return null;
+                for (const day of days) {
+                    if (!Array.isArray(day)) continue;
+                    for (const name of day) {
+                        const s = String(name || '');
+                        const m = s.match(/(.{2,12}?(市|盟|地区|县))/);
+                        if (m && m[1]) return m[1];
+                    }
+                }
+                return null;
+            }
+
+            function inBbox(p, bbox) {
+                if (!bbox) return true;
+                return p.lat >= bbox.minLat && p.lat <= bbox.maxLat && p.lon >= bbox.minLon && p.lon <= bbox.maxLon;
+            }
+
+            function haversineKm(a, b) {
+                const toRad = (deg) => deg * Math.PI / 180;
+                const R = 6371;
+                const dLat = toRad(b.lat - a.lat);
+                const dLon = toRad(b.lon - a.lon);
+                const lat1 = toRad(a.lat);
+                const lat2 = toRad(b.lat);
+                const s = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * (Math.sin(dLon / 2) ** 2);
+                return 2 * R * Math.asin(Math.sqrt(s));
+            }
+
+            function createDayIcon(dayIndex, color) {
+                return L.divIcon({
+                    className: 'custom-div-icon',
+                    html: `<div style="background-color:${color}; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:12px; border:2px solid white; box-shadow:0 2px 5px rgba(0,0,0,0.3);">D${dayIndex + 1}</div>`,
+                    iconSize: [30, 30],
+                    iconAnchor: [15, 15]
+                });
+            }
+
+            async function fetchPhoton(q, bias = null, requiredCity = null, requiredDistrict = null) {
+                try {
+                    let url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=10`;
+                    const ref = bias || hardAnchor || locationBias || null;
+                    if (ref) url += `&lat=${ref.lat}&lon=${ref.lon}&location_bias_scale=0.8`;
+                    const res = await fetch(url);
+                    const data = await res.json();
+                    if (!data.features?.length) return null;
+
+                    const wantCity = requiredCity ? String(requiredCity) : '';
+                    const wantDistrict = requiredDistrict ? String(requiredDistrict) : '';
+                    if (DEBUG && (q.includes('白塔寺') || q.includes('西街'))) {
+                        const p0 = data.features[0]?.properties || {};
+                        console.log('[geo]', JSON.stringify({ q, wantCity, wantDistrict, p0: { name: p0.name, city: p0.city, county: p0.county, state: p0.state, district: p0.district } }));
+                    }
+
+                    let best = null;
+                    let bestScore = Infinity;
+                    let passed = 0;
+
+                    for (const f of data.features) {
+                        const c = f?.geometry?.coordinates;
+                        if (!c || c.length < 2) continue;
+                        const props = f.properties || {};
+                        const cand = { lon: c[0], lat: c[1] };
+                        if (!inBbox(cand, hardBbox)) continue;
+                        const dist = ref ? haversineKm(ref, cand) : 0;
+
+                        const meta = `${props.name || ''} ${props.city || ''} ${props.county || ''} ${props.state || ''} ${props.district || ''}`;
+                        if (wantDistrict) {
+                            const districtMeta = `${props.county || ''} ${props.district || ''}`;
+                            const hasDistrictZh = /[\u4e00-\u9fff]/.test(districtMeta);
+                            if (hasDistrictZh) {
+                                const okDistrict = meta.includes(wantDistrict) || meta.includes(`${wantDistrict}区`) || meta.includes(`${wantDistrict}县`);
+                                if (!okDistrict) continue;
+                            }
+                        } else if (wantCity) {
+                            const cityMeta = `${props.state || ''} ${props.city || ''} ${props.county || ''}`;
+                            const hasCityZh = /[\u4e00-\u9fff]/.test(cityMeta);
+                            if (hasCityZh) {
+                                const okCity = meta.includes(wantCity) || meta.includes(`${wantCity}市`);
+                                if (!okCity) continue;
+                            }
+                        }
+                        passed += 1;
+                        const cityBonus = wantCity && meta.includes(wantCity) ? 10 : 0;
+                        const districtBonus = wantDistrict && (meta.includes(wantDistrict) || meta.includes(`${wantDistrict}区`) || meta.includes(`${wantDistrict}县`)) ? 5 : 0;
+                        const score = dist - cityBonus - districtBonus;
+
+                        if (score < bestScore) {
+                            bestScore = score;
+                            best = cand;
+                        }
+                    }
+
+                    if (DEBUG && (q.includes('白塔寺') || q.includes('西街'))) {
+                        console.log('[geo]', JSON.stringify({ q, passed, best }));
+                    }
+                    return best;
+                } catch { return null; }
+            }
+
+            async function resolveToGcj02(query) {
+                const q = query.replace(/\+/g, ' ').trim();
+                if (cache[q]) return cache[q];
+
+                const afterCity = q.replace(/^.*?(市|盟|地区|县)/, '');
+                const mDistrictToken = afterCity.match(/^[^\s]{2,12}?(区|县)/);
+                const districtToken = mDistrictToken ? mDistrictToken[0] : '';
+                const baseNameFull = q
+                    .replace(/^.*?(市|盟|地区|县)/, '')
+                    .replace(/^.*?(区|县)/, '')
+                    .trim();
+                const baseName = baseNameFull
+                    .replace(/历史文化街区|文化旅游区|旅游区|风景名胜区|风景区|遗址|传统街区/g, '')
+                    .trim();
+                const cityCompact = String(cityToken || '').replace(/\s+/g, '');
+                const cityShort = cityCompact.endsWith('市') ? cityCompact.slice(0, -1) : cityCompact;
+                const districtCompact = String(districtToken || '').replace(/\s+/g, '');
+                const districtShort = districtCompact.replace(/(区|县)$/g, '');
+
+                let searchBias = locationBias;
+                if (districtToken && cityShort) {
+                    const key = districtToken;
+                    if (!districtBiases[key]) {
+                        const dhit = await fetchPhoton(`${districtToken} ${cityShort}`, locationBias, null, null);
+                        if (dhit) districtBiases[key] = dhit;
+                    }
+                    if (districtBiases[key]) searchBias = districtBiases[key];
+                }
+
+                let coreName = baseName;
+                const mCity = coreName.match(/^[^\s]{2,12}?(市|盟|地区|县)(.+)$/);
+                if (mCity && mCity[2]) coreName = mCity[2].trim();
+                const mDistrict = coreName.match(/^[^\s]{2,12}?(区|县)(.+)$/);
+                if (mDistrict && mDistrict[2]) coreName = mDistrict[2].trim();
+                const coreCompact = coreName.replace(/\s+/g, '');
+
+                const cityTokens = q.match(/[^\s]{2,12}?市/g) || [];
+                const subCityToken = cityTokens.length >= 2 ? cityTokens[1] : '';
+                const subCityShort = subCityToken.replace(/市$/g, '');
+
+                const coreNoCityCompact = (cityShort && coreCompact.startsWith(cityShort)) ? coreCompact.slice(cityShort.length) : '';
+                const coreNoCityName = (cityShort && coreName.startsWith(cityShort)) ? coreName.slice(cityShort.length) : '';
+
+                const forced = [];
+                if (q.includes('五店市')) {
+                    forced.push('五店市 泉州');
+                    forced.push('五店市 晋江');
+                }
+
+                const candidates = [
+                    ...forced,
+                    q,
+                    coreName && districtShort ? `${coreName} ${districtShort}` : null,
+                    coreName && cityShort ? `${coreName} ${cityShort}` : null,
+                    baseName && districtShort ? `${baseName} ${districtShort}` : null,
+                    baseName && cityShort ? `${baseName} ${cityShort}` : null,
+                    baseNameFull && districtShort ? `${baseNameFull} ${districtShort}` : null,
+                    baseNameFull && cityShort ? `${baseNameFull} ${cityShort}` : null,
+                ];
+                
+                const unique = Array.from(new Set(candidates.filter(i => typeof i === 'string' && i.trim().length > 2).map(i => i.trim())));
+
+                for (const c of unique) {
+                    const hit = await fetchPhoton(c, searchBias, cityShort || null, districtShort || null);
+                    if (hit) {
+                        const distRef = searchBias || locationBias;
+                        if (distRef) {
+                            const dist = haversineKm(distRef, hit);
+                            const maxDist = hardBbox ? 220 : (districtToken ? 140 : (districtShort ? 220 : 60));
+                            if (dist > maxDist) continue;
+                        }
+                        const gcj = gcoord.transform([hit.lon, hit.lat], gcoord.WGS84, gcoord.GCJ02);
+                        const result = { lon: gcj[0], lat: gcj[1] };
+                        if (biasMode !== 'route') {
+                            locationBias = { lat: hit.lat, lon: hit.lon };
+                            biasMode = 'route';
+                        }
+                        cache[q] = result;
+                        saveCache();
+                        return result;
+                    }
+                }
+                return null;
+            }
+
+            if (initialDays?.length) {
+                cityToken = extractCityToken(initialDays);
+                if (cityToken) {
+                    const cityCompact = String(cityToken || '').replace(/\s+/g, '');
+                    const cityShort = cityCompact.endsWith('市') ? cityCompact.slice(0, -1) : cityCompact;
+                    const rule = CITY_RULES[cityShort] || null;
+                    if (rule) {
+                        hardAnchor = rule.anchor;
+                        hardBbox = rule.bbox;
+                        locationBias = { ...rule.anchor };
+                        biasMode = 'city';
+                    } else {
+                        const cityHit = await fetchPhoton(cityToken, null, null, null);
+                        if (cityHit) {
+                            locationBias = { lat: cityHit.lat, lon: cityHit.lon };
+                            biasMode = 'city';
+                        }
+                    }
+                }
+
+                document.getElementById('loading').style.display = 'block';
+                const unresolved = [];
+                for (let d = 0; d < initialDays.length; d++) {
+                    const color = dayColors[d % dayColors.length];
+                    const dayPoints = [];
+                    for (const name of initialDays[d]) {
+                        const r = await resolveToGcj02(name);
+                        if (r) {
+                            const pos = [r.lat, r.lon];
+                            const marker = L.marker(pos, { icon: createDayIcon(d, color) }).addTo(map);
+                            marker.bindPopup(`<b>D${d+1}: ${name}</b>`);
+                            markersMap[normalize(name)] = marker;
+                            dayPoints.push(pos);
+                            allLatlngs.push(pos);
+                        } else {
+                            unresolved.push(name);
+                        }
+                    }
+                    if (dayPoints.length > 1) L.polyline(dayPoints, { color, weight: 4, opacity: 0.7 }).addTo(map);
+                }
+                if (allLatlngs.length) map.fitBounds(allLatlngs, { padding: [50, 50] });
+                document.getElementById('loading').style.display = 'none';
+
+                if (unresolved.length) {
+                    const el = document.getElementById('issues');
+                    el.innerHTML = `<div class="issues-title">以下地点未能定位（因此无法连线）：</div><ul>${unresolved.map(n => `<li>${n}</li>`).join('')}</ul>`;
+                    el.style.display = 'block';
+                }
+            }
+
+            document.getElementById('content').addEventListener('click', async e => {
+                const a = e.target.closest('a');
+                if (!a) return;
+
+                const isExternal = a.textContent.includes('🗺️') || a.textContent.toLowerCase().includes('map');
+                const isMapLink = a.href.includes('amap.com') || a.href.includes('google.com/maps');
+
+                if (isMapLink) {
+                    if (!isExternal) {
+                        e.preventDefault();
+                        const query = new URL(a.href).searchParams.get('query') || new URL(a.href).searchParams.get('q');
+                        if (!query) return;
+
+                        const norm = normalize(query);
+                        let target = markersMap[norm];
+                        if (!target) {
+                            const match = Object.keys(markersMap).find(k => k.includes(norm) || norm.includes(k));
+                            if (match) target = markersMap[match];
+                        }
+
+                        if (target) {
+                            map.flyTo(target.getLatLng(), 16);
+                            setTimeout(() => target.openPopup(), 400);
+                        } else {
+                            document.getElementById('loading').textContent = '正在临时定位...';
+                            document.getElementById('loading').style.display = 'block';
+                            const r = await resolveToGcj02(query);
+                            document.getElementById('loading').style.display = 'none';
+                            if (r) {
+                                const marker = L.marker([r.lat, r.lon]).addTo(map);
+                                marker.bindPopup(`<b>${query}</b>`).openPopup();
+                                map.flyTo([r.lat, r.lon], 16);
+                            }
+                        }
+                    } else {
+                        a.target = "_blank";
+                    }
+                }
+            });
+
+        } catch (e) { showFatalError(e); }
+    }
+
+    if (document.readyState === 'complete') init();
+    else window.addEventListener('load', init);
+})();
     </script>
 </body>
 </html>

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trip_Plan_Template_Intl</title>
-    <link rel="stylesheet" href="./vendor/leaflet.css" />
-    <script src="./vendor/leaflet.js"></script>
-    <script src="./vendor/gcoord.global.prod.js"></script>
-    <script src="./vendor/marked.min.js"></script>
+    <title>Trip Plan</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/gcoord@0.3.2/dist/gcoord.js"></script>
+    <script src="https://unpkg.com/marked@12.0.0/marked.min.js"></script>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; display: flex; height: 100vh; overflow: hidden; }
         .left-panel { width: 45%; height: 100%; overflow-y: auto; background: white; padding: 30px; box-sizing: border-box; border-right: 1px solid #e0e0e0; }
@@ -46,156 +46,190 @@
     </div>
 
     <script>
-const markdownContent = `MARKDOWN_CONTENT_PLACEHOLDER`;
-const initialDays = INITIAL_DAYS_PLACEHOLDER;
+(function() {
+    const markdownContent = MARKDOWN_CONTENT_JSON;
+    const initialDays = INITIAL_DAYS_JSON;
+    let locationBias = null;
+    let biasMode = 'none';
 
-try {
-    document.getElementById('content').innerHTML = marked.parse(markdownContent);
-} catch (e) {
-    showFatalError(e);
-}
+    function showFatalError(e) {
+        const fatal = document.getElementById('fatal-error');
+        if (!fatal) return;
+        fatal.style.display = 'block';
+        document.getElementById('fatal-error-text').textContent = e && e.stack ? e.stack : String(e);
+    }
 
-const map = L.map('map').setView([0, 0], 2);
-L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-    attribution: '&copy; Google Maps'
-}).addTo(map);
+    async function init() {
+        try {
+            if (typeof L === 'undefined' || typeof gcoord === 'undefined' || typeof marked === 'undefined') {
+                throw new Error('Missing resources. Please ensure internet access for CDN.');
+            }
 
-const dayColors = ['#2ecc71', '#3498db', '#9b59b6', '#f1c40f', '#e67e22', '#e74c3c', '#1abc9c', '#34495e'];
+            document.getElementById('content').innerHTML = marked.parse(markdownContent);
 
-function createDayIcon(dayIndex, color) {
-    return L.divIcon({
-        className: 'custom-div-icon',
-        html: `<div style="background-color:${color}; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:12px; border:2px solid white; box-shadow:0 2px 5px rgba(0,0,0,0.3);">D${dayIndex + 1}</div>`,
-        iconSize: [30, 30],
-        iconAnchor: [15, 15]
-    });
-}
+            const map = L.map('map').setView([0, 0], 2);
+            L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+                subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+                attribution: '&copy; Google Maps'
+            }).addTo(map);
 
-const cacheKey = 'travel-planner:geo-cache:intl:v1';
-const cache = (() => {
-    try { return JSON.parse(localStorage.getItem(cacheKey) || '{}') || {}; } 
-    catch { return {}; }
+            const dayColors = ['#2ecc71', '#3498db', '#9b59b6', '#f1c40f', '#e67e22', '#e74c3c', '#1abc9c', '#34495e'];
+            const markersMap = {};
+            const allLatlngs = [];
+            const cacheKey = 'travel-planner:geo-cache:intl:v4';
+            const cache = (() => {
+                try { return JSON.parse(localStorage.getItem(cacheKey) || '{}') || {}; } catch { return {}; }
+            })();
+
+            function saveCache() {
+                try { localStorage.setItem(cacheKey, JSON.stringify(cache)); } catch {}
+            }
+
+            function normalize(s) {
+                return String(s || '').replace(/\+/g, ' ').replace(/\s+/g, '').toLowerCase().trim();
+            }
+
+            function createDayIcon(dayIndex, color) {
+                return L.divIcon({
+                    className: 'custom-div-icon',
+                    html: `<div style="background-color:${color}; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:12px; border:2px solid white; box-shadow:0 2px 5px rgba(0,0,0,0.3);">D${dayIndex + 1}</div>`,
+                    iconSize: [30, 30],
+                    iconAnchor: [15, 15]
+                });
+            }
+
+            function haversineKm(a, b) {
+                const toRad = (deg) => deg * Math.PI / 180;
+                const R = 6371;
+                const dLat = toRad(b.lat - a.lat);
+                const dLon = toRad(b.lon - a.lon);
+                const lat1 = toRad(a.lat);
+                const lat2 = toRad(b.lat);
+                const s = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * (Math.sin(dLon / 2) ** 2);
+                return 2 * R * Math.asin(Math.sqrt(s));
+            }
+
+            async function fetchPhoton(q, bias = null) {
+                try {
+                    let url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=10`;
+                    if (bias) url += `&lat=${bias.lat}&lon=${bias.lon}&location_bias_scale=0.8`;
+                    const res = await fetch(url);
+                    const data = await res.json();
+                    if (!data.features?.length) return null;
+                    if (!bias) {
+                        const c = data.features[0].geometry.coordinates;
+                        return { lon: c[0], lat: c[1] };
+                    }
+                    let best = null;
+                    let bestDist = Infinity;
+                    for (const f of data.features) {
+                        const c = f?.geometry?.coordinates;
+                        if (!c || c.length < 2) continue;
+                        const cand = { lon: c[0], lat: c[1] };
+                        const dist = haversineKm(bias, cand);
+                        if (dist < bestDist) {
+                            bestDist = dist;
+                            best = cand;
+                        }
+                    }
+                    return best;
+                } catch { return null; }
+            }
+
+            async function resolveCoords(query) {
+                const q = query.replace(/\+/g, ' ').trim();
+                if (cache[q]) return cache[q];
+                const hit = await fetchPhoton(q, locationBias);
+                if (hit) {
+                    cache[q] = hit;
+                    saveCache();
+                    if (biasMode !== 'route') {
+                        locationBias = { lat: hit.lat, lon: hit.lon };
+                        biasMode = 'route';
+                    }
+                    return hit;
+                }
+                return null;
+            }
+
+            if (initialDays?.length) {
+                document.getElementById('loading').style.display = 'block';
+                const unresolved = [];
+                for (let d = 0; d < initialDays.length; d++) {
+                    const color = dayColors[d % dayColors.length];
+                    const dayPoints = [];
+                    for (const name of initialDays[d]) {
+                        const r = await resolveCoords(name);
+                        if (r) {
+                            const pos = [r.lat, r.lon];
+                            const marker = L.marker(pos, { icon: createDayIcon(d, color) }).addTo(map);
+                            marker.bindPopup(`<b>D${d+1}: ${name}</b>`);
+                            markersMap[normalize(name)] = marker;
+                            dayPoints.push(pos);
+                            allLatlngs.push(pos);
+                        } else {
+                            unresolved.push(name);
+                        }
+                    }
+                    if (dayPoints.length > 1) L.polyline(dayPoints, { color, weight: 4, opacity: 0.7 }).addTo(map);
+                }
+                if (allLatlngs.length) map.fitBounds(allLatlngs, { padding: [50, 50] });
+                document.getElementById('loading').style.display = 'none';
+                if (unresolved.length) {
+                    const el = document.getElementById('issues');
+                    el.innerHTML = `<div class="issues-title">Unresolved places (cannot be connected):</div><ul>${unresolved.map(n => `<li>${n}</li>`).join('')}</ul>`;
+                    el.style.display = 'block';
+                }
+            }
+
+            document.getElementById('content').addEventListener('click', async e => {
+                const a = e.target.closest('a');
+                if (!a) return;
+                const isExternal = a.textContent.includes('🗺️') || a.textContent.toLowerCase().includes('map');
+                const isMapLink = a.href.includes('google.com/maps') || a.href.includes('amap.com') || a.href.includes('maps');
+                if (!isMapLink) return;
+
+                if (!isExternal) {
+                    e.preventDefault();
+                    let query = null;
+                    try {
+                        const url = new URL(a.href);
+                        query = url.searchParams.get('query') || url.searchParams.get('q');
+                    } catch {}
+                    if (!query) return;
+
+                    const normQuery = normalize(query);
+                    let targetMarker = markersMap[normQuery];
+                    if (!targetMarker) {
+                        const key = Object.keys(markersMap).find(k => k.includes(normQuery) || normQuery.includes(k));
+                        if (key) targetMarker = markersMap[key];
+                    }
+
+                    if (targetMarker) {
+                        map.flyTo(targetMarker.getLatLng(), 16);
+                        setTimeout(() => targetMarker.openPopup(), 500);
+                    } else {
+                        document.getElementById('loading').textContent = 'Searching...';
+                        document.getElementById('loading').style.display = 'block';
+                        const r = await resolveCoords(query);
+                        document.getElementById('loading').style.display = 'none';
+                        if (r) {
+                            const marker = L.marker([r.lat, r.lon]).addTo(map);
+                            marker.bindPopup(`<b>${query}</b>`).openPopup();
+                            map.flyTo([r.lat, r.lon], 16);
+                        }
+                    }
+                } else {
+                    a.target = "_blank";
+                }
+            });
+
+        } catch (e) { showFatalError(e); }
+    }
+
+    if (document.readyState === 'complete') init();
+    else window.addEventListener('load', init);
 })();
-
-function saveCache() {
-    try { localStorage.setItem(cacheKey, JSON.stringify(cache)); } 
-    catch {}
-}
-
-const markersMap = {};
-const allLatlngs = [];
-let pendingTasks = 0;
-
-function setLoading(text) {
-    const el = document.getElementById('loading');
-    el.style.display = 'block';
-    el.textContent = text;
-}
-function clearLoading() {
-    if (pendingTasks <= 0) document.getElementById('loading').style.display = 'none';
-}
-function showFatalError(e) {
-    const fatal = document.getElementById('fatal-error');
-    if (!fatal) return;
-    fatal.style.display = 'block';
-    document.getElementById('fatal-error-text').textContent = e && e.stack ? e.stack : String(e);
-}
-
-async function fetchPhoton(q) {
-    try {
-        const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=1`;
-        const res = await fetch(url);
-        if (!res.ok) return null;
-        const data = await res.json();
-        if (!data.features || !data.features.length) return null;
-        const coords = data.features[0].geometry.coordinates;
-        return { lon: coords[0], lat: coords[1] };
-    } catch { return null; }
-}
-
-async function resolveCoords(queryName) {
-    const q = queryName.replace(/\+/g, ' ').trim();
-    if (cache[q]) return cache[q];
-    const hit = await fetchPhoton(q);
-    if (hit) {
-        cache[q] = hit;
-        saveCache();
-        return hit;
-    }
-    return null;
-}
-
-async function loadInitialRoute() {
-    if (!Array.isArray(initialDays)) return;
-    const unresolved = [];
-    pendingTasks++;
-    setLoading('Locating attractions...');
-    
-    for (let d = 0; d < initialDays.length; d++) {
-        const dayPlaces = initialDays[d];
-        const dayLatlngs = [];
-        const color = dayColors[d % dayColors.length];
-        
-        for (const placeName of dayPlaces) {
-            const r = await resolveCoords(placeName);
-            if (r) {
-                const pos = [r.lat, r.lon];
-                const marker = L.marker(pos, { icon: createDayIcon(d, color) }).addTo(map);
-                marker.bindPopup(`<b>Day ${d+1}: ${placeName.split(',')[0]}</b>`);
-                markersMap[placeName] = marker;
-                dayLatlngs.push(pos);
-                allLatlngs.push(pos);
-            } else {
-                unresolved.push(placeName);
-            }
-        }
-        
-        if (dayLatlngs.length > 1) {
-            L.polyline(dayLatlngs, { color: color, weight: 4, opacity: 0.8 }).addTo(map);
-        }
-    }
-    
-    if (allLatlngs.length > 0) {
-        map.fitBounds(L.latLngBounds(allLatlngs), { padding: [50, 50] });
-    }
-    pendingTasks--;
-    clearLoading();
-}
-
-document.querySelectorAll('.markdown-body a').forEach((a) => {
-    a.addEventListener('click', async function (e) {
-        if (!this.href.includes('maps') && !this.href.includes('amap')) return;
-        e.preventDefault();
-        const urlObj = new URL(this.href);
-        const q = urlObj.searchParams.get('query') || urlObj.searchParams.get('q');
-        if (!q) return;
-        
-        const normalizedQ = q.replace(/\+/g, ' ');
-        if (markersMap[normalizedQ]) {
-            map.flyTo(markersMap[normalizedQ].getLatLng(), 16, {duration: 1.5});
-            setTimeout(() => markersMap[normalizedQ].openPopup(), 1500);
-        } else {
-            setLoading('Locating...');
-            const r = await resolveCoords(normalizedQ);
-            clearLoading();
-            if (r) {
-                const pos = [r.lat, r.lon];
-                const marker = L.marker(pos).addTo(map);
-                marker.bindPopup(`<b>${normalizedQ.split(',')[0]}</b>`);
-                markersMap[normalizedQ] = marker;
-                map.flyTo(pos, 16, {duration: 1.5});
-                setTimeout(() => marker.openPopup(), 1500);
-            } else {
-                window.open(this.href, '_blank');
-            }
-        }
-    });
-});
-
-window.addEventListener('error', (event) => showFatalError(event.error || event));
-window.addEventListener('unhandledrejection', (event) => showFatalError(event.reason || event));
-loadInitialRoute();
     </script>
 </body>
 </html>
