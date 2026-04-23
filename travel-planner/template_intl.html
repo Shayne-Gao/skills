@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trip_Plan_Template_Intl</title>
-    <!-- 使用在线 CDN -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="./vendor/leaflet.css" />
+    <script src="./vendor/leaflet.js"></script>
+    <script src="./vendor/gcoord.global.prod.js"></script>
+    <script src="./vendor/marked.min.js"></script>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; display: flex; height: 100vh; overflow: hidden; }
         .left-panel { width: 45%; height: 100%; overflow-y: auto; background: white; padding: 30px; box-sizing: border-box; border-right: 1px solid #e0e0e0; }
@@ -24,7 +24,8 @@
         .markdown-body a:hover { text-decoration: underline; }
 
         .loading { position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.95); padding: 8px 10px; border-radius: 6px; font-size: 14px; z-index: 1000; box-shadow: 0 1px 6px rgba(0,0,0,0.15); display: none; }
-        .issues { position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(255,255,255,0.95); border-radius: 8px; padding: 10px 12px; box-shadow: 0 1px 10px rgba(0,0,0,0.12); z-index: 1000; display: none; }
+        .issues { position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(255,255,255,0.95); border-radius: 8px; padding: 10px 12px; box-shadow: 0 1px 10px rgba(0,0,0,0.12); z-index: 1000; display: none; max-height: 30vh; overflow-y: auto;}
+        
         #fatal-error { position: fixed; inset: 0; background: rgba(255,255,255,0.96); display: none; z-index: 9999; padding: 24px; box-sizing: border-box; }
         #fatal-error pre { white-space: pre-wrap; word-break: break-word; background: #111827; color: #f9fafb; padding: 16px; border-radius: 8px; overflow: auto; }
     </style>
@@ -46,7 +47,7 @@
 
     <script>
 const markdownContent = `MARKDOWN_CONTENT_PLACEHOLDER`;
-const initialPlaces = INITIAL_PLACES_PLACEHOLDER;
+const initialDays = INITIAL_DAYS_PLACEHOLDER;
 
 try {
     document.getElementById('content').innerHTML = marked.parse(markdownContent);
@@ -54,12 +55,22 @@ try {
     showFatalError(e);
 }
 
-// 国际版使用 Google Maps 街道底图 (WGS84)
 const map = L.map('map').setView([0, 0], 2);
 L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
     subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
     attribution: '&copy; Google Maps'
 }).addTo(map);
+
+const dayColors = ['#2ecc71', '#3498db', '#9b59b6', '#f1c40f', '#e67e22', '#e74c3c', '#1abc9c', '#34495e'];
+
+function createDayIcon(dayIndex, color) {
+    return L.divIcon({
+        className: 'custom-div-icon',
+        html: `<div style="background-color:${color}; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:12px; border:2px solid white; box-shadow:0 2px 5px rgba(0,0,0,0.3);">D${dayIndex + 1}</div>`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
+    });
+}
 
 const cacheKey = 'travel-planner:geo-cache:intl:v1';
 const cache = (() => {
@@ -73,7 +84,7 @@ function saveCache() {
 }
 
 const markersMap = {};
-const latlngs = [];
+const allLatlngs = [];
 let pendingTasks = 0;
 
 function setLoading(text) {
@@ -86,52 +97,67 @@ function clearLoading() {
 }
 function showFatalError(e) {
     const fatal = document.getElementById('fatal-error');
+    if (!fatal) return;
     fatal.style.display = 'block';
     document.getElementById('fatal-error-text').textContent = e && e.stack ? e.stack : String(e);
 }
 
 async function fetchPhoton(q) {
-    const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=1`;
-    const res = await fetch(url);
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (!data.features || !data.features.length) return null;
-    const coords = data.features[0].geometry.coordinates;
-    return { lon: coords[0], lat: coords[1] };
+    try {
+        const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=1`;
+        const res = await fetch(url);
+        if (!res.ok) return null;
+        const data = await res.json();
+        if (!data.features || !data.features.length) return null;
+        const coords = data.features[0].geometry.coordinates;
+        return { lon: coords[0], lat: coords[1] };
+    } catch { return null; }
 }
 
 async function resolveCoords(queryName) {
     const q = queryName.replace(/\+/g, ' ').trim();
     if (cache[q]) return cache[q];
-
-    try {
-        const hit = await fetchPhoton(q);
-        if (hit) {
-            cache[q] = hit;
-            saveCache();
-            return hit;
-        }
-    } catch {}
+    const hit = await fetchPhoton(q);
+    if (hit) {
+        cache[q] = hit;
+        saveCache();
+        return hit;
+    }
     return null;
 }
 
 async function loadInitialRoute() {
-    if (!Array.isArray(initialPlaces)) return;
+    if (!Array.isArray(initialDays)) return;
+    const unresolved = [];
     pendingTasks++;
     setLoading('Locating attractions...');
-    for (const placeName of initialPlaces) {
-        const r = await resolveCoords(placeName);
-        if (r) {
-            const pos = [r.lat, r.lon];
-            const marker = L.marker(pos).addTo(map);
-            marker.bindPopup(`<b>${placeName.split(',')[0]}</b>`);
-            markersMap[placeName] = marker;
-            latlngs.push(pos);
+    
+    for (let d = 0; d < initialDays.length; d++) {
+        const dayPlaces = initialDays[d];
+        const dayLatlngs = [];
+        const color = dayColors[d % dayColors.length];
+        
+        for (const placeName of dayPlaces) {
+            const r = await resolveCoords(placeName);
+            if (r) {
+                const pos = [r.lat, r.lon];
+                const marker = L.marker(pos, { icon: createDayIcon(d, color) }).addTo(map);
+                marker.bindPopup(`<b>Day ${d+1}: ${placeName.split(',')[0]}</b>`);
+                markersMap[placeName] = marker;
+                dayLatlngs.push(pos);
+                allLatlngs.push(pos);
+            } else {
+                unresolved.push(placeName);
+            }
+        }
+        
+        if (dayLatlngs.length > 1) {
+            L.polyline(dayLatlngs, { color: color, weight: 4, opacity: 0.8 }).addTo(map);
         }
     }
-    if (latlngs.length > 0) {
-        L.polyline(latlngs, { color: '#3498db', weight: 4, dashArray: '5, 10' }).addTo(map);
-        map.fitBounds(L.latLngBounds(latlngs), { padding: [50, 50] });
+    
+    if (allLatlngs.length > 0) {
+        map.fitBounds(L.latLngBounds(allLatlngs), { padding: [50, 50] });
     }
     pendingTasks--;
     clearLoading();
@@ -147,8 +173,8 @@ document.querySelectorAll('.markdown-body a').forEach((a) => {
         
         const normalizedQ = q.replace(/\+/g, ' ');
         if (markersMap[normalizedQ]) {
-            map.flyTo(markersMap[normalizedQ].getLatLng(), 16);
-            markersMap[normalizedQ].openPopup();
+            map.flyTo(markersMap[normalizedQ].getLatLng(), 16, {duration: 1.5});
+            setTimeout(() => markersMap[normalizedQ].openPopup(), 1500);
         } else {
             setLoading('Locating...');
             const r = await resolveCoords(normalizedQ);
@@ -158,8 +184,8 @@ document.querySelectorAll('.markdown-body a').forEach((a) => {
                 const marker = L.marker(pos).addTo(map);
                 marker.bindPopup(`<b>${normalizedQ.split(',')[0]}</b>`);
                 markersMap[normalizedQ] = marker;
-                map.flyTo(pos, 16);
-                marker.openPopup();
+                map.flyTo(pos, 16, {duration: 1.5});
+                setTimeout(() => marker.openPopup(), 1500);
             } else {
                 window.open(this.href, '_blank');
             }
@@ -167,6 +193,8 @@ document.querySelectorAll('.markdown-body a').forEach((a) => {
     });
 });
 
+window.addEventListener('error', (event) => showFatalError(event.error || event));
+window.addEventListener('unhandledrejection', (event) => showFatalError(event.reason || event));
 loadInitialRoute();
     </script>
 </body>

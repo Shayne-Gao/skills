@@ -97,7 +97,8 @@ description: "帮助用户制定详细的旅行计划，按照 5 步工作流收
 2. **语言要求**：即使是国际行程，攻略内容也必须使用**中文**输出。
 3. **地名规范**：涉及地点名称时，必须提供**中英文双语名称**（格式：中文名 English Name），以方便用户在当地沟通及地图检索。
 4. 将其中的 `MARKDOWN_CONTENT_PLACEHOLDER` 替换为你在第五步生成的完整 Markdown 字符串。
-5. 将其中的 `INITIAL_PLACES_PLACEHOLDER` 替换为一个 JSON 数组字符串，该数组**仅包含行程安排表中的选定景点**。
+5. 将其中的 `INITIAL_DAYS_PLACEHOLDER` 替换为一个二维 JSON 数组字符串，该数组必须按天对**选定景点**进行分组。其名称必须与 Markdown 中对应链接的 `query` 参数严格一致。
+   - 格式示例：`[["Day1 景点A", "Day1 景点B"], ["Day2 景点C"], ...]`
 6. 将替换后的内容保存为 `outputs/Trip_Plan_{City}.html`。
 7. 提示用户可以打开该文件（如果遇到依赖加载问题，提示用本地 HTTP 服务打开更稳定）。
 

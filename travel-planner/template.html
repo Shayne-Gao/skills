@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- title 将被大模型替换 -->
     <title>Trip_Plan_Template</title>
-    <!-- 使用在线 CDN，确保脱离当前目录也能正常使用 -->
     <link rel="stylesheet" href="./vendor/leaflet.css" />
     <script src="./vendor/leaflet.js"></script>
     <script src="./vendor/gcoord.global.prod.js"></script>
@@ -16,7 +14,6 @@
         .right-panel { width: 50%; height: 100%; position: relative; }
         #map { width: 100%; height: 100%; background: #eef3f7; }
 
-        /* Markdown 样式 */
         .markdown-body { font-size: 15px; line-height: 1.6; color: #333; }
         .markdown-body h1, .markdown-body h2, .markdown-body h3 { border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; margin-top: 24px; margin-bottom: 16px; font-weight: 600; }
         .markdown-body table { border-collapse: collapse; width: 100%; margin-bottom: 16px; }
@@ -26,7 +23,6 @@
         .markdown-body a { color: #0366d6; text-decoration: none; font-weight: 500; cursor: pointer; }
         .markdown-body a:hover { text-decoration: underline; }
 
-        /* 状态与报错样式 */
         .loading { position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.95); padding: 8px 10px; border-radius: 6px; font-size: 14px; z-index: 1000; box-shadow: 0 1px 6px rgba(0,0,0,0.15); display: none; max-width: calc(100% - 24px); }
         .issues { position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(255,255,255,0.95); border-radius: 8px; padding: 10px 12px; box-shadow: 0 1px 10px rgba(0,0,0,0.12); z-index: 1000; display: none; max-height: 30vh; overflow-y: auto;}
         .issues-title { font-weight: 600; margin-bottom: 6px; color: #e74c3c;}
@@ -55,35 +51,34 @@
     </div>
 
     <script>
-// ==========================================
-// 1. 注入的 Markdown 数据（由大模型生成并替换）
-// ==========================================
 const markdownContent = `MARKDOWN_CONTENT_PLACEHOLDER`;
+// initialDays 格式：[["Day1景点A", "Day1景点B"], ["Day2景点C"]]
+const initialDays = INITIAL_DAYS_PLACEHOLDER;
 
-// ==========================================
-// 2. 注入的初始路线顺序（由大模型生成并替换）
-// 格式要求：仅包含行程表中的必去景点名称，且必须与 markdown 中链接里 query 的参数严格一致，用于按顺序划线。
-// 例如：["天津市 河北区 天津站", "天津市 和平区 瓷房子"]
-// ==========================================
-const initialPlaces = INITIAL_PLACES_PLACEHOLDER;
-
-// ==========================================
-// 核心逻辑区 (无需大模型修改)
-// ==========================================
 try {
     document.getElementById('content').innerHTML = marked.parse(markdownContent);
 } catch (e) {
     showFatalError(e);
 }
 
-const map = L.map('map').setView([39.9, 116.4], 4); // 默认中国中心，后续会自动 fitBounds
+const map = L.map('map').setView([39.9, 116.4], 4);
 L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
     subdomains: ["1", "2", "3", "4"],
     maxZoom: 18,
     attribution: '© 高德地图'
 }).addTo(map);
 
-// 缓存与状态
+const dayColors = ['#2ecc71', '#3498db', '#9b59b6', '#f1c40f', '#e67e22', '#e74c3c', '#1abc9c', '#34495e'];
+
+function createDayIcon(dayIndex, color) {
+    return L.divIcon({
+        className: 'custom-div-icon',
+        html: `<div style="background-color:${color}; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:12px; border:2px solid white; box-shadow:0 2px 5px rgba(0,0,0,0.3);">D${dayIndex + 1}</div>`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
+    });
+}
+
 const cacheKey = 'travel-planner:geo-cache:v2';
 const cache = (() => {
     try { return JSON.parse(localStorage.getItem(cacheKey) || '{}') || {}; } 
@@ -96,19 +91,16 @@ function saveCache() {
 }
 
 const markersMap = {};
-const latlngs = [];
+const allLatlngs = [];
 let pendingTasks = 0;
 
-// UI 辅助
 function setLoading(text) {
     const el = document.getElementById('loading');
     el.style.display = 'block';
     el.textContent = text;
 }
 function clearLoading() {
-    if (pendingTasks <= 0) {
-        document.getElementById('loading').style.display = 'none';
-    }
+    if (pendingTasks <= 0) document.getElementById('loading').style.display = 'none';
 }
 function showIssues(unresolved) {
     const el = document.getElementById('issues');
@@ -121,173 +113,137 @@ function showIssues(unresolved) {
         const href = `https://ditu.amap.com/search?query=${q}`;
         return `<li>${name}（<a href="${href}" target="_blank" rel="noopener noreferrer">在高德打开</a>）</li>`;
     }).join('');
-    el.innerHTML = `<div class="issues-title">以下景点未能自动定位，但这不影响您阅读攻略：</div><ul>${items}</ul>`;
+    el.innerHTML = `<div class="issues-title">以下景点未能自动定位：</div><ul>${items}</ul>`;
     el.style.display = 'block';
 }
 function showFatalError(e) {
     const fatal = document.getElementById('fatal-error');
     if (!fatal) return;
     fatal.style.display = 'block';
-    const msg = e && e.stack ? e.stack : String(e);
-    document.getElementById('fatal-error-text').textContent = msg;
+    document.getElementById('fatal-error-text').textContent = e && e.stack ? e.stack : String(e);
 }
 
-// 检索增强
 function normalizeQuery(q) {
-    return String(q || '').replace(/\\+/g, ' ').replace(/\\s+/g, ' ').trim();
+    return String(q || '').replace(/\+/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
 function candidateQueries(queryName) {
     const q = normalizeQuery(queryName);
     const variants = [q];
-    // 降级策略：逐步去掉可能干扰海外开源 API 检索的词缀
-    variants.push(q.replace(/历史文化街区/g, ''));
-    variants.push(q.replace(/文化旅游区/g, ''));
-    variants.push(q.replace(/风情区/g, ''));
-    variants.push(q.replace(/风景名胜区/g, ''));
-    variants.push(q.replace(/风景区/g, ''));
-    variants.push(q.replace(/旅游区/g, ''));
-    variants.push(q.replace(/遗址/g, ''));
-    
-    // 提取纯净景点名（去掉市/区县前缀）
-    let pureMatch = q.match(/.*?(区|县|市)\\s+(.*)/);
-    if(pureMatch && pureMatch[2]) {
-        variants.push(pureMatch[2].trim());
-    }
-
+    variants.push(q.replace(/历史文化街区|文化旅游区|风情区|风景名胜区|风景区|旅游区|遗址/g, ''));
+    let pureMatch = q.match(/.*?(区|县|市)\s+(.*)/);
+    if(pureMatch && pureMatch[2]) variants.push(pureMatch[2].trim());
     const unique = [];
     for (const item of variants) {
         const v = normalizeQuery(item);
-        if (!v) continue;
-        if (!unique.includes(v)) unique.push(v);
+        if (v && !unique.includes(v)) unique.push(v);
     }
     return unique;
 }
 
 async function fetchPhoton(q) {
-    const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=1`;
-    const res = await fetch(url);
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (!data.features || !data.features.length) return null;
-    const coords = data.features[0].geometry.coordinates;
-    return { lon: coords[0], lat: coords[1] };
+    try {
+        const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}&limit=1`;
+        const res = await fetch(url);
+        if (!res.ok) return null;
+        const data = await res.json();
+        if (!data.features || !data.features.length) return null;
+        const coords = data.features[0].geometry.coordinates;
+        return { lon: coords[0], lat: coords[1] };
+    } catch { return null; }
 }
 
 async function resolveToGcj02(queryName) {
     const q = normalizeQuery(queryName);
-    // 命中缓存直出
-    if (cache[q] && cache[q].lon && cache[q].lat) {
-        return { lon: cache[q].lon, lat: cache[q].lat };
-    }
-
+    if (cache[q] && cache[q].lon && cache[q].lat) return cache[q];
     const candidates = candidateQueries(q);
     for (const c of candidates) {
-        try {
-            const hit = await fetchPhoton(c);
-            if (hit) {
-                // 转为高德坐标系
-                const gcj = gcoord.transform([hit.lon, hit.lat], gcoord.WGS84, gcoord.GCJ02);
-                cache[q] = { lon: gcj[0], lat: gcj[1] };
-                saveCache();
-                return cache[q];
-            }
-        } catch {}
+        const hit = await fetchPhoton(c);
+        if (hit) {
+            const gcj = gcoord.transform([hit.lon, hit.lat], gcoord.WGS84, gcoord.GCJ02);
+            cache[q] = { lon: gcj[0], lat: gcj[1] };
+            saveCache();
+            return cache[q];
+        }
     }
     return null;
 }
 
-// 初始化路线打点
 async function loadInitialRoute() {
-    if (!Array.isArray(initialPlaces) || initialPlaces.length === 0) return;
-    
+    if (!Array.isArray(initialDays) || initialDays.length === 0) return;
     const unresolved = [];
     pendingTasks++;
-    setLoading('正在智能检索地图坐标（首次打开可能稍慢，之后会自动缓存）…');
+    setLoading('正在检索地图坐标…');
     
-    for (let i = 0; i < initialPlaces.length; i++) {
-        const placeName = initialPlaces[i];
-        const r = await resolveToGcj02(placeName);
-        if (!r) {
-            unresolved.push(placeName);
-            continue;
-        }
-        const mappedLatlng = [r.lat, r.lon];
-        const displayName = placeName.replace(/.*?(区|县|市)\\s+/, '').trim();
+    for (let d = 0; d < initialDays.length; d++) {
+        const dayPlaces = initialDays[d];
+        const dayLatlngs = [];
+        const color = dayColors[d % dayColors.length];
         
-        const marker = L.marker(mappedLatlng).addTo(map);
-        marker.bindPopup(`<b>${displayName}</b>`);
-        markersMap[normalizeQuery(placeName)] = marker;
-        latlngs.push(mappedLatlng);
+        for (const placeName of dayPlaces) {
+            const r = await resolveToGcj02(placeName);
+            if (!r) {
+                unresolved.push(placeName);
+                continue;
+            }
+            const pos = [r.lat, r.lon];
+            const marker = L.marker(pos, { icon: createDayIcon(d, color) }).addTo(map);
+            marker.bindPopup(`<b>Day ${d+1}: ${placeName.replace(/.*?(区|县|市)\s+/, '').trim()}</b>`);
+            markersMap[normalizeQuery(placeName)] = marker;
+            dayLatlngs.push(pos);
+            allLatlngs.push(pos);
+        }
+        
+        if (dayLatlngs.length > 1) {
+            L.polyline(dayLatlngs, { color: color, weight: 4, opacity: 0.8 }).addTo(map);
+        }
     }
     
-    if (latlngs.length > 0) {
-        const polyline = L.polyline(latlngs, { color: '#e74c3c', weight: 4, dashArray: '10, 10' }).addTo(map);
-        map.fitBounds(polyline.getBounds(), { padding: [50, 50] });
+    if (allLatlngs.length > 0) {
+        map.fitBounds(L.latLngBounds(allLatlngs), { padding: [50, 50] });
     }
-    
     showIssues(unresolved);
     pendingTasks--;
     clearLoading();
 }
 
-// 点击左侧链接，联动右侧地图
 async function focusAndPlotPlace(queryName) {
     const normalized = normalizeQuery(queryName);
-    
-    // 已打点，直接飞过去
     if (markersMap[normalized]) {
         map.flyTo(markersMap[normalized].getLatLng(), 16, {duration: 1.5});
         setTimeout(() => markersMap[normalized].openPopup(), 1500);
         return;
     }
-
-    // 未打点（例如附录里的备选景点），触发临时检索
     pendingTasks++;
     setLoading(`正在定位：${normalized.replace(/.*?(区|县|市)\s+/, '').trim()}…`);
     const r = await resolveToGcj02(normalized);
     pendingTasks--;
     clearLoading();
-    
     if (!r) {
-        // 兜底：真的找不到，跳去高德原链接
         window.open(`https://ditu.amap.com/search?query=${encodeURIComponent(normalized.replace(/\s+/g, '+'))}`, '_blank');
         return;
     }
-    
-    const mappedLatlng = [r.lat, r.lon];
-    const displayName = normalized.replace(/.*?(区|县|市)\s+/, '').trim();
-    const marker = L.marker(mappedLatlng).addTo(map);
-    marker.bindPopup(`<b>${displayName}</b>`);
+    const pos = [r.lat, r.lon];
+    const marker = L.marker(pos).addTo(map);
+    marker.bindPopup(`<b>${normalized.replace(/.*?(区|县|市)\s+/, '').trim()}</b>`);
     markersMap[normalized] = marker;
-    
-    map.flyTo(mappedLatlng, 16, {duration: 1.5});
+    map.flyTo(pos, 16, {duration: 1.5});
     setTimeout(() => marker.openPopup(), 1500);
 }
 
-// 拦截事件
 document.querySelectorAll('.markdown-body a').forEach((a) => {
     if (!a.href.includes('amap.com') && !a.href.includes('google.com/maps')) return;
     a.addEventListener('click', function (e) {
         e.preventDefault();
-        try {
-            const urlObj = new URL(this.href);
-            const q = urlObj.searchParams.get('query');
-            if (!q) {
-                window.open(this.href, '_blank');
-                return;
-            }
-            focusAndPlotPlace(q);
-        } catch {
-            window.open(this.href, '_blank');
-        }
+        const urlObj = new URL(this.href);
+        const q = urlObj.searchParams.get('query') || urlObj.searchParams.get('q');
+        if (q) focusAndPlotPlace(q);
+        else window.open(this.href, '_blank');
     });
 });
 
 window.addEventListener('error', (event) => showFatalError(event.error || event));
 window.addEventListener('unhandledrejection', (event) => showFatalError(event.reason || event));
-
-// 启动
 loadInitialRoute();
     </script>
 </body>
