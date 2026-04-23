@@ -98,7 +98,7 @@ description: "帮助用户制定详细的旅行计划，按照 5 步工作流收
 3. **地名规范**：涉及地点名称时，必须提供**中英文双语名称**（格式：中文名 English Name），以方便用户在当地沟通及地图检索。
 4. 将其中的 `MARKDOWN_CONTENT_PLACEHOLDER` 替换为你在第五步生成的完整 Markdown 字符串。
 5. 将其中的 `INITIAL_PLACES_PLACEHOLDER` 替换为一个 JSON 数组字符串，该数组**仅包含行程安排表中的选定景点**。
-6. 将替换后的内容保存为 `Trip_Plan_{City}.html`。
+6. 将替换后的内容保存为 `outputs/Trip_Plan_{City}.html`。
 7. 提示用户可以打开该文件（如果遇到依赖加载问题，提示用本地 HTTP 服务打开更稳定）。
 
 ## 交互原则

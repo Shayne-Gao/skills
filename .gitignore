@@ -1,0 +1,6 @@
+travel-planner/outputs/
+*.html
+!travel-planner/template.html
+!travel-planner/template_intl.html
+.DS_Store
+__pycache__/
