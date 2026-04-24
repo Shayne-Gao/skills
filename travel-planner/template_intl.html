@@ -28,6 +28,42 @@
         
         #fatal-error { position: fixed; inset: 0; background: rgba(255,255,255,0.96); display: none; z-index: 9999; padding: 24px; box-sizing: border-box; }
         #fatal-error pre { white-space: pre-wrap; word-break: break-word; background: #111827; color: #f9fafb; padding: 16px; border-radius: 8px; overflow: auto; }
+
+        .extras-section { margin-top: 28px; padding-top: 18px; border-top: 1px solid #eaecef; }
+        .extras-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+        .extras-title { font-size: 18px; font-weight: 700; margin: 0; }
+        .extras-subtitle { font-size: 13px; color: #6b7280; margin: 0; }
+        .extras-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+        .extras-tab { border: 1px solid #e5e7eb; background: #fff; border-radius: 999px; padding: 6px 10px; font-size: 13px; cursor: pointer; }
+        .extras-tab.active { background: #111827; color: #fff; border-color: #111827; }
+        .extras-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+        .extras-card { border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; background: #fff; display: flex; flex-direction: column; min-height: 180px; }
+        .extras-img { width: 100%; height: 120px; object-fit: cover; background: #f3f4f6; }
+        .extras-body { padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; }
+        .extras-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+        .extras-name { font-weight: 700; font-size: 14px; line-height: 1.2; margin: 0; }
+        .extras-price { font-size: 13px; color: #111827; white-space: nowrap; }
+        .extras-desc { font-size: 13px; color: #374151; margin: 0; }
+        .extras-meta { font-size: 12px; color: #6b7280; margin: 0; }
+        .extras-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+        .extras-tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #f3f4f6; color: #374151; }
+        .extras-actions { display: flex; gap: 10px; margin-top: 6px; }
+        .extras-link { font-size: 13px; color: #0366d6; text-decoration: none; }
+        .extras-link:hover { text-decoration: underline; }
+
+        @media (max-width: 900px) {
+            body { flex-direction: column; height: 100vh; overflow: hidden; }
+            .right-panel { order: 0; width: 100%; height: 45vh; flex: 0 0 45vh; }
+            #map { height: 100%; }
+            .left-panel { order: 1; width: 100%; height: auto; flex: 1 1 auto; overflow-y: auto; border-right: none; border-top: 1px solid #e0e0e0; padding: 18px; }
+            .extras-grid { grid-template-columns: 1fr; }
+        }
+
+        body.force-mobile { flex-direction: column; height: 100vh; overflow: hidden; }
+        body.force-mobile .right-panel { order: 0; width: 100%; height: 45vh; flex: 0 0 45vh; }
+        body.force-mobile #map { height: 100%; }
+        body.force-mobile .left-panel { order: 1; width: 100%; height: auto; flex: 1 1 auto; overflow-y: auto; border-right: none; border-top: 1px solid #e0e0e0; padding: 18px; }
+        body.force-mobile .extras-grid { grid-template-columns: 1fr; }
     </style>
 </head>
 <body>
@@ -45,8 +81,13 @@
         <pre id="fatal-error-text"></pre>
     </div>
 
+    <script id="extras-data" type="application/json">EXTRAS_JSON</script>
+
     <script>
 (function() {
+    try {
+        if (new URLSearchParams(location.search).get('mobile') === '1') document.body.classList.add('force-mobile');
+    } catch {}
     const markdownContent = MARKDOWN_CONTENT_JSON;
     const initialDays = INITIAL_DAYS_JSON;
     let locationBias = null;
@@ -59,6 +100,177 @@
         document.getElementById('fatal-error-text').textContent = e && e.stack ? e.stack : String(e);
     }
 
+    function readExtras() {
+        const el = document.getElementById('extras-data');
+        if (!el) return [];
+        try {
+            const text = (el.textContent || '').trim();
+            if (!text || (text[0] !== '[' && text[0] !== '{')) return [];
+            const parsed = JSON.parse(text);
+            return Array.isArray(parsed) ? parsed : [];
+        } catch {
+            return [];
+        }
+    }
+
+    function normalizeExtrasType(t) {
+        const v = String(t || '').toLowerCase();
+        if (v.includes('food') || v.includes('美食') || v.includes('snack') || v.includes('restaurant')) return 'food';
+        if (v.includes('souvenir') || v.includes('gift') || v.includes('伴手礼') || v.includes('特产')) return 'souvenir';
+        return 'all';
+    }
+
+    function placeholderDataUrl(title) {
+        const t = String(title || '').trim().slice(0, 16) || 'Image';
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#e5e7eb"/><stop offset="1" stop-color="#f3f4f6"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="52%" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial" font-size="40" fill="#111827">${t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</text></svg>`;
+        return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+    }
+
+    function renderExtras(items) {
+        const list = Array.isArray(items) ? items.filter(Boolean) : [];
+        if (!list.length) return;
+        const content = document.getElementById('content');
+        if (!content) return;
+
+        const section = document.createElement('section');
+        section.className = 'extras-section';
+
+        const header = document.createElement('div');
+        header.className = 'extras-header';
+
+        const titleWrap = document.createElement('div');
+        const title = document.createElement('h2');
+        title.className = 'extras-title';
+        title.textContent = 'Local Eats & Souvenirs';
+        const subtitle = document.createElement('p');
+        subtitle.className = 'extras-subtitle';
+        subtitle.textContent = 'Reference only: prices/images may vary';
+        titleWrap.appendChild(title);
+        titleWrap.appendChild(subtitle);
+
+        const tabs = document.createElement('div');
+        tabs.className = 'extras-tabs';
+        const tabAll = document.createElement('button');
+        tabAll.className = 'extras-tab active';
+        tabAll.type = 'button';
+        tabAll.textContent = 'All';
+        const tabFood = document.createElement('button');
+        tabFood.className = 'extras-tab';
+        tabFood.type = 'button';
+        tabFood.textContent = 'Food';
+        const tabSouvenir = document.createElement('button');
+        tabSouvenir.className = 'extras-tab';
+        tabSouvenir.type = 'button';
+        tabSouvenir.textContent = 'Souvenirs';
+        tabs.appendChild(tabAll);
+        tabs.appendChild(tabFood);
+        tabs.appendChild(tabSouvenir);
+
+        header.appendChild(titleWrap);
+        header.appendChild(tabs);
+        section.appendChild(header);
+
+        const grid = document.createElement('div');
+        grid.className = 'extras-grid';
+        section.appendChild(grid);
+        content.appendChild(section);
+
+        function setActive(btn) {
+            for (const b of tabs.querySelectorAll('button')) b.classList.remove('active');
+            btn.classList.add('active');
+        }
+
+        function render(type) {
+            grid.innerHTML = '';
+            const filtered = type === 'all' ? list : list.filter(i => normalizeExtrasType(i.type || i.category) === type);
+            for (const item of filtered) {
+                const card = document.createElement('article');
+                card.className = 'extras-card';
+
+                const img = document.createElement('img');
+                img.className = 'extras-img';
+                img.loading = 'lazy';
+                img.alt = item.name || '';
+                try { img.referrerPolicy = 'no-referrer'; } catch {}
+                const image = String(item.image || item.imageUrl || '').trim();
+                const fallback = placeholderDataUrl(item.name || '');
+                img.src = image || fallback;
+                img.onerror = () => {
+                    img.onerror = null;
+                    img.src = fallback;
+                };
+                card.appendChild(img);
+
+                const body = document.createElement('div');
+                body.className = 'extras-body';
+
+                const row = document.createElement('div');
+                row.className = 'extras-row';
+                const h = document.createElement('h3');
+                h.className = 'extras-name';
+                h.textContent = item.name || '';
+                const p = document.createElement('div');
+                p.className = 'extras-price';
+                const price = item.price || item.priceRange || '';
+                p.textContent = price ? `Price: ${price}` : '';
+                row.appendChild(h);
+                row.appendChild(p);
+                body.appendChild(row);
+
+                const desc = item.desc || item.description || '';
+                if (desc) {
+                    const d = document.createElement('p');
+                    d.className = 'extras-desc';
+                    d.textContent = desc;
+                    body.appendChild(d);
+                }
+
+                const where = item.where || item.location || '';
+                if (where) {
+                    const m = document.createElement('p');
+                    m.className = 'extras-meta';
+                    m.textContent = `Where: ${where}`;
+                    body.appendChild(m);
+                }
+
+                const tags = Array.isArray(item.tags) ? item.tags.slice(0, 6) : [];
+                if (tags.length) {
+                    const tagWrap = document.createElement('div');
+                    tagWrap.className = 'extras-tags';
+                    for (const t of tags) {
+                        const s = document.createElement('span');
+                        s.className = 'extras-tag';
+                        s.textContent = String(t);
+                        tagWrap.appendChild(s);
+                    }
+                    body.appendChild(tagWrap);
+                }
+
+                const mapUrl = item.mapUrl || item.map || '';
+                if (mapUrl) {
+                    const actions = document.createElement('div');
+                    actions.className = 'extras-actions';
+                    const link = document.createElement('a');
+                    link.className = 'extras-link';
+                    link.href = mapUrl;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.textContent = '🗺️ Map';
+                    actions.appendChild(link);
+                    body.appendChild(actions);
+                }
+
+                card.appendChild(body);
+                grid.appendChild(card);
+            }
+        }
+
+        tabAll.addEventListener('click', () => { setActive(tabAll); render('all'); });
+        tabFood.addEventListener('click', () => { setActive(tabFood); render('food'); });
+        tabSouvenir.addEventListener('click', () => { setActive(tabSouvenir); render('souvenir'); });
+        render('all');
+    }
+
     async function init() {
         try {
             if (typeof L === 'undefined' || typeof gcoord === 'undefined' || typeof marked === 'undefined') {
@@ -66,6 +278,7 @@
             }
 
             document.getElementById('content').innerHTML = marked.parse(markdownContent);
+            renderExtras(readExtras());
 
             const map = L.map('map').setView([0, 0], 2);
             L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
