@@ -281,10 +281,16 @@
             renderExtras(readExtras());
 
             const map = L.map('map').setView([0, 0], 2);
-            L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-                attribution: '&copy; Google Maps'
-            }).addTo(map);
+            const tileMode = (() => {
+                try { return new URLSearchParams(location.search).get('tile') || ''; } catch { return ''; }
+            })();
+            const mode = tileMode.toLowerCase();
+            const tile = mode === 'google'
+                ? L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', { subdomains: ['mt0', 'mt1', 'mt2', 'mt3'], attribution: '&copy; Google' })
+                : mode === 'osm'
+                    ? L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { subdomains: ['a', 'b', 'c'], maxZoom: 19, attribution: '&copy; OpenStreetMap contributors' })
+                    : L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Tiles &copy; Esri' });
+            tile.addTo(map);
 
             const dayColors = ['#2ecc71', '#3498db', '#9b59b6', '#f1c40f', '#e67e22', '#e74c3c', '#1abc9c', '#34495e'];
             const markersMap = {};
