@@ -23,6 +23,38 @@
         .markdown-body a { color: #0366d6; text-decoration: none; font-weight: 500; cursor: pointer; }
         .markdown-body a:hover { text-decoration: underline; }
 
+        .candidate-toolbar { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.96); backdrop-filter: blur(6px); border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 12px; margin: 12px 0 16px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+        .candidate-toolbar .hint { font-size: 13px; color: #374151; }
+        .candidate-toolbar .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+        .candidate-btn { appearance: none; border: 1px solid #d1d5db; background: #fff; color: #111827; border-radius: 10px; padding: 7px 10px; font-size: 13px; cursor: pointer; }
+        .candidate-btn.primary { background: #111827; border-color: #111827; color: #fff; }
+        .candidate-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .candidate-area { margin-top: 18px; }
+        .candidate-area-title { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 0 0 10px; }
+        .candidate-area-title .name { font-size: 18px; font-weight: 800; margin: 0; }
+        .candidate-area-title .meta { font-size: 13px; color: #6b7280; }
+
+        .candidate-list { display: flex; flex-direction: column; gap: 12px; }
+        .candidate-card { border: 1px solid #e5e7eb; border-radius: 14px; padding: 12px 12px; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
+        .candidate-card.candidate-must { border-color: #86efac; background: linear-gradient(0deg, rgba(240,253,244,0.8), rgba(240,253,244,0.8)), #fff; }
+        .candidate-card.candidate-avoid { border-color: #fca5a5; background: linear-gradient(0deg, rgba(254,242,242,0.9), rgba(254,242,242,0.9)), #fff; }
+        .candidate-top { display: flex; gap: 10px; align-items: flex-start; justify-content: space-between; }
+        .candidate-title { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .candidate-index { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 999px; background: #111827; color: #fff; font-weight: 800; font-size: 13px; flex: 0 0 auto; }
+        .candidate-name { font-weight: 800; font-size: 15px; color: #111827; }
+        .candidate-rating { font-size: 13px; font-weight: 700; color: #111827; white-space: nowrap; }
+        .candidate-actions { display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+        .candidate-pillbtn { appearance: none; border: 1px solid #d1d5db; background: rgba(255,255,255,0.9); color: #111827; border-radius: 999px; padding: 5px 10px; font-size: 12px; cursor: pointer; line-height: 1; }
+        .candidate-pillbtn.must.active { background: #16a34a; border-color: #16a34a; color: #fff; }
+        .candidate-pillbtn.avoid.active { background: #dc2626; border-color: #dc2626; color: #fff; }
+
+        .candidate-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+        .candidate-pill { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; }
+        .candidate-desc { margin-top: 10px; display: grid; gap: 8px; }
+        .candidate-desc-title { font-size: 12px; font-weight: 800; color: #111827; }
+        .candidate-desc-body { font-size: 13px; color: #374151; }
+
         .loading { position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.95); padding: 8px 10px; border-radius: 6px; font-size: 14px; z-index: 1000; box-shadow: 0 1px 6px rgba(0,0,0,0.15); display: none; }
         .issues { position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(255,255,255,0.95); border-radius: 8px; padding: 10px 12px; box-shadow: 0 1px 10px rgba(0,0,0,0.12); z-index: 1000; display: none; max-height: 30vh; overflow-y: auto;}
         
@@ -271,6 +303,96 @@
         render('all');
     }
 
+    function initCandidateSelection() {
+        const toolbar = document.getElementById('candidate-toolbar');
+        if (!toolbar) return;
+        const content = document.getElementById('content');
+        if (!content) return;
+
+        const mustCountEl = document.getElementById('candidate-must-count');
+        const avoidCountEl = document.getElementById('candidate-avoid-count');
+        const copyBtn = document.getElementById('candidate-copy');
+        const clearBtn = document.getElementById('candidate-clear');
+
+        function readState() {
+            const state = { must: [], avoid: [] };
+            for (const card of content.querySelectorAll('.candidate-card')) {
+                const idx = parseInt(card.getAttribute('data-idx') || '', 10);
+                if (!Number.isFinite(idx)) continue;
+                if (card.classList.contains('candidate-must')) state.must.push(idx);
+                else if (card.classList.contains('candidate-avoid')) state.avoid.push(idx);
+            }
+            state.must.sort((a, b) => a - b);
+            state.avoid.sort((a, b) => a - b);
+            return state;
+        }
+
+        function update() {
+            const state = readState();
+            if (mustCountEl) mustCountEl.textContent = String(state.must.length);
+            if (avoidCountEl) avoidCountEl.textContent = String(state.avoid.length);
+            const disabled = state.must.length === 0 && state.avoid.length === 0;
+            if (copyBtn) copyBtn.disabled = disabled;
+            if (clearBtn) clearBtn.disabled = disabled;
+        }
+
+        async function copy() {
+            const state = readState();
+            const lines = [];
+            if (state.must.length) lines.push(`必去：${state.must.join(',')}`);
+            if (state.avoid.length) lines.push(`不想去：${state.avoid.join(',')}`);
+            lines.push('未选择：随缘安排（顺路就去，否则就不去）');
+            const text = lines.join('\n');
+            if (!text) return;
+            try {
+                await navigator.clipboard.writeText(text);
+            } catch {
+                try { window.prompt('复制下面这段：', text); } catch {}
+            }
+        }
+
+        function clear() {
+            for (const card of content.querySelectorAll('.candidate-card')) {
+                card.classList.remove('candidate-must');
+                card.classList.remove('candidate-avoid');
+                for (const b of card.querySelectorAll('.candidate-pillbtn')) b.classList.remove('active');
+            }
+            update();
+        }
+
+        function setCardState(card, state) {
+            card.classList.remove('candidate-must');
+            card.classList.remove('candidate-avoid');
+            for (const b of card.querySelectorAll('.candidate-pillbtn')) b.classList.remove('active');
+            if (state === 'must') {
+                card.classList.add('candidate-must');
+                const btn = card.querySelector('.candidate-pillbtn.must');
+                if (btn) btn.classList.add('active');
+            } else if (state === 'avoid') {
+                card.classList.add('candidate-avoid');
+                const btn = card.querySelector('.candidate-pillbtn.avoid');
+                if (btn) btn.classList.add('active');
+            }
+        }
+
+        content.addEventListener('click', e => {
+            const btn = e.target.closest('.candidate-pillbtn');
+            if (!btn) return;
+            e.preventDefault();
+            const card = btn.closest('.candidate-card');
+            if (!card) return;
+            const isMust = btn.classList.contains('must');
+            const isAvoid = btn.classList.contains('avoid');
+            if (!isMust && !isAvoid) return;
+            const next = btn.classList.contains('active') ? 'none' : (isMust ? 'must' : 'avoid');
+            setCardState(card, next);
+            update();
+        });
+        if (copyBtn) copyBtn.addEventListener('click', copy);
+        if (clearBtn) clearBtn.addEventListener('click', clear);
+        update();
+    }
+
     async function init() {
         try {
             if (typeof L === 'undefined' || typeof gcoord === 'undefined' || typeof marked === 'undefined') {
@@ -279,6 +401,7 @@
 
             document.getElementById('content').innerHTML = marked.parse(markdownContent);
             renderExtras(readExtras());
+            initCandidateSelection();
 
             const map = L.map('map').setView([0, 0], 2);
             const tileMode = (() => {
@@ -315,6 +438,37 @@
                     iconSize: [30, 30],
                     iconAnchor: [15, 15]
                 });
+            }
+
+            function createCandidateIcon(idx, label) {
+                const safeIdx = Number.isFinite(idx) ? idx : '';
+                const safeLabel = String(label || '').trim();
+                const short = safeLabel.length > 18 ? safeLabel.slice(0, 18) + '…' : safeLabel;
+                const chip = `<div style="display:inline-flex; align-items:center; gap:6px; padding:6px 8px; border-radius:999px; background:rgba(17,24,39,0.92); color:#fff; border:2px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,0.25); max-width:220px;">` +
+                    `<span style="display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:999px; background:rgba(255,255,255,0.18); font-weight:900; font-size:12px; flex:0 0 auto;">${safeIdx}</span>` +
+                    `<span style="font-weight:800; font-size:12px; line-height:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:180px;">${short.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</span>` +
+                    `</div>`;
+                return L.divIcon({
+                    className: 'custom-div-icon',
+                    html: chip,
+                    iconSize: [240, 34],
+                    iconAnchor: [20, 17]
+                });
+            }
+
+            function unpackPoint(p, fallbackIdx) {
+                if (typeof p === 'string') {
+                    const s = p.replace(/\+/g, ' ').trim();
+                    return { query: s, label: s, idx: null };
+                }
+                if (p && typeof p === 'object') {
+                    const q = String(p.query || p.q || p.name || '').replace(/\+/g, ' ').trim();
+                    const label = String(p.label || p.title || p.name || q).replace(/\+/g, ' ').trim();
+                    const idx = Number.isFinite(Number(p.idx)) ? Number(p.idx) : (Number.isFinite(fallbackIdx) ? fallbackIdx : null);
+                    return { query: q, label, idx };
+                }
+                const s = String(p || '').replace(/\+/g, ' ').trim();
+                return { query: s, label: s, idx: null };
             }
 
             function haversineKm(a, b) {
@@ -378,16 +532,20 @@
                     const color = dayColors[d % dayColors.length];
                     const dayPoints = [];
                     for (const name of initialDays[d]) {
-                        const r = await resolveCoords(name);
+                        const pt = unpackPoint(name, d + 1);
+                        const r = await resolveCoords(pt.query);
                         if (r) {
                             const pos = [r.lat, r.lon];
-                            const marker = L.marker(pos, { icon: createDayIcon(d, color) }).addTo(map);
-                            marker.bindPopup(`<b>D${d+1}: ${name}</b>`);
-                            markersMap[normalize(name)] = marker;
+                            const icon = pt && pt.idx ? createCandidateIcon(pt.idx, pt.label) : createDayIcon(d, color);
+                            const marker = L.marker(pos, { icon }).addTo(map);
+                            const popupTitle = pt && pt.idx ? `${pt.idx}. ${pt.label}` : `D${d+1}: ${pt.label}`;
+                            marker.bindPopup(`<b>${popupTitle}</b>`);
+                            markersMap[normalize(pt.query)] = marker;
+                            markersMap[normalize(pt.label)] = marker;
                             dayPoints.push(pos);
                             allLatlngs.push(pos);
                         } else {
-                            unresolved.push(name);
+                            unresolved.push(pt.query || pt.label || String(name));
                         }
                     }
                     if (dayPoints.length > 1) L.polyline(dayPoints, { color, weight: 4, opacity: 0.7 }).addTo(map);
