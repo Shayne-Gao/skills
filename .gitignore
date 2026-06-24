@@ -1,6 +1,13 @@
 travel-planner/outputs/
+game-account-evaluator/outputs/
+game-account-evaluator/data/
+taiwu_builder/node_modules/
+taiwu_builder/dist/
+taiwu_builder/*.tsbuildinfo
+*.tsbuildinfo
 *.html
 !travel-planner/template.html
 !travel-planner/template_intl.html
+!taiwu_builder/index.html
 .DS_Store
 __pycache__/

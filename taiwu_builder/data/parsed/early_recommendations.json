@@ -1,0 +1,956 @@
+{
+  "source": {
+    "page": "https://taiwu.huijiwiki.com/wiki/%E5%89%8D%E6%9C%9F%E5%8A%9F%E6%B3%95%E6%8E%A8%E8%8D%90",
+    "title": "前期功法推荐 - 太吾绘卷资料攻略百科站 | Steam - 灰机wiki - 北京嘉闻杰诺网络科技有限公司",
+    "total_groups": 67
+  },
+  "categories": {
+    "内功": {
+      "通用类": 7,
+      "直伤类": 1,
+      "魔音类": 1
+    },
+    "摧破": {
+      "通用类": 1,
+      "直伤类": 12,
+      "魔音类": 3,
+      "辅助类": 14
+    },
+    "轻灵": {
+      "命中化解类": 1,
+      "增伤类": 1,
+      "攻击类": 2,
+      "增益类": 2,
+      "移动类": 2,
+      "特殊效果类": 1
+    },
+    "护体": {
+      "机制减伤类": 1,
+      "比例减伤类": 1,
+      "化解类": 1,
+      "动态真气类": 1,
+      "内息紊乱类": 1
+    },
+    "奇窍": {
+      "减伤&增伤类": 4,
+      "辅助战斗类": 9,
+      "辅助魔音类": 1
+    }
+  },
+  "items": [
+    {
+      "group_id": "内功/通用类/001",
+      "martial_category": "内功",
+      "recommendation_category": "通用类",
+      "skill_ids": [
+        "1",
+        "23",
+        "98",
+        "83",
+        "77"
+      ],
+      "skill_names": [
+        "逆·罗汉功",
+        "逆·抱元守一",
+        "逆·黑尸四诀",
+        "逆·天园养气法",
+        "逆·赤仙法"
+      ],
+      "recommendation_reason": "各种内力的专属内功，降低提气&架势消耗有助于前期流畅地使用功法（释放完只消耗架势的催破后，能立即释放只消耗架势的护体，避免在架势恢复间隙被趁虚而入）"
+    },
+    {
+      "group_id": "内功/通用类/002",
+      "martial_category": "内功",
+      "recommendation_category": "通用类",
+      "skill_ids": [
+        "36"
+      ],
+      "skill_names": [
+        "逆·十三太保横练功"
+      ],
+      "recommendation_reason": "廉价的连发同源增伤内功，注意要同种摧破的连发才能稳定触发该效果"
+    },
+    {
+      "group_id": "内功/通用类/003",
+      "martial_category": "内功",
+      "recommendation_category": "通用类",
+      "skill_ids": [
+        "24"
+      ],
+      "skill_names": [
+        "一字混元桩"
+      ],
+      "recommendation_reason": "转化气势资源，广泛用于连发或有着频繁使用辅助护体/摧破的bd"
+    },
+    {
+      "group_id": "内功/通用类/004",
+      "martial_category": "内功",
+      "recommendation_category": "通用类",
+      "skill_ids": [
+        "63"
+      ],
+      "skill_names": [
+        "柴山青囊诀"
+      ],
+      "recommendation_reason": "吃场外药物补给的内功，但给予的同源减伤或同源增伤在战内能稳定触发"
+    },
+    {
+      "group_id": "内功/通用类/005",
+      "martial_category": "内功",
+      "recommendation_category": "通用类",
+      "skill_ids": [
+        "59"
+      ],
+      "skill_names": [
+        "千锤百炼篇"
+      ],
+      "recommendation_reason": "吃场外武器补给的内功，但给予的非同源减伤或非同源增伤在战内能稳定触发"
+    },
+    {
+      "group_id": "内功/通用类/006",
+      "martial_category": "内功",
+      "recommendation_category": "通用类",
+      "skill_ids": [
+        "38",
+        "42"
+      ],
+      "skill_names": [
+        "光明狮子劲",
+        "损悦法"
+      ],
+      "recommendation_reason": "偏生活类的内功，膂lv力能提供负重，能让前中期缺乏高级精致材料和足够属性的情况下穿动重甲；而后者的悟性提升在突破、研读、灵光一闪等功法/技艺修习的方方面面都发挥着重要作用"
+    },
+    {
+      "group_id": "内功/通用类/007",
+      "martial_category": "内功",
+      "recommendation_category": "通用类",
+      "skill_ids": [
+        "85"
+      ],
+      "skill_names": [
+        "正·步天歌"
+      ],
+      "recommendation_reason": "闪避流bd的重要组件，闪避而让对方一些功法无法发挥十成而触发特效往往会有妙用。"
+    },
+    {
+      "group_id": "内功/直伤类/008",
+      "martial_category": "内功",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "50",
+        "64"
+      ],
+      "skill_names": [
+        "少阴一明珏",
+        "蛟蛰四法"
+      ],
+      "recommendation_reason": "直伤专属，越后期，且属性越高，加成越明显，正练可以补足弱势防御，逆练可以明显增强直伤的伤害"
+    },
+    {
+      "group_id": "内功/魔音类/009",
+      "martial_category": "内功",
+      "recommendation_category": "魔音类",
+      "skill_ids": [
+        "3"
+      ],
+      "skill_names": [
+        "逆·无色禅功"
+      ],
+      "recommendation_reason": "能明显补足动心的手段，越后期，且属性越高，加成越明显"
+    },
+    {
+      "group_id": "摧破/通用类/010",
+      "martial_category": "摧破",
+      "recommendation_category": "通用类",
+      "skill_ids": [
+        "543",
+        "583",
+        "471"
+      ],
+      "skill_names": [
+        "正·七十二嗔剑",
+        "正·虎步八极刀",
+        "虎尾功"
+      ],
+      "recommendation_reason": "极为实用的自动摧破，被太吾广泛运用于如武林大会、门派小教等限制战中。"
+    },
+    {
+      "group_id": "摧破/直伤类/011",
+      "martial_category": "摧破",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "573",
+        "534",
+        "386"
+      ],
+      "skill_names": [
+        "界青快剑",
+        "白虹剑法",
+        "疯魔醉拳"
+      ],
+      "recommendation_reason": "中期少有的连发摧破。白虹剑法具有一定控制能力；界青快剑比较看脸，虽面板较低，但有点穴补足；疯魔醉拳面板较高，增伤足，拳掌六品及以下的首选功法"
+    },
+    {
+      "group_id": "摧破/直伤类/012",
+      "martial_category": "摧破",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "487",
+        "470",
+        "521"
+      ],
+      "skill_names": [
+        "蛤蟆倒踢腿",
+        "鸳鸯连环脚",
+        "黄坟砂"
+      ],
+      "recommendation_reason": "前期好用的腿法以及类腿法，蛤蟆倒踢腿在前期具有较高的机动性；鸳鸯连环脚整局战斗的消耗减免可以穿插很多摧破进行使用；黄坟砂写作暗器读作腿法，前期可以用来高速上毒"
+    },
+    {
+      "group_id": "摧破/直伤类/013",
+      "martial_category": "摧破",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "322",
+        "514",
+        "347"
+      ],
+      "skill_names": [
+        "少林金刚掌",
+        "龙吐珠",
+        "大开门八式"
+      ],
+      "recommendation_reason": "下三品的数值怪，少林金刚掌特效简单暴力；龙吐珠特效不仅和关联直伤的摧破有关，作为远程摧破却有着大多数近战摧破都没有的极高数值，大开门八式有着独特的重创增伤效果"
+    },
+    {
+      "group_id": "摧破/直伤类/014",
+      "martial_category": "摧破",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "607",
+        "527",
+        "551",
+        "575",
+        "440",
+        "377",
+        "684"
+      ],
+      "skill_names": [
+        "逆·罗刹刀法",
+        "逆·白眉剑法",
+        "飞剑术",
+        "咸池剑气",
+        "铁花腐骨爪",
+        "逆·血蛭掌",
+        "逆·勾魂碎骨鞭"
+      ],
+      "recommendation_reason": "锁部位摧破，逆练在前期具有较高的直伤伤害，正练可以用于克制回血功法"
+    },
+    {
+      "group_id": "摧破/直伤类/015",
+      "martial_category": "摧破",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "608",
+        "402",
+        "331"
+      ],
+      "skill_names": [
+        "魔障刀法",
+        "拈花指功",
+        "十二手滥缠丝拳"
+      ],
+      "recommendation_reason": "其中仅推荐魔障刀法，有不错的面板和增伤效果，而后两者的价值仅在于不可降低的特效，由于面板较低而显得增伤意义不强"
+    },
+    {
+      "group_id": "摧破/直伤类/016",
+      "martial_category": "摧破",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "471"
+      ],
+      "skill_names": [
+        "虎尾功"
+      ],
+      "recommendation_reason": "白送三次连发，后面每次释放后再送一次，基础面板不错，频率优秀"
+    },
+    {
+      "group_id": "摧破/直伤类/017",
+      "martial_category": "摧破",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "348"
+      ],
+      "skill_names": [
+        "大力开碑掌"
+      ],
+      "recommendation_reason": "高超的面板和高额的破甲，一个有条件的大幅穿透加成，值得在前期作为主力摧破"
+    },
+    {
+      "group_id": "摧破/直伤类/018",
+      "martial_category": "摧破",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "651",
+        "592",
+        "635",
+        "535"
+      ],
+      "skill_names": [
+        "灵蛇刺",
+        "九牛二虎刀",
+        "桓侯十六枪",
+        "太乙玄门剑"
+      ],
+      "recommendation_reason": "赛亚人摧破，属性越高威力越高"
+    },
+    {
+      "group_id": "摧破/直伤类/019",
+      "martial_category": "摧破",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "659"
+      ],
+      "skill_names": [
+        "五雷招来咒"
+      ],
+      "recommendation_reason": "独特的印刷机制，在符咒领域的输出能力较强，能补足符咒前期心神不持续的缺点"
+    },
+    {
+      "group_id": "摧破/直伤类/020",
+      "martial_category": "摧破",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "569"
+      ],
+      "skill_names": [
+        "神木辟邪剑"
+      ],
+      "recommendation_reason": "正练在前期能作为主力摧破使用，通过吸取自身其他摧破的威力，可以在前期叠到较高威力，后期也能作为猴戏功法使用"
+    },
+    {
+      "group_id": "摧破/直伤类/021",
+      "martial_category": "摧破",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "702"
+      ],
+      "skill_names": [
+        "奇形龙爪索"
+      ],
+      "recommendation_reason": "控制型技能，本身面板一般偏高，不推荐专门为它玩机关"
+    },
+    {
+      "group_id": "摧破/直伤类/022",
+      "martial_category": "摧破",
+      "recommendation_category": "直伤类",
+      "skill_ids": [
+        "576"
+      ],
+      "skill_names": [
+        "界青暗手快剑"
+      ],
+      "recommendation_reason": "前期少有的套娃连发催破，开局免费送一次，能联动其他下三品剑法\n内功比例调为全内功，搭配\n正·一字混元桩与内功比例全外功催破有奇效 搭配\n界青快剑，运气好开局一个催破连到战斗结束"
+    },
+    {
+      "group_id": "摧破/魔音类/023",
+      "martial_category": "摧破",
+      "recommendation_category": "魔音类",
+      "skill_ids": [
+        "707"
+      ],
+      "skill_names": [
+        "正·云水引"
+      ],
+      "recommendation_reason": "降低气势消耗，很实用的魔音辅助摧破"
+    },
+    {
+      "group_id": "摧破/魔音类/024",
+      "martial_category": "摧破",
+      "recommendation_category": "魔音类",
+      "skill_ids": [
+        "709"
+      ],
+      "skill_names": [
+        "逆·凤来仪"
+      ],
+      "recommendation_reason": "额外降低敌人守心的机制，很实用的魔音辅助摧破"
+    },
+    {
+      "group_id": "摧破/魔音类/025",
+      "martial_category": "摧破",
+      "recommendation_category": "魔音类",
+      "skill_ids": [
+        "717"
+      ],
+      "skill_names": [
+        "黄竹歌"
+      ],
+      "recommendation_reason": "强度极高的连发摧破，甚至能以六品带动一品魔音摧破的发动"
+    },
+    {
+      "group_id": "摧破/辅助类/026",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "462"
+      ],
+      "skill_names": [
+        "戳眼削耳功"
+      ],
+      "recommendation_reason": "锁头加减敌命中以及减敌兵器化解，因为位于头部这一较为容易打出伤口的部位，配合其他面板较高的锁头摧破，能有效打出伤坏效果"
+    },
+    {
+      "group_id": "摧破/辅助类/027",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "558"
+      ],
+      "skill_names": [
+        "十二路鱼肠刺剑"
+      ],
+      "recommendation_reason": "面板很低，但有增加功法进度机制，前期施展速度不快时可用于加快出手，从而骗敌人护体"
+    },
+    {
+      "group_id": "摧破/辅助类/028",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "648",
+        "623",
+        "598"
+      ],
+      "skill_names": [
+        "逆·五行刺",
+        "逆·少林六合棍",
+        "新亭侯刀法"
+      ],
+      "recommendation_reason": "短时间封禁+打断敌人身法/护体的功法，日常泛用性不佳，但面对仅有一个强力身法/护体的敌人有奇效 说的就是你，剑冢！"
+    },
+    {
+      "group_id": "摧破/辅助类/029",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "401",
+        "407"
+      ],
+      "skill_names": [
+        "逆·少林一指禅",
+        "逆·峨眉一指禅"
+      ],
+      "recommendation_reason": "减抗特效，前期很实用的直伤辅助摧破"
+    },
+    {
+      "group_id": "摧破/辅助类/030",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "368",
+        "370"
+      ],
+      "skill_names": [
+        "五怒手",
+        "金刚黑砂掌"
+      ],
+      "recommendation_reason": "增加穿透面板的摧破，前期能补足穿透不足的问题"
+    },
+    {
+      "group_id": "摧破/辅助类/031",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "559",
+        "561"
+      ],
+      "skill_names": [
+        "工布独一剑",
+        "巨阙千钧剑"
+      ],
+      "recommendation_reason": "独特的解封机制，本身的面板在前期也极强，中后期也能过渡为辅助摧破进行使用"
+    },
+    {
+      "group_id": "摧破/辅助类/032",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "338",
+        "385"
+      ],
+      "skill_names": [
+        "正·武当绵掌",
+        "正·火炼掌"
+      ],
+      "recommendation_reason": "根骨/体质增伤功法，前期较为好用"
+    },
+    {
+      "group_id": "摧破/辅助类/033",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "496"
+      ],
+      "skill_names": [
+        "惊梦香"
+      ],
+      "recommendation_reason": "强度极高的打断机制，配合毒素的拖延战打法，有效保证毒发期间的生存能力"
+    },
+    {
+      "group_id": "摧破/辅助类/034",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "394"
+      ],
+      "skill_names": [
+        "七十二地煞拳"
+      ],
+      "recommendation_reason": "极大程度限制对方脚力，对付一些身法较为强力的敌人十分好用术方以向莫女出列！"
+    },
+    {
+      "group_id": "摧破/辅助类/035",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "465",
+        "396"
+      ],
+      "skill_names": [
+        "三指夺阴爪",
+        "血煞掌"
+      ],
+      "recommendation_reason": "分别应对一些气势使用非常单一的敌人，例如大岳衣以侯等，会具有奇效"
+    },
+    {
+      "group_id": "摧破/辅助类/036",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "515"
+      ],
+      "skill_names": [
+        "赤青神火劲"
+      ],
+      "recommendation_reason": "较强的增伤功法，本身有一定的负面效果"
+    },
+    {
+      "group_id": "摧破/辅助类/037",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "339"
+      ],
+      "skill_names": [
+        "游身八卦掌"
+      ],
+      "recommendation_reason": "极强的挂件摧破，触发简单效果强力"
+    },
+    {
+      "group_id": "摧破/辅助类/038",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "668"
+      ],
+      "skill_names": [
+        "怒目金刚杵"
+      ],
+      "recommendation_reason": "开光的机制以及杵武器的泛用性，使其真伤机制在后期也能用于补足伤害"
+    },
+    {
+      "group_id": "摧破/辅助类/039",
+      "martial_category": "摧破",
+      "recommendation_category": "辅助类",
+      "skill_ids": [
+        "693"
+      ],
+      "skill_names": [
+        "扁鹊神针"
+      ],
+      "recommendation_reason": "独特的治疗摧破，前期在保证不被打出重创的情况下能有效治疗自身"
+    },
+    {
+      "group_id": "轻灵/命中化解类/040",
+      "martial_category": "轻灵",
+      "recommendation_category": "命中化解类",
+      "skill_ids": [
+        "127",
+        "112",
+        "142",
+        "170"
+      ],
+      "skill_names": [
+        "五步梅花桩",
+        "弹腿缩地",
+        "五鬼步",
+        "陷石脚"
+      ],
+      "recommendation_reason": "前期命中不足时可正练，后期可逆练转化解"
+    },
+    {
+      "group_id": "轻灵/增伤类/041",
+      "martial_category": "轻灵",
+      "recommendation_category": "增伤类",
+      "skill_ids": [
+        "135",
+        "199"
+      ],
+      "skill_names": [
+        "猛虎下山式",
+        "鬼犼入地震天法"
+      ],
+      "recommendation_reason": "腿法增伤"
+    },
+    {
+      "group_id": "轻灵/攻击类/042",
+      "martial_category": "轻灵",
+      "recommendation_category": "攻击类",
+      "skill_ids": [
+        "151"
+      ],
+      "skill_names": [
+        "逆·别离步"
+      ],
+      "recommendation_reason": "攻击6次强制造伤，适合高攻速搭配"
+    },
+    {
+      "group_id": "轻灵/攻击类/043",
+      "martial_category": "轻灵",
+      "recommendation_category": "攻击类",
+      "skill_ids": [
+        "160"
+      ],
+      "skill_names": [
+        "八方诸式"
+      ],
+      "recommendation_reason": "额外进行兵器攻击来增加伤害；最适合武具运用较高，且追求最高破体的金刚内力与3兵势纯外伤兵器最高破气不适合是因为，玄阴内力的武具运用加成较少\n前期攻速与追击概率不足时，也可用于辅助加快式的获取速度"
+    },
+    {
+      "group_id": "轻灵/增益类/044",
+      "martial_category": "轻灵",
+      "recommendation_category": "增益类",
+      "skill_ids": [
+        "143"
+      ],
+      "skill_names": [
+        "正·御风符"
+      ],
+      "recommendation_reason": "泛用移动身法，前期第二增益身法"
+    },
+    {
+      "group_id": "轻灵/增益类/045",
+      "martial_category": "轻灵",
+      "recommendation_category": "增益类",
+      "skill_ids": [
+        "108"
+      ],
+      "skill_names": [
+        "轻身术"
+      ],
+      "recommendation_reason": "泛用跳跃身法，前期第一增益身法"
+    },
+    {
+      "group_id": "轻灵/移动类/046",
+      "martial_category": "轻灵",
+      "recommendation_category": "移动类",
+      "skill_ids": [
+        "165",
+        "196",
+        "136",
+        "176",
+        "122",
+        "130"
+      ],
+      "skill_names": [
+        "草上飞",
+        "狸窜术",
+        "千里独行",
+        "蛤蟆纵跳功",
+        "御针行",
+        "天罡北斗步"
+      ],
+      "recommendation_reason": "穿上草鞋跑的飞快；常规跳跃身法"
+    },
+    {
+      "group_id": "轻灵/移动类/047",
+      "martial_category": "轻灵",
+      "recommendation_category": "移动类",
+      "skill_ids": [
+        "175"
+      ],
+      "skill_names": [
+        "逆·闯泥潭"
+      ],
+      "recommendation_reason": "逆练效果是封禁对面的移速到标准属性100%，必死150%，这样自己只要超过150%就稳定比对面跑得快；如果对面不跳跃的话。这是低配版\n逆·一苇渡江"
+    },
+    {
+      "group_id": "轻灵/特殊效果类/048",
+      "martial_category": "轻灵",
+      "recommendation_category": "特殊效果类",
+      "skill_ids": [
+        "181",
+        "191",
+        "171",
+        "122",
+        "137"
+      ],
+      "skill_names": [
+        "百尺桩",
+        "醉八仙步",
+        "大定脚",
+        "御针行",
+        "玄甲定"
+      ],
+      "recommendation_reason": "包括一些特殊效果有利于获取式或者释放功法"
+    },
+    {
+      "group_id": "护体/机制减伤类/049",
+      "martial_category": "护体",
+      "recommendation_category": "机制减伤类",
+      "skill_ids": [
+        "228",
+        "249"
+      ],
+      "skill_names": [
+        "武当铁布衫",
+        "五鬼搬运法"
+      ],
+      "recommendation_reason": "前期易获取易突破且减伤效果显著五鬼搬运法真不改嘛？"
+    },
+    {
+      "group_id": "护体/比例减伤类/050",
+      "martial_category": "护体",
+      "recommendation_category": "比例减伤类",
+      "skill_ids": [
+        "312",
+        "300"
+      ],
+      "skill_names": [
+        "烂泥绝技",
+        "正·寒冰八脉"
+      ],
+      "recommendation_reason": "高比例减伤不如水货硬气功"
+    },
+    {
+      "group_id": "护体/化解类/051",
+      "martial_category": "护体",
+      "recommendation_category": "化解类",
+      "skill_ids": [
+        "213",
+        "252"
+      ],
+      "skill_names": [
+        "尽无骨",
+        "逆·摄魂大法"
+      ],
+      "recommendation_reason": "摄魂大法反弹心神伤害及自带高守心加持，尽无骨化解敌人攻击后可获得式或是让敌人失去式"
+    },
+    {
+      "group_id": "护体/动态真气类/052",
+      "martial_category": "护体",
+      "recommendation_category": "动态真气类",
+      "skill_ids": [
+        "305",
+        "306"
+      ],
+      "skill_names": [
+        "龙回首",
+        "神火罩功"
+      ],
+      "recommendation_reason": "挨打回复真气"
+    },
+    {
+      "group_id": "护体/内息紊乱类/053",
+      "martial_category": "护体",
+      "recommendation_category": "内息紊乱类",
+      "skill_ids": [
+        "289"
+      ],
+      "skill_names": [
+        "乱情瘴"
+      ],
+      "recommendation_reason": "搔首弄姿，对面看了直呼受不了然后内息紊乱"
+    },
+    {
+      "group_id": "奇窍/减伤&增伤类/054",
+      "martial_category": "奇窍",
+      "recommendation_category": "减伤&增伤类",
+      "skill_ids": [
+        "201",
+        "210",
+        "271",
+        "304"
+      ],
+      "skill_names": [
+        "卧虎功",
+        "峨眉虎步功",
+        "四指青膏",
+        "怒相功"
+      ],
+      "recommendation_reason": "高难度前期推荐正练能提供一定的减伤，后期真气获取容易的时候推荐逆练增伤"
+    },
+    {
+      "group_id": "奇窍/减伤&增伤类/055",
+      "martial_category": "奇窍",
+      "recommendation_category": "减伤&增伤类",
+      "skill_ids": [
+        "290"
+      ],
+      "skill_names": [
+        "红玉九香虫"
+      ],
+      "recommendation_reason": "根据敌/我正练/逆练中毒标记数量提高伤害，鉴于毒素的泛用，可视作一种稳定增伤。"
+    },
+    {
+      "group_id": "奇窍/减伤&增伤类/056",
+      "martial_category": "奇窍",
+      "recommendation_category": "减伤&增伤类",
+      "skill_ids": [
+        "266"
+      ],
+      "skill_names": [
+        "辟甲真钢十四诀"
+      ],
+      "recommendation_reason": "基于护甲的高减伤，是较为实用的减伤/增伤奇窍"
+    },
+    {
+      "group_id": "奇窍/减伤&增伤类/057",
+      "martial_category": "奇窍",
+      "recommendation_category": "减伤&增伤类",
+      "skill_ids": [
+        "246"
+      ],
+      "skill_names": [
+        "霸王举鼎"
+      ],
+      "recommendation_reason": "根据运用者装备重量提供增伤/减伤，效果强力，在神龙dlc中可依靠九子霸下吃满功法效果"
+    },
+    {
+      "group_id": "奇窍/辅助战斗类/058",
+      "martial_category": "奇窍",
+      "recommendation_category": "辅助战斗类",
+      "skill_ids": [
+        "297"
+      ],
+      "skill_names": [
+        "天关通"
+      ],
+      "recommendation_reason": "能为运功者消除破绽/封穴，当侵袭boss有持续增加破绽/封穴的摧破时可以考虑根据其摧破效果选择正练解除破绽/逆练解除封穴"
+    },
+    {
+      "group_id": "奇窍/辅助战斗类/059",
+      "martial_category": "奇窍",
+      "recommendation_category": "辅助战斗类",
+      "skill_ids": [
+        "219",
+        "221"
+      ],
+      "skill_names": [
+        "三十六手易针法",
+        "百草雀啄灸"
+      ],
+      "recommendation_reason": "提供变招来恶化/回复伤势，难度高的情况下可以靠三十六手易针法来确保变招命中"
+    },
+    {
+      "group_id": "奇窍/辅助战斗类/060",
+      "martial_category": "奇窍",
+      "recommendation_category": "辅助战斗类",
+      "skill_ids": [
+        "264",
+        "251"
+      ],
+      "skill_names": [
+        "七手八脚功",
+        "阴阳眼术"
+      ],
+      "recommendation_reason": "七手八脚功可以提供一定的施展速度结合阴阳眼术可以通过高施展速度来在敌人的护体功法释放完毕以前打到敌人俗称卡护体"
+    },
+    {
+      "group_id": "奇窍/辅助战斗类/061",
+      "martial_category": "奇窍",
+      "recommendation_category": "辅助战斗类",
+      "skill_ids": [
+        "211"
+      ],
+      "skill_names": [
+        "逆·心无定意"
+      ],
+      "recommendation_reason": "增加式的获取效率，使用重武器前期攻击速度不够时建议使用(推荐逆练，正练被逆练完爆)"
+    },
+    {
+      "group_id": "奇窍/辅助战斗类/062",
+      "martial_category": "奇窍",
+      "recommendation_category": "辅助战斗类",
+      "skill_ids": [
+        "222"
+      ],
+      "skill_names": [
+        "乱针错穴"
+      ],
+      "recommendation_reason": "造成/解除更多的封穴但每次只能增加或者减少一个，同时提供一定的破气"
+    },
+    {
+      "group_id": "奇窍/辅助战斗类/063",
+      "martial_category": "奇窍",
+      "recommendation_category": "辅助战斗类",
+      "skill_ids": [
+        "231"
+      ],
+      "skill_names": [
+        "阴阳周天法"
+      ],
+      "recommendation_reason": "对内息和敌人的内外功比例有影响，连发效率高的情况下对敌我的内息影响更为显著，另一个效果则可以配合\n武当混元功实现减伤，或者\n逆·青黄赤黑神掌完成封禁"
+    },
+    {
+      "group_id": "奇窍/辅助战斗类/064",
+      "martial_category": "奇窍",
+      "recommendation_category": "辅助战斗类",
+      "skill_ids": [
+        "260"
+      ],
+      "skill_names": [
+        "天女散花阵"
+      ],
+      "recommendation_reason": "增强同道机略指令中的：推进、拉回；以在战斗中更灵活地调整距离"
+    },
+    {
+      "group_id": "奇窍/辅助战斗类/065",
+      "martial_category": "奇窍",
+      "recommendation_category": "辅助战斗类",
+      "skill_ids": [
+        "283"
+      ],
+      "skill_names": [
+        "七轮感应法"
+      ],
+      "recommendation_reason": "提供一些功法来触发真气增加效果，类似于金凰儿的\n七文五彩 (望大佬补充)\n常配合\n御风符\n轻身术等使用"
+    },
+    {
+      "group_id": "奇窍/辅助战斗类/066",
+      "martial_category": "奇窍",
+      "recommendation_category": "辅助战斗类",
+      "skill_ids": [
+        "315"
+      ],
+      "skill_names": [
+        "血食功"
+      ],
+      "recommendation_reason": "效果类似饮血剑，造成伤势标记后消除自己的标记"
+    },
+    {
+      "group_id": "奇窍/辅助魔音类/067",
+      "martial_category": "奇窍",
+      "recommendation_category": "辅助魔音类",
+      "skill_ids": [
+        "257",
+        "259"
+      ],
+      "skill_names": [
+        "冰清玉洁",
+        "墨玉功"
+      ],
+      "recommendation_reason": "提供动心/守心并且墨玉功的效果能影响失神标记的持续时间，在前期连发效率不高的情况下很有用"
+    }
+  ]
+}
