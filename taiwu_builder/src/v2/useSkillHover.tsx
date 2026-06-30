@@ -4,7 +4,8 @@ import FloatingLayer from "./FloatingLayer";
 import SkillHoverCard from "./SkillHoverCard";
 import { getSkillById } from "@/utils/taiwuData";
 
-type Hover = { skillId: string; anchor: HTMLElement } | null;
+type PracticeHint = "正练" | "逆练" | "正/逆";
+type Hover = { skillId: string; anchor: HTMLElement; practiceMode?: PracticeHint } | null;
 
 /**
  * 复用 BuilderPageV2 的 hover 稳定方案：
@@ -12,7 +13,7 @@ type Hover = { skillId: string; anchor: HTMLElement } | null;
  * - 浮层渲染 SkillHoverCard（含正逆练 diff 高亮）
  * 用法：
  *   const { onEnter, onLeave, hoverNode } = useSkillHover();
- *   <span onMouseEnter={(e) => onEnter(skillId, e.currentTarget)} onMouseLeave={onLeave}>...</span>
+ *   <span onMouseEnter={(e) => onEnter(skillId, e.currentTarget, "正练")} onMouseLeave={onLeave}>...</span>
  *   {hoverNode}
  */
 export function useSkillHover() {
@@ -30,9 +31,9 @@ export function useSkillHover() {
     closeTimer.current = window.setTimeout(() => setHover(null), 150);
   };
 
-  const onEnter = (skillId: string, anchor: HTMLElement) => {
+  const onEnter = (skillId: string, anchor: HTMLElement, practiceMode?: PracticeHint) => {
     cancelClose();
-    setHover({ skillId, anchor });
+    setHover({ skillId, anchor, practiceMode });
   };
   const onLeave = () => {
     scheduleClose();
@@ -80,7 +81,7 @@ export function useSkillHover() {
       onPointerEnter={cancelClose}
       onPointerLeave={scheduleClose}
     >
-      {skill ? <SkillHoverCard skill={skill} /> : null}
+      {skill ? <SkillHoverCard skill={skill} practiceMode={hover?.practiceMode} /> : null}
     </FloatingLayer>
   );
 

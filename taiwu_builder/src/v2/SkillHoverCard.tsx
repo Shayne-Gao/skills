@@ -9,7 +9,7 @@ import {
 } from "./gameColors";
 import { diffPair, type DiffSeg } from "./diffText";
 
-type Props = { skill: SkillRecord; practiceMode?: "正练" | "逆练" };
+type Props = { skill: SkillRecord; practiceMode?: "正练" | "逆练" | "正/逆" };
 
 /**
  * 完全还原游戏内 tooltip：
@@ -19,7 +19,7 @@ type Props = { skill: SkillRecord; practiceMode?: "正练" | "逆练" };
  * - 施展需求、功法属性、心法正/逆练分块
  * - 当同时有正练和逆练时，按字符级 diff 高亮各自独有部分
  */
-export default function SkillHoverCard({ skill }: Props) {
+export default function SkillHoverCard({ skill, practiceMode }: Props) {
   const gradeColor = getGradeColor(skill.grade);
   const routeColor = getRouteColor(skill.route);
   const isSecret = (skill.meta_text || "").includes("不传之秘");
@@ -94,6 +94,29 @@ export default function SkillHoverCard({ skill }: Props) {
             </>
           ) : null}
         </p>
+        {practiceMode ? (
+          <div className="mt-2 flex justify-center">
+            <span
+              className="rounded-sm border px-2 py-0.5 text-[12px]"
+              style={{
+                borderColor:
+                  practiceMode === "正练"
+                    ? PRACTICE_COLORS.正练
+                    : practiceMode === "逆练"
+                      ? PRACTICE_COLORS.逆练
+                      : HOVER_THEME.border,
+                color:
+                  practiceMode === "正练"
+                    ? PRACTICE_COLORS.正练
+                    : practiceMode === "逆练"
+                      ? PRACTICE_COLORS.逆练
+                      : HOVER_THEME.text,
+              }}
+            >
+              当前推荐：{practiceMode === "正/逆" ? "正练 / 逆练" : practiceMode}
+            </span>
+          </div>
+        ) : null}
       </div>
 
       {/* 施展需求 */}
@@ -124,7 +147,9 @@ export default function SkillHoverCard({ skill }: Props) {
           className="px-3.5 py-2"
           style={{ borderTop: `1px solid ${HOVER_THEME.divider}` }}
         >
-          <p className="font-bold" style={{ color: PRACTICE_COLORS.正练 }}>心法正练</p>
+          <p className="font-bold" style={{ color: PRACTICE_COLORS.正练 }}>
+            心法正练{practiceMode === "正练" ? "（当前）" : ""}
+          </p>
           <p className="mt-0.5 text-[13.5px] leading-snug">
             <DiffText segs={zhengSegs} highlight={PRACTICE_COLORS.正练} />
           </p>
@@ -137,7 +162,9 @@ export default function SkillHoverCard({ skill }: Props) {
           className="px-3.5 py-2"
           style={{ borderTop: `1px solid ${HOVER_THEME.divider}` }}
         >
-          <p className="font-bold" style={{ color: PRACTICE_COLORS.逆练 }}>心法逆练</p>
+          <p className="font-bold" style={{ color: PRACTICE_COLORS.逆练 }}>
+            心法逆练{practiceMode === "逆练" ? "（当前）" : ""}
+          </p>
           <p className="mt-0.5 text-[13.5px] leading-snug">
             <DiffText segs={niSegs} highlight={PRACTICE_COLORS.逆练} />
           </p>

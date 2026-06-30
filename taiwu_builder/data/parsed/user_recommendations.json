@@ -1,0 +1,179 @@
+{
+  "source": {
+    "note": "用户补充的门派推荐功法清单，按当前 skills.json 中可识别功法整理。"
+  },
+  "factions": [
+    {
+      "faction": "血犼教",
+      "items": [
+        { "skill_id": "320", "skill_name": "血童不死身", "note": "不如九色玉蝉" },
+        { "skill_id": "319", "skill_name": "天魔通", "note": "正逆反击功法" },
+        { "skill_id": "100", "skill_name": "三毒无明咒", "practice_hint": "正" },
+        { "skill_id": "99", "skill_name": "邪鬼功" },
+        { "skill_id": "98", "skill_name": "黑尸四诀", "practice_hint": "正" },
+        { "skill_id": "487", "skill_name": "蛤蟆倒踢腿", "practice_hint": "逆" },
+        { "skill_id": "312", "skill_name": "烂泥绝技", "practice_hint": "正" }
+      ]
+    },
+    {
+      "faction": "伏龙坛",
+      "items": [
+        { "skill_id": "195", "skill_name": "醉卧东海", "practice_hint": "正" },
+        { "skill_id": "192", "skill_name": "龙摆尾", "practice_hint": "正" },
+        { "skill_id": "90", "skill_name": "伏龙吞火功", "practice_hint": "逆" },
+        { "skill_id": "191", "skill_name": "醉八仙步", "practice_hint": "正/逆" },
+        { "skill_id": "304", "skill_name": "怒相功", "practice_hint": "正" }
+      ]
+    },
+    {
+      "faction": "铸剑山庄",
+      "items": [
+        { "skill_id": "270", "skill_name": "天铸玄铁册", "practice_hint": "正" },
+        { "skill_id": "163", "skill_name": "乘龙术", "practice_hint": "正" },
+        { "skill_id": "59", "skill_name": "千锤百炼篇", "practice_hint": "逆" },
+        { "skill_id": "267", "skill_name": "神机阵", "practice_hint": "正", "note": "同道流" },
+        { "skill_id": "266", "skill_name": "辟甲真钢十四诀", "practice_hint": "正" },
+        { "skill_id": "160", "skill_name": "八方诸式", "practice_hint": "逆" },
+        { "skill_id": "57", "skill_name": "彰施乃服篇", "practice_hint": "正" },
+        { "skill_id": "264", "skill_name": "七手八脚功", "practice_hint": "正/逆" }
+      ]
+    },
+    {
+      "faction": "百花谷",
+      "items": [
+        { "skill_id": "227", "skill_name": "完璧不破法", "practice_hint": "正" },
+        { "skill_id": "126", "skill_name": "万花听雨式", "note": "魔音" },
+        { "skill_id": "225", "skill_name": "生死八门", "practice_hint": "逆" },
+        { "skill_id": "124", "skill_name": "金盏悬丝", "practice_hint": "正" },
+        { "skill_id": "123", "skill_name": "踏雪寻梅", "note": "配合指法" },
+        { "skill_id": "222", "skill_name": "乱针错穴", "practice_hint": "逆" },
+        { "skill_id": "122", "skill_name": "御针行", "practice_hint": "正" },
+        { "skill_id": "220", "skill_name": "净衣辟邪", "practice_hint": "正" }
+      ]
+    },
+    {
+      "faction": "然山派",
+      "items": [
+        { "skill_id": "255", "skill_name": "象拟比转功", "practice_hint": "正", "note": "最强反震" },
+        { "skill_id": "148", "skill_name": "凌六虚", "practice_hint": "正", "note": "精妙 buff" },
+        { "skill_id": "43", "skill_name": "盛神法", "practice_hint": "逆" },
+        { "skill_id": "553", "skill_name": "蚨母从子剑", "note": "反震挂件" },
+        { "skill_id": "146", "skill_name": "仙踪步", "practice_hint": "正" },
+        { "skill_id": "252", "skill_name": "摄魂大法", "practice_hint": "逆" },
+        { "skill_id": "251", "skill_name": "阴阳眼术", "practice_hint": "正" },
+        { "skill_id": "425", "skill_name": "五言五态手", "practice_hint": "正", "note": "刷名誉" },
+        { "skill_id": "40", "skill_name": "转圆法", "practice_hint": "逆" },
+        { "skill_id": "143", "skill_name": "御风符", "practice_hint": "正" },
+        { "skill_id": "249", "skill_name": "五鬼搬运法", "practice_hint": "正/逆" },
+        { "skill_id": "142", "skill_name": "五鬼步", "practice_hint": "逆" }
+      ]
+    },
+    {
+      "faction": "空桑派",
+      "items": [
+        { "skill_id": "279", "skill_name": "九色玉蝉法", "practice_hint": "逆" },
+        { "skill_id": "65", "skill_name": "九鼎功", "practice_hint": "正" },
+        { "skill_id": "64", "skill_name": "蛟蛰四法", "practice_hint": "逆" },
+        { "skill_id": "63", "skill_name": "柴山青囊诀", "practice_hint": "逆" },
+        { "skill_id": "273", "skill_name": "透骨切剖法", "note": "内外" },
+        { "skill_id": "272", "skill_name": "三部九候法", "practice_hint": "正/逆" },
+        { "skill_id": "271", "skill_name": "四指青膏", "practice_hint": "正" },
+        { "skill_id": "478", "skill_name": "倒打冲天子", "practice_hint": "正" }
+      ]
+    },
+    {
+      "faction": "狮相门",
+      "items": [
+        { "skill_id": "916", "skill_name": "大威勇神通", "practice_hint": "逆" },
+        { "skill_id": "247", "skill_name": "狮啸功", "practice_hint": "正/逆" },
+        { "skill_id": "246", "skill_name": "霸王举鼎", "practice_hint": "正" },
+        { "skill_id": "38", "skill_name": "光明狮子劲", "practice_hint": "逆" },
+        { "skill_id": "36", "skill_name": "十三太保横练功", "practice_hint": "逆" },
+        { "skill_id": "244", "skill_name": "兵闻拙速", "practice_hint": "逆" }
+      ]
+    },
+    {
+      "faction": "界青门",
+      "items": [
+        { "skill_id": "189", "skill_name": "浑天移星功", "practice_hint": "正/逆" },
+        { "skill_id": "187", "skill_name": "七星飞旋" },
+        { "skill_id": "186", "skill_name": "神仙索", "practice_hint": "正/逆" },
+        { "skill_id": "184", "skill_name": "天河游步", "practice_hint": "正/逆" },
+        { "skill_id": "85", "skill_name": "步天歌", "practice_hint": "逆" },
+        { "skill_id": "181", "skill_name": "百尺桩", "practice_hint": "正/逆" },
+        { "skill_id": "297", "skill_name": "天关通", "practice_hint": "正/逆" }
+      ]
+    },
+    {
+      "faction": "金刚宗",
+      "items": [
+        { "skill_id": "283", "skill_name": "七轮感应法", "practice_hint": "正" }
+      ]
+    },
+    {
+      "faction": "五仙教",
+      "items": [
+        { "skill_id": "295", "skill_name": "鬼降大法", "practice_hint": "逆" },
+        { "skill_id": "180", "skill_name": "天蛇翻" },
+        { "skill_id": "80", "skill_name": "离魂功" },
+        { "skill_id": "178", "skill_name": "玉索倒悬" },
+        { "skill_id": "290", "skill_name": "红玉九香虫", "practice_hint": "正" },
+        { "skill_id": "176", "skill_name": "蛤蟆纵跳功", "practice_hint": "逆" },
+        { "skill_id": "175", "skill_name": "闯泥潭", "practice_hint": "逆" },
+        { "skill_id": "289", "skill_name": "乱情瘴", "practice_hint": "逆" }
+      ]
+    },
+    {
+      "faction": "武当派",
+      "items": [
+        { "skill_id": "235", "skill_name": "三华聚顶", "practice_hint": "正" },
+        { "skill_id": "339", "skill_name": "游身八卦掌", "practice_hint": "正" },
+        { "skill_id": "676", "skill_name": "老君拂尘功", "practice_hint": "正" },
+        { "skill_id": "130", "skill_name": "天罡北斗步", "practice_hint": "正" },
+        { "skill_id": "24", "skill_name": "一字混元桩", "practice_hint": "正/逆" },
+        { "skill_id": "228", "skill_name": "武当铁布衫", "practice_hint": "逆" },
+        { "skill_id": "127", "skill_name": "五步梅花桩", "practice_hint": "正" }
+      ]
+    },
+    {
+      "faction": "璇女派",
+      "items": [
+        { "skill_id": "156", "skill_name": "洛神凌波" },
+        { "skill_id": "261", "skill_name": "霞姝仙衣法", "practice_hint": "正" },
+        { "skill_id": "51", "skill_name": "西华真经", "practice_hint": "正", "note": "内伤流派需要" },
+        { "skill_id": "260", "skill_name": "天女散花阵", "practice_hint": "正" },
+        { "skill_id": "50", "skill_name": "少阴一明珏", "practice_hint": "正" },
+        { "skill_id": "259", "skill_name": "墨玉功", "practice_hint": "正" },
+        { "skill_id": "258", "skill_name": "精卫填海式", "practice_hint": "逆" },
+        { "skill_id": "257", "skill_name": "冰清玉洁", "practice_hint": "逆" },
+        { "skill_id": "47", "skill_name": "璇女心诀", "practice_hint": "正" }
+      ]
+    },
+    {
+      "faction": "少林派",
+      "items": [
+        { "skill_id": "207", "skill_name": "佛门狮子吼", "practice_hint": "正" },
+        { "skill_id": "111", "skill_name": "一苇渡江", "practice_hint": "逆" },
+        { "skill_id": "205", "skill_name": "金钟罩", "practice_hint": "逆" },
+        { "skill_id": "108", "skill_name": "轻身术", "practice_hint": "正/逆" },
+        { "skill_id": "1", "skill_name": "罗汉功", "practice_hint": "正" },
+        { "skill_id": "202", "skill_name": "沾衣十八跌", "practice_hint": "正/逆" },
+        { "skill_id": "201", "skill_name": "卧虎功", "practice_hint": "正" }
+      ]
+    },
+    {
+      "faction": "峨眉派",
+      "items": [
+        { "skill_id": "16", "skill_name": "大般涅槃法", "practice_hint": "正", "note": "传剑流必拿" },
+        { "skill_id": "217", "skill_name": "七星横链", "practice_hint": "逆" },
+        { "skill_id": "12", "skill_name": "灵悟功", "practice_hint": "正" },
+        { "skill_id": "212", "skill_name": "五花八门", "practice_hint": "正" },
+        { "skill_id": "211", "skill_name": "心无定意", "practice_hint": "逆" },
+        { "skill_id": "113", "skill_name": "白猿飞纵术", "practice_hint": "正/逆" },
+        { "skill_id": "9", "skill_name": "丹田开合功", "practice_hint": "正" },
+        { "skill_id": "112", "skill_name": "弹腿缩地", "practice_hint": "逆" },
+        { "skill_id": "210", "skill_name": "峨眉虎步功", "practice_hint": "正" }
+      ]
+    }
+  ]
+}

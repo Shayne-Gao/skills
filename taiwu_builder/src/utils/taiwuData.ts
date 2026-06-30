@@ -1,5 +1,6 @@
 import rawRecommendations from "../../data/parsed/early_recommendations.json";
 import curatedRecommendationSource from "../../data/parsed/curated_recommendations.json";
+import userRecommendationSource from "../../data/parsed/user_recommendations.json";
 import rawSkills from "../../data/parsed/skills.json";
 import bladeDanceData from "../v2/builds/blade-dance.json";
 import taijiWuxiaData from "../v2/builds/taiji-wuxia.json";
@@ -15,6 +16,7 @@ import type {
   RecommendationGroup,
   SkillFilterState,
   SkillRecord,
+  UserRecommendationItem,
 } from "@/types";
 
 const ATTACK_CATEGORIES = new Set([
@@ -53,6 +55,14 @@ const tabNameMap: Record<string, string> = {
   special: "绝技推荐",
 };
 
+function getRecommendationTabIdForSkill(skill: SkillRecord) {
+  if (skill.category === "内功") return "internal";
+  if (skill.category === "身法") return "movement";
+  if (ATTACK_CATEGORIES.has(skill.category || "")) return "attack";
+  if (skill.category === "绝技") return "special";
+  return null;
+}
+
 const legacyRecommendationTabs = Object.values(
   recommendationData.reduce<Record<string, CuratedRecommendationTab>>((acc, group) => {
     const tabId = mapRecommendationTabId(group.martial_category);
@@ -79,8 +89,50 @@ const legacyRecommendationTabs = Object.values(
   }, {}),
 );
 
+const userRecommendationTabs = Object.values(
+  (
+    userRecommendationSource.factions as Array<{
+      faction: string;
+      items: UserRecommendationItem[];
+    }>
+  ).reduce<Record<string, CuratedRecommendationTab>>((acc, factionBlock) => {
+    const groupedByTab = new Map<string, UserRecommendationItem[]>();
+    for (const item of factionBlock.items) {
+      const skill = skillMap.get(item.skill_id);
+      if (!skill) continue;
+      const tabId = getRecommendationTabIdForSkill(skill);
+      if (!tabId) continue;
+      if (!groupedByTab.has(tabId)) groupedByTab.set(tabId, []);
+      groupedByTab.get(tabId)!.push(item);
+    }
+
+    for (const [tabId, items] of groupedByTab.entries()) {
+      if (!acc[tabId]) {
+        acc[tabId] = {
+          tab_id: tabId,
+          tab_name: tabNameMap[tabId] ?? tabId,
+          rows: [],
+        };
+      }
+      acc[tabId].rows.push({
+        row_id: `user-${tabId}-${factionBlock.faction}`,
+        skill_ids: items.map((item) => item.skill_id),
+        skill_prefixes: items.map((item) => (item.practice_hint ? `${item.practice_hint}·` : null)),
+        recommendation_reason: items
+          .map((item) => `${item.skill_name}${item.note ? `（${item.note}）` : ""}`)
+          .join("；"),
+        source_label: "小米推荐",
+        topic_label: factionBlock.faction,
+      });
+    }
+
+    return acc;
+  }, {}),
+);
+
 export const curatedRecommendations = curatedRecommendationTabs.map((tab) => {
   const legacyTab = legacyRecommendationTabs.find((item) => item.tab_id === tab.tab_id);
+  const userTab = userRecommendationTabs.find((item) => item.tab_id === tab.tab_id);
   return {
     ...tab,
     rows: [
@@ -88,6 +140,7 @@ export const curatedRecommendations = curatedRecommendationTabs.map((tab) => {
         ...row,
         source_label: row.source_label ?? "综合整理",
       })),
+      ...(userTab?.rows ?? []),
       ...(legacyTab?.rows ?? []),
     ],
   };

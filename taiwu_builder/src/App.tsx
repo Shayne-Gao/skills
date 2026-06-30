@@ -2,12 +2,14 @@ import { useState } from "react";
 import BuilderPageV2 from "@/v2/BuilderPageV2";
 import EarlyRecPage from "@/v2/EarlyRecPage";
 import AllSkillsPage from "@/v2/AllSkillsPage";
+import FactionShoppingPage from "@/v2/FactionShoppingPage";
 
-type View = "build" | "early" | "all";
+type View = "build" | "early" | "shopping" | "all";
 
 const TABS: Array<{ id: View; label: string }> = [
   { id: "build", label: "Build 搭配" },
   { id: "early", label: "前期功法推荐" },
+  { id: "shopping", label: "门派购物清单" },
   { id: "all", label: "全部功法一览" },
 ];
 
@@ -43,6 +45,7 @@ export default function App() {
 
       {view === "build" ? <BuilderPageV2 /> : null}
       {view === "early" ? <EarlyRecPage /> : null}
+      {view === "shopping" ? <FactionShoppingPage /> : null}
       {view === "all" ? <AllSkillsPage /> : null}
     </div>
   );

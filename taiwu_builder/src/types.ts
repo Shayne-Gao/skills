@@ -48,6 +48,13 @@ export type CuratedRecommendationTab = {
   rows: CuratedRecommendationRow[];
 };
 
+export type UserRecommendationItem = {
+  skill_id: string;
+  skill_name: string;
+  practice_hint?: string | null;
+  note?: string | null;
+};
+
 export type BuildSlot = {
   slotId: string;
   section: BuildSectionKey;
