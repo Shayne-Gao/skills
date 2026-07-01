@@ -8,6 +8,7 @@ import FloatingLayer from "./FloatingLayer";
 import SkillHoverCard from "./SkillHoverCard";
 import SkillPickerModal from "./SkillPickerModal";
 import { ACCENT_RED, HOVER_THEME, PRACTICE_COLORS, getGradeColor } from "./gameColors";
+import { createOwnedSkillKey, useOwnedSkills } from "./ownedSkills";
 
 type ActiveMenu = {
   slotId: string;
@@ -49,6 +50,7 @@ export default function BuilderPageV2() {
   const [picker, setPicker] = useState<{ slotId: string; section: BuildSectionKey } | null>(null);
   const [copyHint, setCopyHint] = useState<"idle" | "ok" | "fail">("idle");
   const hoverCloseTimerRef = useRef<number | null>(null);
+  const { ownedMap } = useOwnedSkills();
 
   // 点击其他地方关闭操作菜单
   useEffect(() => {
@@ -239,6 +241,7 @@ export default function BuilderPageV2() {
               key={section}
               section={section}
               slots={build.sections[section]}
+              ownedMap={ownedMap}
               slotWidth={slotWidth}
               isLast={idx === buildSections.length - 1}
               onEmptyClick={(slotId) => openPicker(section, slotId)}
@@ -409,6 +412,7 @@ function findSlot(build: ReturnType<typeof useV2Store.getState>["builds"][number
 function SectionRow({
   section,
   slots,
+  ownedMap,
   slotWidth,
   isLast,
   onEmptyClick,
@@ -419,6 +423,7 @@ function SectionRow({
 }: {
   section: BuildSectionKey;
   slots: BuildSlot[];
+  ownedMap: Record<string, boolean>;
   slotWidth: number;
   isLast: boolean;
   onEmptyClick: (slotId: string) => void;
@@ -490,6 +495,7 @@ function SectionRow({
             slot={slot}
             span={span}
             active={activeSlotId === slot.slotId}
+            owned={!!(slot.skillId && ownedMap[createOwnedSkillKey(slot.skillId, slot.practiceMode)])}
             onClick={(anchor) => onSlotClick(slot, anchor)}
             onEnter={(anchor) => onSlotEnter(slot, anchor)}
             onLeave={onSlotLeave}
@@ -505,6 +511,7 @@ function SlotCell({
   slot,
   span,
   active,
+  owned,
   onClick,
   onEnter,
   onLeave,
@@ -513,6 +520,7 @@ function SlotCell({
   slot: BuildSlot;
   span: number;
   active: boolean;
+  owned: boolean;
   onClick: (anchor: HTMLElement) => void;
   onEnter: (anchor: HTMLElement) => void;
   onLeave: () => void;
@@ -614,6 +622,19 @@ function SlotCell({
           秘
         </span>
       ) : null}
+      {owned ? (
+        <span
+          className="absolute left-0.5 top-0.5 flex h-4 w-4 items-center justify-center rounded-full border text-[10px]"
+          style={{
+            borderColor: "#6DB75F",
+            background: "rgba(17,35,17,0.9)",
+            color: "#9EE08A",
+          }}
+          title="已获得"
+        >
+          ✓
+        </span>
+      ) : null}
     </button>
   );
 }
@@ -634,25 +655,7 @@ const GRADE_ORDER = [
 const SECTION_ORDER: BuildSectionKey[] = ["内功", "摧破", "轻灵", "护体", "奇窍"];
 
 function ShoppingList({ build }: { build: BuildRecord }) {
-  const storageKey = `taiwu-v2-shopping-checklist:${build.id}`;
-  const [checkedMap, setCheckedMap] = useState<Record<string, boolean>>({});
-
-  useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(storageKey);
-      setCheckedMap(raw ? (JSON.parse(raw) as Record<string, boolean>) : {});
-    } catch {
-      setCheckedMap({});
-    }
-  }, [storageKey]);
-
-  useEffect(() => {
-    try {
-      window.localStorage.setItem(storageKey, JSON.stringify(checkedMap));
-    } catch {
-      // localStorage 不可用时静默降级，不影响主体页面。
-    }
-  }, [storageKey, checkedMap]);
+  const { ownedMap, toggleOwned } = useOwnedSkills();
 
   // 把所有已填槽位按门派归类
   const groups = useMemo(() => {
@@ -728,10 +731,11 @@ function ShoppingList({ build }: { build: BuildRecord }) {
               {items.map((it) => {
                 const nameColor = getGradeColor(it.skill.grade);
                 const practiceColor = PRACTICE_COLORS[it.practiceMode];
-                const checked = !!checkedMap[it.slotId];
+                const ownedKey = createOwnedSkillKey(it.skill.id, it.practiceMode);
+                const checked = !!ownedMap[ownedKey];
                 return (
                   <li
-                    key={it.slotId}
+                    key={`${it.slotId}-${ownedKey}`}
                     className={`flex items-center gap-2 px-3 py-2 text-[14px] transition ${
                       checked ? "opacity-40" : ""
                     }`}
@@ -740,12 +744,7 @@ function ShoppingList({ build }: { build: BuildRecord }) {
                       type="checkbox"
                       className="h-4 w-4 shrink-0 accent-[#caa75a]"
                       checked={checked}
-                      onChange={() =>
-                        setCheckedMap((prev) => ({
-                          ...prev,
-                          [it.slotId]: !prev[it.slotId],
-                        }))
-                      }
+                      onChange={() => toggleOwned(ownedKey)}
                       aria-label={`标记 ${it.skill.name} 是否已获得`}
                     />
                     <span

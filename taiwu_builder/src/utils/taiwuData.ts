@@ -1,5 +1,4 @@
 import rawRecommendations from "../../data/parsed/early_recommendations.json";
-import curatedRecommendationSource from "../../data/parsed/curated_recommendations.json";
 import userRecommendationSource from "../../data/parsed/user_recommendations.json";
 import rawSkills from "../../data/parsed/skills.json";
 import bladeDanceData from "../v2/builds/blade-dance.json";
@@ -36,7 +35,6 @@ const ATTACK_CATEGORIES = new Set([
 export { buildSections, sectionSlotCount };
 
 export const recommendationData = rawRecommendations.items as RecommendationGroup[];
-const curatedRecommendationTabs = curatedRecommendationSource.tabs as CuratedRecommendationTab[];
 export const skills = rawSkills.items as SkillRecord[];
 export const skillMap = new Map(skills.map((skill) => [skill.id, skill]));
 
@@ -130,21 +128,19 @@ const userRecommendationTabs = Object.values(
   }, {}),
 );
 
-export const curatedRecommendations = curatedRecommendationTabs.map((tab) => {
-  const legacyTab = legacyRecommendationTabs.find((item) => item.tab_id === tab.tab_id);
-  const userTab = userRecommendationTabs.find((item) => item.tab_id === tab.tab_id);
-  return {
-    ...tab,
-    rows: [
-      ...tab.rows.map((row) => ({
-        ...row,
-        source_label: row.source_label ?? "综合整理",
-      })),
-      ...(userTab?.rows ?? []),
-      ...(legacyTab?.rows ?? []),
-    ],
-  };
-});
+export const curatedRecommendations = Object.values(
+  [...legacyRecommendationTabs, ...userRecommendationTabs].reduce<Record<string, CuratedRecommendationTab>>((acc, tab) => {
+    if (!acc[tab.tab_id]) {
+      acc[tab.tab_id] = {
+        tab_id: tab.tab_id,
+        tab_name: tab.tab_name,
+        rows: [],
+      };
+    }
+    acc[tab.tab_id].rows.push(...tab.rows);
+    return acc;
+  }, {}),
+);
 
 const hintedSectionBySkillId = recommendationData.reduce<Record<string, BuildSectionKey>>((acc, group) => {
   if (buildSections.includes(group.martial_category as BuildSectionKey)) {

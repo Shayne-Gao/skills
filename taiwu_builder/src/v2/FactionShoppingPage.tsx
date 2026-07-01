@@ -3,8 +3,7 @@ import { curatedRecommendations, getSkillById } from "@/utils/taiwuData";
 import SkillChip from "./SkillChip";
 import { useSkillHover } from "./useSkillHover";
 import { useV2Store } from "./store";
-
-const PURCHASED_STORAGE_KEY = "taiwu-v2-faction-shopping-purchased";
+import { useOwnedSkills } from "./ownedSkills";
 
 const ROW_DEFS: Array<{ label: string; categories: string[] }> = [
   { label: "内功", categories: ["内功"] },
@@ -86,12 +85,12 @@ type ShoppingItem = {
 export default function FactionShoppingPage() {
   const { onEnter, onLeave, hoverNode } = useSkillHover();
   const builds = useV2Store((s) => s.builds);
+  const { ownedMap, toggleOwned, resetOwned } = useOwnedSkills();
   const [activeFaction, setActiveFaction] = useState("全部");
   const [activeCategory, setActiveCategory] = useState("全部");
   const [activeGrade, setActiveGrade] = useState("全部");
   const [activeBuildId, setActiveBuildId] = useState("全部");
   const [hoveredReasonSourceKey, setHoveredReasonSourceKey] = useState<string | null>(null);
-  const [purchasedMap, setPurchasedMap] = useState<Record<string, boolean>>({});
 
   const recommendationMap = useMemo(() => {
     const grouped = new Map<
@@ -116,7 +115,7 @@ export default function FactionShoppingPage() {
               grouped.get(id)!.modes.set(typedMode, { sourceReasons: new Map() });
             }
             if (row.recommendation_reason?.trim()) {
-              const source = row.source_label?.trim() || "综合整理";
+              const source = row.source_label?.trim() || "前期推荐";
               const sourceReasons = grouped.get(id)!.modes.get(typedMode)!.sourceReasons;
               if (!sourceReasons.has(source)) sourceReasons.set(source, new Set<string>());
               sourceReasons.get(source)!.add(row.recommendation_reason.trim());
@@ -238,22 +237,6 @@ export default function FactionShoppingPage() {
   useEffect(() => {
     if (!buildTabs.some((build) => build.id === activeBuildId)) setActiveBuildId("全部");
   }, [activeBuildId, buildTabs]);
-  useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(PURCHASED_STORAGE_KEY);
-      setPurchasedMap(raw ? (JSON.parse(raw) as Record<string, boolean>) : {});
-    } catch {
-      setPurchasedMap({});
-    }
-  }, []);
-  useEffect(() => {
-    try {
-      window.localStorage.setItem(PURCHASED_STORAGE_KEY, JSON.stringify(purchasedMap));
-    } catch {
-      // localStorage 不可用时静默降级
-    }
-  }, [purchasedMap]);
-
   const filteredItems = useMemo(
     () =>
       shoppingItems.filter((item) => {
@@ -297,13 +280,13 @@ export default function FactionShoppingPage() {
 
         <div className="mt-3 rounded-2xl border border-[#caa75a]/25 bg-[#15140f] px-3 py-3 shadow-[0_8px_28px_rgba(0,0,0,0.6)]">
           <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-            <p className="text-[12px] text-[#9a927d]">正练 / 逆练分开记录，已购入状态仅保存在当前浏览器本地。</p>
+            <p className="text-[12px] text-[#9a927d]">正练 / 逆练分开记录，已获得状态会同步到购物清单、Build 采购清单和 Build 卡片。</p>
             <button
               type="button"
-              onClick={() => setPurchasedMap({})}
+              onClick={resetOwned}
               className="rounded-sm border border-[#caa75a]/20 bg-[#1a1812] px-2.5 py-1 text-[12px] text-[#c9c2af] transition hover:border-[#caa75a]/45 hover:text-[#f4ecd8]"
             >
-              重置已购入
+              重置已获得
             </button>
           </div>
           <div className="flex flex-wrap items-center gap-1.5">
@@ -413,29 +396,24 @@ export default function FactionShoppingPage() {
                       <div
                         key={`${row.label}-${item.itemKey}`}
                         className={`relative min-w-[220px] rounded-2xl border border-[#caa75a]/10 bg-[#181713] px-2.5 py-2.5 transition ${
-                          purchasedMap[item.itemKey] ? "opacity-50" : ""
+                          ownedMap[item.itemKey] ? "opacity-50" : ""
                         }`}
                       >
                         <div className="absolute right-2 top-2">
                           <label
                             className={`flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border text-[11px] transition ${
-                              purchasedMap[item.itemKey]
+                              ownedMap[item.itemKey]
                                 ? "border-[#caa75a]/60 bg-[#caa75a]/18 text-[#f4ecd8]"
                                 : "border-[#caa75a]/14 bg-[#15140f] text-transparent hover:border-[#caa75a]/30"
                             }`}
-                            title="标记已购入"
-                            aria-label="标记已购入"
+                            title="标记已获得"
+                            aria-label="标记已获得"
                           >
                             <input
                               type="checkbox"
                               className="sr-only"
-                              checked={!!purchasedMap[item.itemKey]}
-                              onChange={() =>
-                                setPurchasedMap((prev) => ({
-                                  ...prev,
-                                  [item.itemKey]: !prev[item.itemKey],
-                                }))
-                              }
+                              checked={!!ownedMap[item.itemKey]}
+                              onChange={() => toggleOwned(item.itemKey)}
                             />
                             ✓
                           </label>
