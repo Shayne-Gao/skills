@@ -4,6 +4,8 @@ import SkillChip from "./SkillChip";
 import { useSkillHover } from "./useSkillHover";
 import { useV2Store } from "./store";
 
+const PURCHASED_STORAGE_KEY = "taiwu-v2-faction-shopping-purchased";
+
 const ROW_DEFS: Array<{ label: string; categories: string[] }> = [
   { label: "内功", categories: ["内功"] },
   { label: "身法", categories: ["身法"] },
@@ -65,7 +67,9 @@ function mergeDisplayPrefix(prefixes: Array<string | null | undefined>) {
 }
 
 type ShoppingItem = {
+  itemKey: string;
   skillId: string;
+  practiceMode: "正" | "逆";
   prefix: string;
   faction: string;
   category: string;
@@ -87,28 +91,37 @@ export default function FactionShoppingPage() {
   const [activeGrade, setActiveGrade] = useState("全部");
   const [activeBuildId, setActiveBuildId] = useState("全部");
   const [hoveredReasonSourceKey, setHoveredReasonSourceKey] = useState<string | null>(null);
+  const [purchasedMap, setPurchasedMap] = useState<Record<string, boolean>>({});
 
   const recommendationMap = useMemo(() => {
     const grouped = new Map<
       string,
       {
-        prefixes: string[];
-        sourceReasons: Map<string, Set<string>>;
+        modes: Map<"正" | "逆", { sourceReasons: Map<string, Set<string>> }>;
       }
     >();
     curatedRecommendations.forEach((tab) => {
       tab.rows.forEach((row) => {
         row.skill_ids.forEach((id, index) => {
           const prefix = row.skill_prefixes?.[index] ?? null;
-          if (!grouped.has(id)) grouped.set(id, { prefixes: [], sourceReasons: new Map() });
-          grouped.get(id)!.prefixes.push(prefix ?? "正/逆·");
-          if (row.recommendation_reason?.trim()) {
-            const source = row.source_label?.trim() || "综合整理";
-            if (!grouped.get(id)!.sourceReasons.has(source)) {
-              grouped.get(id)!.sourceReasons.set(source, new Set<string>());
-            }
-            grouped.get(id)!.sourceReasons.get(source)!.add(row.recommendation_reason.trim());
+          if (!grouped.has(id)) grouped.set(id, { modes: new Map() });
+          const modes = collectPracticeModes(prefix);
+          if (!modes.size) {
+            modes.add("正");
+            modes.add("逆");
           }
+          modes.forEach((mode) => {
+            const typedMode = mode as "正" | "逆";
+            if (!grouped.get(id)!.modes.has(typedMode)) {
+              grouped.get(id)!.modes.set(typedMode, { sourceReasons: new Map() });
+            }
+            if (row.recommendation_reason?.trim()) {
+              const source = row.source_label?.trim() || "综合整理";
+              const sourceReasons = grouped.get(id)!.modes.get(typedMode)!.sourceReasons;
+              if (!sourceReasons.has(source)) sourceReasons.set(source, new Set<string>());
+              sourceReasons.get(source)!.add(row.recommendation_reason.trim());
+            }
+          });
         });
       });
     });
@@ -119,9 +132,7 @@ export default function FactionShoppingPage() {
     const grouped = new Map<
       string,
       {
-        prefixes: string[];
-        buildIds: Set<string>;
-        buildNames: Set<string>;
+        modes: Map<"正" | "逆", { buildIds: Set<string>; buildNames: Set<string> }>;
       }
     >();
     builds.forEach((build) => {
@@ -130,15 +141,16 @@ export default function FactionShoppingPage() {
           if (!slot.skillId) return;
           if (!grouped.has(slot.skillId)) {
             grouped.set(slot.skillId, {
-              prefixes: [],
-              buildIds: new Set<string>(),
-              buildNames: new Set<string>(),
+              modes: new Map(),
             });
           }
           const item = grouped.get(slot.skillId)!;
-          item.prefixes.push(slot.practiceMode === "正练" ? "正·" : "逆·");
-          item.buildIds.add(build.id);
-          item.buildNames.add(build.name);
+          const mode = (slot.practiceMode === "正练" ? "正" : "逆") as "正" | "逆";
+          if (!item.modes.has(mode)) {
+            item.modes.set(mode, { buildIds: new Set<string>(), buildNames: new Set<string>() });
+          }
+          item.modes.get(mode)!.buildIds.add(build.id);
+          item.modes.get(mode)!.buildNames.add(build.name);
         });
       });
     });
@@ -156,26 +168,37 @@ export default function FactionShoppingPage() {
       if (!skill?.faction || !skill.category || !skill.grade) return;
       const rec = recommendationMap.get(skillId);
       const build = buildRequirementMap.get(skillId);
-      items.push({
-        skillId,
-        prefix: mergeDisplayPrefix([...(rec?.prefixes ?? []), ...(build?.prefixes ?? [])]),
-        faction: skill.faction,
-        category: skill.category,
-        grade: skill.grade,
-        recommended: !!rec,
-        recommendationSources: Array.from(rec?.sourceReasons.entries() ?? []).map(([label, reasons]) => ({
-          label,
-          reasons: Array.from(reasons),
-        })),
-        buildIds: Array.from(build?.buildIds ?? []),
-        buildNames: Array.from(build?.buildNames ?? []),
+      const modes = new Set<"正" | "逆">([
+        ...Array.from(rec?.modes.keys() ?? []),
+        ...Array.from(build?.modes.keys() ?? []),
+      ]);
+      modes.forEach((mode) => {
+        const recMode = rec?.modes.get(mode);
+        const buildMode = build?.modes.get(mode);
+        items.push({
+          itemKey: `${skillId}-${mode}`,
+          skillId,
+          practiceMode: mode,
+          prefix: mode === "正" ? "正·" : "逆·",
+          faction: skill.faction,
+          category: skill.category,
+          grade: skill.grade,
+          recommended: !!recMode,
+          recommendationSources: Array.from(recMode?.sourceReasons.entries() ?? []).map(([label, reasons]) => ({
+            label,
+            reasons: Array.from(reasons),
+          })),
+          buildIds: Array.from(buildMode?.buildIds ?? []),
+          buildNames: Array.from(buildMode?.buildNames ?? []),
+        });
       });
     });
     return items.sort((a, b) => {
       const ga = GRADE_ORDER[a.grade] ?? 99;
       const gb = GRADE_ORDER[b.grade] ?? 99;
       if (ga !== gb) return ga - gb;
-      return Number(a.skillId) - Number(b.skillId);
+      if (Number(a.skillId) !== Number(b.skillId)) return Number(a.skillId) - Number(b.skillId);
+      return a.practiceMode.localeCompare(b.practiceMode);
     });
   }, [buildRequirementMap, recommendationMap]);
 
@@ -215,6 +238,21 @@ export default function FactionShoppingPage() {
   useEffect(() => {
     if (!buildTabs.some((build) => build.id === activeBuildId)) setActiveBuildId("全部");
   }, [activeBuildId, buildTabs]);
+  useEffect(() => {
+    try {
+      const raw = window.localStorage.getItem(PURCHASED_STORAGE_KEY);
+      setPurchasedMap(raw ? (JSON.parse(raw) as Record<string, boolean>) : {});
+    } catch {
+      setPurchasedMap({});
+    }
+  }, []);
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(PURCHASED_STORAGE_KEY, JSON.stringify(purchasedMap));
+    } catch {
+      // localStorage 不可用时静默降级
+    }
+  }, [purchasedMap]);
 
   const filteredItems = useMemo(
     () =>
@@ -258,6 +296,16 @@ export default function FactionShoppingPage() {
         </div>
 
         <div className="mt-3 rounded-2xl border border-[#caa75a]/25 bg-[#15140f] px-3 py-3 shadow-[0_8px_28px_rgba(0,0,0,0.6)]">
+          <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+            <p className="text-[12px] text-[#9a927d]">正练 / 逆练分开记录，已购入状态仅保存在当前浏览器本地。</p>
+            <button
+              type="button"
+              onClick={() => setPurchasedMap({})}
+              className="rounded-sm border border-[#caa75a]/20 bg-[#1a1812] px-2.5 py-1 text-[12px] text-[#c9c2af] transition hover:border-[#caa75a]/45 hover:text-[#f4ecd8]"
+            >
+              重置已购入
+            </button>
+          </div>
           <div className="flex flex-wrap items-center gap-1.5">
             <span className="mr-1 rounded-sm bg-[#caa75a] px-2 py-1 text-[13px] text-[#1a1812]">Build</span>
             {buildTabs.map((build) => {
@@ -363,23 +411,57 @@ export default function FactionShoppingPage() {
                     if (!skill) return null;
                     return (
                       <div
-                        key={`${row.label}-${item.skillId}`}
-                        className="relative rounded-md border border-[#caa75a]/15 bg-[#1c1a14] px-2 py-1.5"
+                        key={`${row.label}-${item.itemKey}`}
+                        className={`relative min-w-[220px] rounded-2xl border border-[#caa75a]/10 bg-[#181713] px-2.5 py-2.5 transition ${
+                          purchasedMap[item.itemKey] ? "opacity-50" : ""
+                        }`}
                       >
-                        <SkillChip skill={skill} onEnter={onEnter} onLeave={onLeave} prefix={item.prefix} />
-                        <div className="mt-1 flex flex-wrap items-center gap-1 text-[11px] text-[#8f866f]">
+                        <div className="absolute right-2 top-2">
+                          <label
+                            className={`flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border text-[11px] transition ${
+                              purchasedMap[item.itemKey]
+                                ? "border-[#caa75a]/60 bg-[#caa75a]/18 text-[#f4ecd8]"
+                                : "border-[#caa75a]/14 bg-[#15140f] text-transparent hover:border-[#caa75a]/30"
+                            }`}
+                            title="标记已购入"
+                            aria-label="标记已购入"
+                          >
+                            <input
+                              type="checkbox"
+                              className="sr-only"
+                              checked={!!purchasedMap[item.itemKey]}
+                              onChange={() =>
+                                setPurchasedMap((prev) => ({
+                                  ...prev,
+                                  [item.itemKey]: !prev[item.itemKey],
+                                }))
+                              }
+                            />
+                            ✓
+                          </label>
+                        </div>
+                        <div className="pr-7">
+                          <SkillChip
+                            skill={skill}
+                            onEnter={onEnter}
+                            onLeave={onLeave}
+                            prefix={item.prefix}
+                            large
+                          />
+                        </div>
+                        <div className="mt-2 flex flex-nowrap items-center gap-1 overflow-x-auto text-[10px] text-[#8f866f] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                           {item.recommendationSources.map((source) => {
-                            const hoverKey = `${item.skillId}-${source.label}`;
+                            const hoverKey = `${item.itemKey}-${source.label}`;
                             const colorClass =
                               source.label === "前期推荐"
-                                ? "border-[#8fbae7]/20 bg-[#11141b] text-[#b7cbe7]"
+                                ? "bg-[#11141b] text-[#a9c3e8]"
                                 : source.label === "小米推荐"
-                                  ? "border-[#caa75a]/20 bg-[#17140d] text-[#e5cd92]"
-                                  : "border-[#8bbf8b]/20 bg-[#111710] text-[#b7dfb1]";
+                                  ? "bg-[#17140d] text-[#dcc27f]"
+                                  : "bg-[#111710] text-[#a9d4a3]";
                             return (
                               <span
                                 key={hoverKey}
-                                className={`rounded-full border px-1.5 py-0.5 ${colorClass}`}
+                                className={`shrink-0 rounded-full px-1.5 py-[2px] leading-none ${colorClass}`}
                                 onMouseEnter={() => setHoveredReasonSourceKey(hoverKey)}
                                 onMouseLeave={() =>
                                   setHoveredReasonSourceKey((current) => (current === hoverKey ? null : current))
@@ -391,15 +473,15 @@ export default function FactionShoppingPage() {
                           })}
                           {item.buildNames.map((name) => (
                             <span
-                              key={`${item.skillId}-${name}`}
-                              className="rounded-full border border-[#8fbae7]/20 bg-[#11141b] px-1.5 py-0.5 text-[#b7cbe7]"
+                              key={`${item.itemKey}-${name}`}
+                              className="shrink-0 rounded-full border border-[#8fbae7]/14 bg-[#11141b] px-1.5 py-[2px] leading-none text-[#9eb7d6]"
                             >
                               {name}
                             </span>
                           ))}
                         </div>
                         {item.recommendationSources.map((source) => {
-                          const hoverKey = `${item.skillId}-${source.label}`;
+                          const hoverKey = `${item.itemKey}-${source.label}`;
                           if (hoveredReasonSourceKey !== hoverKey || !source.reasons.length) return null;
                           return (
                             <div
