@@ -564,7 +564,7 @@ function SlotCell({
       }`}
       style={{
         gridColumn: `span ${span}`,
-        background: HOVER_THEME.bg,
+        background: owned ? "rgba(228,228,228,0.18)" : HOVER_THEME.bg,
         borderColor: active ? HOVER_THEME.border : "rgba(202,167,90,0.35)",
         color: HOVER_THEME.text,
         boxShadow: active
@@ -620,19 +620,6 @@ function SlotCell({
           title="不传之秘"
         >
           秘
-        </span>
-      ) : null}
-      {owned ? (
-        <span
-          className="absolute left-0.5 top-0.5 flex h-4 w-4 items-center justify-center rounded-full border text-[10px]"
-          style={{
-            borderColor: "#6DB75F",
-            background: "rgba(17,35,17,0.9)",
-            color: "#9EE08A",
-          }}
-          title="已获得"
-        >
-          ✓
         </span>
       ) : null}
     </button>
