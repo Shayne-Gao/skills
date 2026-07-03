@@ -86,16 +86,49 @@ shopping-research/rice-cooker/
 - 人读结论页
 - 记录推荐顺位、好价带、购买建议、替代项
 
+### 4. Compare table
+
+```text
+<category_slug>_compare_table.md
+```
+
+或：
+
+```text
+<category_slug>_compare_table.html
+```
+
+用途：
+- 每次抓新数据后输出主力型号横向比较
+- 让后续对话直接复用，不必重新临时整理表格
+- 把价格、参数、口碑、推荐结论放到同一张表里
+
+建议列：
+- `model_group`
+- `current_price`
+- `recent_low_price`
+- `price_position`
+- `key_specs`
+- `public_feedback_summary`
+- `fit_for`
+- `recommendation_level`
+- `buy_now_decision`
+
 ## Update Rule
 
 价格与参数分开维护：
 - 价格记录更新 `latest_capture`
 - 型号参数更新 `model_specs_registry`
+- 本轮横向比较更新 `compare_table`
 
 不要在每次刷新价格时重写整份参数库，除非：
 - 发现新型号
 - 补到了原本缺失的关键参数
 - 修正了旧口径错误
+
+但只要本轮抓了新数据：
+- `compare_table` 必须更新
+- `buying_advice` 也应至少做最小更新
 
 ## Naming Rule
 

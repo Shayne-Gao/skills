@@ -1,0 +1,361 @@
+{
+  "meta": {
+    "category_query": "除螨仪",
+    "category_slug": "mite-remover",
+    "captured_at": "2026-06-30",
+    "capture_method": "SMZDM search pages via WebFetch",
+    "pages_scanned": [
+      "https://search.smzdm.com/?c=home&s=%E9%99%A4%E8%9E%A8%E4%BB%AA",
+      "https://search.smzdm.com/?c=home&s=%E9%99%A4%E8%9E%A8%E4%BB%AA&v=a&mx_v=b&p=2",
+      "https://search.smzdm.com/?c=home&mx_v=b&p=3&s=%E9%99%A4%E8%9E%A8%E4%BB%AA&v=a"
+    ],
+    "default_scenario_assumption": "通用家庭场景，重点关注床垫/沙发除螨、宠物毛发、潮湿季节热风需求",
+    "notes": [
+      "搜索结果混有攻略软文和普通吸尘器，已做人工过滤。",
+      "价格多来自国补、百亿补贴、凑单或返卡，落地价不等于常规售价。",
+      "缺少长期历史库，本轮仅能给出近期可见价带和相对好价判断。"
+    ]
+  },
+  "raw_items": [
+    {
+      "title": "UWANT 双杯尘螨分离 除螨仪",
+      "normalized_model": "uwant-m100-little-genie",
+      "price": 154.71,
+      "currency": "CNY",
+      "mall": "天猫精选",
+      "posted_at": "06-16 09:20",
+      "source_url": "https://www.smzdm.com/p/176752098/",
+      "tags": ["好价", "双杯", "国补"],
+      "heat_signals": {
+        "related_articles": 1111,
+        "comments": 0
+      }
+    },
+    {
+      "title": "UWANT 除螨仪小精灵 更小更轻高温杀菌大吸力",
+      "normalized_model": "uwant-m100-little-genie",
+      "price": 159.12,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "06-26 17:00",
+      "source_url": "https://www.smzdm.com/p/177492482/",
+      "tags": ["好价", "小精灵", "国补"],
+      "heat_signals": {
+        "comments": 0
+      }
+    },
+    {
+      "title": "UWANT 双杯尘螨分离 除螨仪",
+      "normalized_model": "uwant-m100-little-genie",
+      "price": 235.0,
+      "currency": "CNY",
+      "mall": "天猫精选",
+      "posted_at": "06-22 08:40",
+      "source_url": "https://www.smzdm.com/p/177190093/",
+      "tags": ["好价", "百亿补贴"],
+      "heat_signals": {
+        "related_articles": 11,
+        "comments": 0
+      }
+    },
+    {
+      "title": "京东京造 JZM2 小海豹 双杯尘螨分离除螨仪",
+      "normalized_model": "jd-jzm2",
+      "price": 135.0,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "06-17 11:14",
+      "source_url": "https://www.smzdm.com/p/176844512/",
+      "tags": ["好价", "双杯", "晒单返卡"],
+      "heat_signals": {
+        "related_articles": 38,
+        "comments": 1
+      }
+    },
+    {
+      "title": "闪电新品：米家除螨仪2 Pro，升级双尘杯大吸力",
+      "normalized_model": "xiaomi-2-pro",
+      "price": 429.0,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "04-17",
+      "source_url": "https://post.smzdm.com/p/a240m3md/",
+      "tags": ["新品资讯", "双尘杯", "智能尘螨感应", "国补可用"],
+      "heat_signals": {
+        "notes": "资讯文中写售价429元，文末展示京东价469.4元"
+      }
+    },
+    {
+      "title": "苏泊尔 SJ-R8 双杯 除螨仪",
+      "normalized_model": "supor-sj-r8",
+      "price": 175.14,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "06-25 11:28",
+      "source_url": "https://www.smzdm.com/p/177392645/",
+      "tags": ["好价", "双杯", "国补"],
+      "heat_signals": {
+        "related_articles": 18,
+        "comments": 1
+      }
+    },
+    {
+      "title": "苏泊尔 SJ-R8 双杯 除螨仪",
+      "normalized_model": "supor-sj-r8",
+      "price": 220.15,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "06-28 17:02",
+      "source_url": "https://www.smzdm.com/p/177599943/",
+      "tags": ["好价", "双杯", "国补"],
+      "heat_signals": {
+        "related_articles": 18,
+        "comments": 0
+      }
+    },
+    {
+      "title": "苏泊尔 高温杀菌大功率三合一除螨一体机 ERC-TT25M PRO",
+      "normalized_model": "supor-erc-tt25m-pro",
+      "price": 241.0,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "06-26 11:29",
+      "source_url": "https://www.smzdm.com/p/177466199/",
+      "tags": ["好价", "预告"],
+      "heat_signals": {
+        "comments": 1
+      }
+    },
+    {
+      "title": "苏泊尔 高温杀菌 除螨仪 双杯",
+      "normalized_model": "supor-erc-tt25m-pro",
+      "price": 257.05,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "06-29 10:10",
+      "source_url": "https://www.smzdm.com/p/177626916/",
+      "tags": ["好价", "双杯", "国补"],
+      "heat_signals": {
+        "comments": 1
+      }
+    },
+    {
+      "title": "海尔 白巧 双杯尘螨分离除螨仪",
+      "normalized_model": "haier-white-smart-hsm-y201f",
+      "price": 149.8,
+      "currency": "CNY",
+      "mall": "天猫精选",
+      "posted_at": "06-26 11:10",
+      "source_url": "https://www.smzdm.com/p/177465619/",
+      "tags": ["好价", "百亿补贴", "157天新低"],
+      "heat_signals": {
+        "related_articles": 4,
+        "comments": 0
+      }
+    },
+    {
+      "title": "海尔 白巧 双杯尘螨分离除螨仪",
+      "normalized_model": "haier-white-smart-hsm-y201f",
+      "price": 152.0,
+      "currency": "CNY",
+      "mall": "天猫精选",
+      "posted_at": "06-16 00:16",
+      "source_url": "https://www.smzdm.com/p/176742666/",
+      "tags": ["好价", "百亿补贴"],
+      "heat_signals": {
+        "comments": 0
+      }
+    },
+    {
+      "title": "美的 BC7 超声波除螨 热风除湿 手持除螨仪",
+      "normalized_model": "midea-bc7",
+      "price": 317.07,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "06-26 10:05",
+      "source_url": "https://www.smzdm.com/p/177458766/",
+      "tags": ["好价", "价格低于618", "国补"],
+      "heat_signals": {
+        "related_articles": 38,
+        "comments": 2
+      }
+    },
+    {
+      "title": "UWANT CM2306 65℃热风烘干 双杯尘螨分离 手持式除螨仪 大白",
+      "normalized_model": "uwant-cm2306-big-white",
+      "price": 368.92,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "06-28 09:33",
+      "source_url": "https://www.smzdm.com/p/177572847/",
+      "tags": ["好价", "117天新低"],
+      "heat_signals": {
+        "related_articles": 58,
+        "comments": 0
+      }
+    },
+    {
+      "title": "UWANT 大白Ultra 除螨仪",
+      "normalized_model": "uwant-cm2306-big-white",
+      "price": 369.24,
+      "currency": "CNY",
+      "mall": "天猫精选",
+      "posted_at": "06-30 01:57",
+      "source_url": "https://www.smzdm.com/p/177682075/",
+      "tags": ["好价", "聚划算百亿补贴"],
+      "heat_signals": {
+        "related_articles": 12,
+        "comments": 0
+      }
+    },
+    {
+      "title": "UWANT 除螨仪大白无线增强版",
+      "normalized_model": "uwant-cm2306-big-white",
+      "price": 321.73,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "06-15 12:30",
+      "source_url": "https://www.smzdm.com/p/176685810/",
+      "tags": ["好价", "186天新低", "凑单"],
+      "heat_signals": {
+        "comments": 0
+      }
+    },
+    {
+      "title": "摩飞 MR3100 除螨仪 椰奶白",
+      "normalized_model": "morphy-richards-mr3100",
+      "price": 282.1,
+      "currency": "CNY",
+      "mall": "天猫超市",
+      "posted_at": "06-16 09:30",
+      "source_url": "https://www.smzdm.com/p/176757561/",
+      "tags": ["好价", "315天新低"],
+      "heat_signals": {
+        "related_articles": 68,
+        "comments": 0
+      }
+    },
+    {
+      "title": "追觅 S10 紫外线杀菌除螨仪",
+      "normalized_model": "dreame-s10",
+      "price": 277.32,
+      "currency": "CNY",
+      "mall": "天猫超市",
+      "posted_at": "06-16 01:11",
+      "source_url": "https://www.smzdm.com/p/176744764/",
+      "tags": ["好价", "46天新低"],
+      "heat_signals": {
+        "comments": 0
+      }
+    },
+    {
+      "title": "追觅 S20 除尘除螨仪",
+      "normalized_model": "dreame-s20",
+      "price": 352.0,
+      "currency": "CNY",
+      "mall": "抖音商城",
+      "posted_at": "06-27 09:46",
+      "source_url": "https://www.smzdm.com/p/177523850/",
+      "tags": ["好价"],
+      "heat_signals": {
+        "comments": 0
+      }
+    }
+  ],
+  "normalized_groups": [
+    {
+      "normalized_model": "uwant-m100-little-genie",
+      "brand": "UWANT",
+      "series": "小精灵/M100",
+      "aliases": ["双杯尘螨分离", "小精灵", "M100"],
+      "observed_prices": [154.71, 159.12, 199.75, 235.0],
+      "current_best_visible_price": 154.71,
+      "price_band_summary": "150-235",
+      "recent_frequency_signal": "high",
+      "positioning": "入门爆款"
+    },
+    {
+      "normalized_model": "haier-white-smart-hsm-y201f",
+      "brand": "海尔",
+      "series": "白巧",
+      "aliases": ["HSM-Y201(F)", "白巧"],
+      "observed_prices": [149.8, 152.0],
+      "current_best_visible_price": 149.8,
+      "price_band_summary": "150左右",
+      "recent_frequency_signal": "medium",
+      "positioning": "低价双杯"
+    },
+    {
+      "normalized_model": "xiaomi-2-pro",
+      "brand": "米家",
+      "series": "2 Pro",
+      "aliases": ["米家除螨仪2 Pro", "E401HW"],
+      "observed_prices": [429.0, 469.4],
+      "current_best_visible_price": 429.0,
+      "price_band_summary": "429-469",
+      "recent_frequency_signal": "low",
+      "positioning": "参数透明型"
+    },
+    {
+      "normalized_model": "supor-sj-r8",
+      "brand": "苏泊尔",
+      "series": "SJ-R8",
+      "aliases": ["SJ-R8 双杯"],
+      "observed_prices": [175.14, 220.15],
+      "current_best_visible_price": 175.14,
+      "price_band_summary": "175-220",
+      "recent_frequency_signal": "medium",
+      "positioning": "预算友好双杯"
+    },
+    {
+      "normalized_model": "midea-bc7",
+      "brand": "美的",
+      "series": "BC7",
+      "aliases": ["BC7", "香氛双杯"],
+      "observed_prices": [317.07],
+      "current_best_visible_price": 317.07,
+      "price_band_summary": "317左右",
+      "recent_frequency_signal": "medium",
+      "positioning": "中端均衡"
+    },
+    {
+      "normalized_model": "morphy-richards-mr3100",
+      "brand": "摩飞",
+      "series": "MR3100",
+      "aliases": ["MR3100 椰奶白"],
+      "observed_prices": [282.1, 369.0, 404.1, 422.1, 469.0],
+      "current_best_visible_price": 282.1,
+      "price_band_summary": "282-469",
+      "recent_frequency_signal": "medium",
+      "positioning": "轻量无线"
+    },
+    {
+      "normalized_model": "uwant-cm2306-big-white",
+      "brand": "UWANT",
+      "series": "大白/CM2306",
+      "aliases": ["CM2306", "大白", "大白 Ultra"],
+      "observed_prices": [321.73, 368.92, 369.24, 434.12, 457.65],
+      "current_best_visible_price": 321.73,
+      "price_band_summary": "322-458",
+      "recent_frequency_signal": "high",
+      "positioning": "高配主推"
+    },
+    {
+      "normalized_model": "dreame-s10",
+      "brand": "追觅",
+      "series": "S10/S20",
+      "aliases": ["S10", "S20"],
+      "observed_prices": [277.32, 352.0],
+      "current_best_visible_price": 277.32,
+      "price_band_summary": "277-352",
+      "recent_frequency_signal": "low",
+      "positioning": "待补更多参数"
+    }
+  ],
+  "quick_takeaways": [
+    "近期站内最密集的促销主线是 UWANT、小米、苏泊尔、海尔；其中 UWANT 的两个价位段覆盖最广。",
+    "150-180 元档已经可以买到双杯/热风/UV 组合，但这一档更适合日常维护，不适合把参数宣传当成旗舰替代。",
+    "300-380 元档本轮更值得重点看的其实是美的 BC7、UWANT 大白、摩飞 MR3100；米家 2 Pro 在本轮 SMZDM 可核到的是新品资讯，不是低价爆料。",
+    "如果追求更稳的综合体验而不是极限低价，近期更值得盯的是 UWANT 大白和美的 BC7；如果只要便宜够用，海尔白巧和苏泊尔 SJ-R8 更接近甜点位。"
+  ]
+}

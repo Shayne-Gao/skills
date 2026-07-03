@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "version": "3.3",
+    "notes": [
+      "基于公开3.3资料做的小幅角色校准",
+      "manual_adjust 表示对该角色基础分做上下5分微调",
+      "dependency_penalty 表示体系依赖型角色额外减分"
+    ]
+  },
+  "items": [
+    {
+      "角色": "卡提希娅",
+      "manual_adjust": 5,
+      "dependency_penalty": 0,
+      "reason": "相较当前梯度，按3.3公开资料小幅上调"
+    },
+    {
+      "角色": "嘉贝莉娜",
+      "manual_adjust": -5,
+      "dependency_penalty": 0,
+      "reason": "相较当前梯度，按3.3公开资料小幅下调"
+    },
+    {
+      "角色": "达妮娅",
+      "manual_adjust": 0,
+      "dependency_penalty": -5,
+      "reason": "体系依赖较强"
+    },
+    {
+      "角色": "尤诺",
+      "manual_adjust": 0,
+      "dependency_penalty": -5,
+      "reason": "体系依赖较强"
+    },
+    {
+      "角色": "陆·赫斯",
+      "manual_adjust": 0,
+      "dependency_penalty": -5,
+      "reason": "体系依赖较强"
+    }
+  ]
+}
+

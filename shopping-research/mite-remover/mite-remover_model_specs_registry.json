@@ -1,0 +1,346 @@
+[
+  {
+    "brand": "UWANT",
+    "model": "M100",
+    "series": "小精灵",
+    "normalized_model": "uwant-m100-little-genie",
+    "aliases": ["小精灵", "双杯尘螨分离", "CM2407MAX"],
+    "lookup_tokens": ["uwant", "m100", "小精灵", "除螨仪"],
+    "key_specs": {
+      "power_w": 450,
+      "suction_kpa": 16,
+      "tapping_per_min": 36000,
+      "uv_nm": 253.7,
+      "hot_air_c": 65,
+      "dust_mite_detection": true,
+      "filtration": "5层过滤",
+      "net_weight_kg": 1.3,
+      "power_type": "有线"
+    },
+    "public_feedback_summary": {
+      "common_praise": [
+        "机身轻，单手友好",
+        "双杯思路对日常维护比较友好",
+        "低价档里配置堆得比较满"
+      ],
+      "common_complaints": [
+        "极低价时往往依赖国补/百补，常规价和到手价差距大",
+        "更偏入门维护，不适合期待旗舰级深层清洁体验"
+      ],
+      "best_for": "预算敏感、希望轻便、每周高频维护床褥和沙发的人群",
+      "not_ideal_for": "特别在意极致拍打强度或更完整智能显示的人群"
+    },
+    "warnings": [
+      "中文官方稳定参数页较少，部分中文口径来自商城页和二次转载。",
+      "SMZDM 标题常混用“小精灵/M100/CM2407MAX”，购买前需核对型号。"
+    ],
+    "confidence": "medium",
+    "sources": [
+      {
+        "type": "官网参数页",
+        "site": "UWANT",
+        "url": "https://uwanthome.com/products/m100-mattress-vacuum-cleaner"
+      },
+      {
+        "type": "商城页",
+        "site": "苏宁",
+        "url": "https://m.suning.com/bigimages/12440018132.html"
+      }
+    ]
+  },
+  {
+    "brand": "米家",
+    "model": "Dust Mite Vacuum Cleaner 2 Pro",
+    "series": "2 Pro",
+    "normalized_model": "xiaomi-2-pro",
+    "aliases": ["米家除螨仪2 Pro", "E401HW"],
+    "lookup_tokens": ["xiaomi", "mijia", "2 pro", "e401hw", "除螨仪"],
+    "key_specs": {
+      "power_w": 500,
+      "suction_kpa": 16,
+      "tapping_per_min": 72000,
+      "roller_diameter_mm": 49,
+      "wide_nozzle_cm": 21.5,
+      "hot_air_c": 65,
+      "dust_mite_detection": true,
+      "uv_led": true,
+      "ultrasonic_mite_interruption": true,
+      "filtration": "6层精滤",
+      "noise_db_max": 80,
+      "net_weight_kg": 2.4,
+      "power_type": "有线"
+    },
+    "public_feedback_summary": {
+      "common_praise": [
+        "参数完整，拍打频率和双尘杯方案比较扎实",
+        "智能感应和基础体验均衡",
+        "品牌和售后认知度高"
+      ],
+      "common_complaints": [
+        "机身比轻量无线机型更重",
+        "本轮什么值得买能核到的更多是新品资讯，不是强促销低价"
+      ],
+      "best_for": "想买参数比较透明、功能全面、品牌认知高的均衡型用户",
+      "not_ideal_for": "特别在意轻量手感或无线自由度的人群"
+    },
+    "warnings": [
+      "SMZDM 搜索结果里“有线除螨仪2”“除螨仪Pro”“2 Pro”容易混写，必须按 E401HW 和双尘杯、16kPa、72000次/分钟这些特征核型号。",
+      "本轮已剔除把普通款误记为 2 Pro 的低价爆料。"
+    ],
+    "confidence": "high",
+    "sources": [
+      {
+        "type": "官网参数页",
+        "site": "Xiaomi",
+        "url": "https://www.mi.com/global/product/xiaomi-dust-mite-vacuum-cleaner-2-pro/specs/"
+      },
+      {
+        "type": "什么值得买新品资讯",
+        "site": "什么值得买",
+        "url": "https://post.smzdm.com/p/a240m3md"
+      },
+      {
+        "type": "官网介绍页",
+        "site": "Xiaomi",
+        "url": "https://www.mi.com/es/product/xiaomi-dust-mite-vacuum-cleaner-2-pro/"
+      }
+    ]
+  },
+  {
+    "brand": "海尔",
+    "model": "HSM-Y201(F)",
+    "series": "白巧",
+    "normalized_model": "haier-white-smart-hsm-y201f",
+    "aliases": ["白巧", "HSM-Y201(F)"],
+    "lookup_tokens": ["haier", "白巧", "hsm-y201", "除螨仪"],
+    "key_specs": {
+      "power_w": 400,
+      "suction_kpa": 14,
+      "hot_air_c": 56,
+      "uv": true,
+      "ultrasonic": true,
+      "double_cup": true,
+      "anti_tangle_tapping": true,
+      "noise_db_max": 80,
+      "size_mm": "245x265",
+      "power_type": "有线"
+    },
+    "public_feedback_summary": {
+      "common_praise": [
+        "价格很低时性价比显眼",
+        "双杯和热风功能在低价段少见",
+        "适合先买来试试除螨仪是否符合自己习惯"
+      ],
+      "common_complaints": [
+        "低价机型参数核验口径相对分散",
+        "更偏够用型，不适合拿来对标高端机"
+      ],
+      "best_for": "只想用较低成本获得双杯+热风基础能力的人群",
+      "not_ideal_for": "希望参数、评测和长期口碑都很充分的人群"
+    },
+    "warnings": [
+      "本型号公开参数主要来自二次转载内容，置信度低于米家/美的/UWANT。",
+      "购买前建议再核对店铺页的具体型号和热风温度。"
+    ],
+    "confidence": "medium",
+    "sources": [
+      {
+        "type": "评测转载",
+        "site": "搜狐",
+        "url": "https://m.sohu.com/a/1027697870_122645061/"
+      },
+      {
+        "type": "评测转载",
+        "site": "搜狐",
+        "url": "https://m.sohu.com/a/1036078845_122645061/"
+      }
+    ]
+  },
+  {
+    "brand": "苏泊尔",
+    "model": "SJ-R8",
+    "series": "SJ-R8",
+    "normalized_model": "supor-sj-r8",
+    "aliases": ["SJ-R8 双杯"],
+    "lookup_tokens": ["supor", "sj-r8", "双杯", "除螨仪"],
+    "key_specs": {
+      "double_cup": true,
+      "uv": true,
+      "ultrasonic": true,
+      "warm_air": true,
+      "dust_mite_detection": true,
+      "power_type": "有线"
+    },
+    "public_feedback_summary": {
+      "common_praise": [
+        "近期站内百元到两百出头价位出现频繁",
+        "功能组合完整，预算压力小",
+        "用户反馈里常提到双仓、热风和尘螨感应"
+      ],
+      "common_complaints": [
+        "公开硬参数不够透明",
+        "宣传型号和同系列机型较多，容易混淆"
+      ],
+      "best_for": "预算有限但又想要双杯、热风、UV 全套基础能力的人群",
+      "not_ideal_for": "必须要有清晰官方参数和可验证实测数据的人群"
+    },
+    "warnings": [
+      "目前更像“价格驱动型推荐”，不是“参数最透明型推荐”。",
+      "建议下单前核实是否就是 SJ-R8，而非 ERC-TT 系列其他机型。"
+    ],
+    "confidence": "low",
+    "sources": [
+      {
+        "type": "商品评论页",
+        "site": "京东",
+        "url": "https://club.jd.com/repay/100134967161_T6NbO8RzipgtdRKAWa6YxX6B_1.html"
+      },
+      {
+        "type": "促销资讯",
+        "site": "ZOL",
+        "url": "https://jd.zol.com.cn/968/9684964.html"
+      }
+    ]
+  },
+  {
+    "brand": "美的",
+    "model": "BC7",
+    "series": "BC7",
+    "normalized_model": "midea-bc7",
+    "aliases": ["BC7", "BC7 香氛双杯"],
+    "lookup_tokens": ["midea", "bc7", "双杯", "除螨仪"],
+    "key_specs": {
+      "power_w": 600,
+      "suction_kpa": 13.5,
+      "tapping_per_min": 48000,
+      "dust_cup_ml": 700,
+      "uv": true,
+      "ultrasonic": true,
+      "hot_air_c": 66,
+      "dust_mite_detection": true,
+      "net_weight_kg": 2.2,
+      "power_type": "有线"
+    },
+    "public_feedback_summary": {
+      "common_praise": [
+        "配置和品牌力比较均衡",
+        "双杯、热风、感应、香氛这些卖点集中",
+        "中端价位里属于比较稳的选择"
+      ],
+      "common_complaints": [
+        "重量和有线形态不算轻便",
+        "常规标价较高，需要等活动价"
+      ],
+      "best_for": "想买一个不太偏科、家里长期用、省心度优先的人群",
+      "not_ideal_for": "特别在意极致轻量或无线使用的人群"
+    },
+    "warnings": [
+      "中文信息里存在 600W 与 400W 的口径差异，本轮采用官方旗舰店商品页口径。",
+      "BC7 和 BC7 Max 是不同产品线，不要混买。"
+    ],
+    "confidence": "high",
+    "sources": [
+      {
+        "type": "官方旗舰店商品页",
+        "site": "淘宝美的官方旗舰店",
+        "url": "https://www.taobao.com/list/item/777866468853.htm"
+      }
+    ]
+  },
+  {
+    "brand": "摩飞",
+    "model": "MR3100",
+    "series": "MR3100",
+    "normalized_model": "morphy-richards-mr3100",
+    "aliases": ["MR3100 椰奶白"],
+    "lookup_tokens": ["morphy richards", "mr3100", "摩飞", "除螨仪"],
+    "key_specs": {
+      "power_w": 90,
+      "suction_kpa": 13,
+      "tapping_per_min": 72000,
+      "battery_mah": 2000,
+      "runtime_min": 30,
+      "charging_hours": 4,
+      "uv_nm": 245,
+      "dust_cup_ml": 120,
+      "filtration": "H10级五层过滤",
+      "net_weight_kg": 1.2,
+      "power_type": "无线"
+    },
+    "public_feedback_summary": {
+      "common_praise": [
+        "轻、无线、颜值高",
+        "卧室和租房场景使用门槛低",
+        "站内值友标签集中在吸力强、清洁力高、外观漂亮"
+      ],
+      "common_complaints": [
+        "尘杯较小",
+        "更适合维护型清洁，不是大床垫重度深清机器"
+      ],
+      "best_for": "在意轻便、无线自由度、日常高频快速清洁的人群",
+      "not_ideal_for": "想要长续航、大尘杯或更强有线持续输出的人群"
+    },
+    "warnings": [
+      "部分平台页面存在噪音等异常字段，未采用。",
+      "无线机型常规成交价波动较大，建议等 280-320 区间。"
+    ],
+    "confidence": "medium",
+    "sources": [
+      {
+        "type": "商城参数页",
+        "site": "OfficeBox",
+        "url": "https://www.officebox.cn//Product/Details?bid=225838"
+      },
+      {
+        "type": "价格趋势页",
+        "site": "什么值得买",
+        "url": "https://m.smzdm.com/dynamic_detail/35712945"
+      }
+    ]
+  },
+  {
+    "brand": "UWANT",
+    "model": "CM2306",
+    "series": "大白",
+    "normalized_model": "uwant-cm2306-big-white",
+    "aliases": ["大白", "CM2306", "大白Ultra"],
+    "lookup_tokens": ["uwant", "cm2306", "大白", "除螨仪"],
+    "key_specs": {
+      "hot_air_c": 65,
+      "double_cup": true,
+      "pet_hair_friendly": true,
+      "power_type": "有线",
+      "confidence_note": "本轮主要拿到了价格信号，硬参数尚待补更稳定官方页"
+    },
+    "public_feedback_summary": {
+      "common_praise": [
+        "最近促销最密集的高配线之一",
+        "宠物毛发、床褥和沙发场景曝光高",
+        "价位比很多高端有线旗舰更友好"
+      ],
+      "common_complaints": [
+        "型号命名复杂，大白/大白Ultra/CM2306 易混",
+        "高配卖点多，但需核实具体版本差异"
+      ],
+      "best_for": "想要比入门双杯更进一步，但预算又不想冲到千元以上的人群",
+      "not_ideal_for": "不愿意花时间核版本差异、只想买参数最透明型号的人群"
+    },
+    "warnings": [
+      "本轮对这条产品线的价格把握强于参数把握，仍建议下单前回到官方页逐项核对。",
+      "321-369 元是很值得留意的活动区间。"
+    ],
+    "confidence": "low",
+    "sources": [
+      {
+        "type": "什么值得买搜索结果",
+        "site": "什么值得买",
+        "url": "https://www.smzdm.com/p/177572847/"
+      },
+      {
+        "type": "什么值得买搜索结果",
+        "site": "什么值得买",
+        "url": "https://www.smzdm.com/p/176685810/"
+      }
+    ]
+  }
+]

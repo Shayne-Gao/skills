@@ -1,0 +1,414 @@
+{
+  "items": [
+    {
+      "weapon_name": "千古洑流",
+      "english_name": "Ages of Harvest",
+      "weapon_class": "signature",
+      "owner_character": "今汐",
+      "owner_tier": "T2",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 167
+    },
+    {
+      "weapon_name": "不屈命定之冠",
+      "english_name": "Defier's Thorn",
+      "weapon_class": "signature",
+      "owner_character": "卡提希娅",
+      "owner_tier": "T0.5",
+      "confidence": "medium",
+      "source": "public_banner_history_plus_name_matching",
+      "appearance_count_in_200": 43
+    },
+    {
+      "weapon_name": "苍鳞千嶂",
+      "english_name": "Verdant Summit",
+      "weapon_class": "signature",
+      "owner_character": "忌炎",
+      "owner_tier": "T2",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 35
+    },
+    {
+      "weapon_name": "灼霜",
+      "english_name": "Frostburn",
+      "weapon_class": "signature",
+      "owner_character": "绯雪",
+      "owner_tier": "T0",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 34
+    },
+    {
+      "weapon_name": "星序协响",
+      "english_name": "Stellar Symphony",
+      "weapon_class": "signature",
+      "owner_character": "守岸人",
+      "owner_tier": "T0.5",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 33
+    },
+    {
+      "weapon_name": "裁春",
+      "english_name": "Red Spring",
+      "weapon_class": "signature",
+      "owner_character": "椿",
+      "owner_tier": "T1",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 33
+    },
+    {
+      "weapon_name": "掣傀之手",
+      "english_name": "Stringmaster",
+      "weapon_class": "signature",
+      "owner_character": "吟霖",
+      "owner_tier": "T2",
+      "confidence": "medium",
+      "source": "public_banner_history_plus_name_matching",
+      "appearance_count_in_200": 28
+    },
+    {
+      "weapon_name": "诸方玄枢",
+      "english_name": "Verity's Handle",
+      "weapon_class": "signature",
+      "owner_character": "相里要",
+      "owner_tier": "T2",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 28
+    },
+    {
+      "weapon_name": "死与舞",
+      "english_name": "The Last Dance",
+      "weapon_class": "signature",
+      "owner_character": "珂莱塔",
+      "owner_tier": "T1",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 26
+    },
+    {
+      "weapon_name": "昙切",
+      "english_name": "Kumokiri",
+      "weapon_class": "signature",
+      "owner_character": "千咲",
+      "owner_tier": "T0.5",
+      "confidence": "medium",
+      "source": "public_banner_history_plus_name_matching",
+      "appearance_count_in_200": 23
+    },
+    {
+      "weapon_name": "和光回唱",
+      "english_name": "Luminous Hymn",
+      "weapon_class": "signature",
+      "owner_character": "菲比",
+      "owner_tier": "T1",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 20
+    },
+    {
+      "weapon_name": "焰光裁定",
+      "english_name": "Blazing Justice",
+      "weapon_class": "signature",
+      "owner_character": "赞妮",
+      "owner_tier": "T1",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 19
+    },
+    {
+      "weapon_name": "赫奕流明",
+      "english_name": "Blazing Brilliance",
+      "weapon_class": "signature",
+      "owner_character": "长离",
+      "owner_tier": "T2",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 19
+    },
+    {
+      "weapon_name": "万物持存的注释",
+      "english_name": "Moongazer's Sigil",
+      "weapon_class": "signature",
+      "owner_character": "尤诺",
+      "owner_tier": "T0.5",
+      "confidence": "low",
+      "source": "public_banner_history_plus_cooccurrence",
+      "appearance_count_in_200": 18
+    },
+    {
+      "weapon_name": "幽冥的忘忧章",
+      "english_name": "Lethean Elegy",
+      "weapon_class": "signature",
+      "owner_character": "弗洛洛",
+      "owner_tier": "T0.5",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 18
+    },
+    {
+      "weapon_name": "永远的启明星",
+      "english_name": "Everbright Polestar",
+      "weapon_class": "signature",
+      "owner_character": "爱弥斯",
+      "owner_tier": "T0",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 15
+    },
+    {
+      "weapon_name": "光影双生",
+      "english_name": "Lux & Umbra",
+      "weapon_class": "signature",
+      "owner_character": "嘉贝莉娜",
+      "owner_tier": "T0.5",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 13
+    },
+    {
+      "weapon_name": "琼枝冰绡",
+      "english_name": "Rime-Draped Sprouts",
+      "weapon_class": "signature",
+      "owner_character": "折枝",
+      "owner_tier": "T2",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 12
+    },
+    {
+      "weapon_name": "溢彩荧辉",
+      "english_name": "Spectrum Blaster",
+      "weapon_class": "signature",
+      "owner_character": "琳奈",
+      "owner_tier": "T0",
+      "confidence": "medium",
+      "source": "public_banner_history_plus_name_matching",
+      "appearance_count_in_200": 10
+    },
+    {
+      "weapon_name": "昭日译注",
+      "english_name": "Solsworn Ciphers",
+      "weapon_class": "signature",
+      "owner_character": "西格莉卡",
+      "owner_tier": "T0",
+      "confidence": "medium",
+      "source": "public_banner_history_plus_name_matching",
+      "appearance_count_in_200": 9
+    },
+    {
+      "weapon_name": "驭冕铸雷之权",
+      "english_name": "Thunderflare Dominion",
+      "weapon_class": "signature",
+      "owner_character": "奥古斯塔",
+      "owner_tier": "T0.5",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 9
+    },
+    {
+      "weapon_name": "裁竹",
+      "english_name": "Emerald Sentence",
+      "weapon_class": "signature",
+      "owner_character": "仇远",
+      "owner_tier": "T1",
+      "confidence": "medium",
+      "source": "public_banner_history_plus_name_matching",
+      "appearance_count_in_200": 8
+    },
+    {
+      "weapon_name": "海的呢喃",
+      "english_name": "Whispers of Sirens",
+      "weapon_class": "signature",
+      "owner_character": "坎特蕾拉",
+      "owner_tier": "T1",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 7
+    },
+    {
+      "weapon_name": "宙算仪轨",
+      "english_name": "Starfield Calibrator",
+      "weapon_class": "signature",
+      "owner_character": "莫宁",
+      "owner_tier": "T0.5",
+      "confidence": "medium",
+      "source": "public_banner_history_plus_name_matching",
+      "appearance_count_in_200": 5
+    },
+    {
+      "weapon_name": "悲喜剧",
+      "english_name": "Tragicomedy",
+      "weapon_class": "signature",
+      "owner_character": "洛可可",
+      "owner_tier": "",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 4
+    },
+    {
+      "weapon_name": "焰痕",
+      "english_name": "Wildfire Mark",
+      "weapon_class": "signature",
+      "owner_character": "露帕",
+      "owner_tier": "T1",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 4
+    },
+    {
+      "weapon_name": "不灭航路",
+      "english_name": "Unflickering Valor",
+      "weapon_class": "signature",
+      "owner_character": "布兰特",
+      "owner_tier": "T1",
+      "confidence": "medium",
+      "source": "public_banner_history_plus_name_matching",
+      "appearance_count_in_200": 3
+    },
+    {
+      "weapon_name": "白昼之脊",
+      "english_name": "Daybreaker's Spine",
+      "weapon_class": "signature",
+      "owner_character": "陆·赫斯",
+      "owner_tier": "T0.5",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 2
+    },
+    {
+      "weapon_name": "林间的咏叹调",
+      "english_name": "Woodland Aria",
+      "weapon_class": "signature",
+      "owner_character": "坎特蕾拉",
+      "owner_tier": "T1",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 1
+    },
+    {
+      "weapon_name": "赝作的矮星",
+      "english_name": "Forged Dwarf Star",
+      "weapon_class": "signature",
+      "owner_character": "达妮娅",
+      "owner_tier": "T0.5",
+      "confidence": "high",
+      "source": "public_banner_history",
+      "appearance_count_in_200": 1
+    },
+    {
+      "weapon_name": "血誓盟约",
+      "english_name": "Emerald of Genesis",
+      "weapon_class": "standard",
+      "owner_character": "",
+      "owner_tier": "",
+      "confidence": "low",
+      "source": "public_permanent_banner_plus_name_matching",
+      "appearance_count_in_200": 158
+    },
+    {
+      "weapon_name": "漪澜浮录",
+      "english_name": "Cosmic Ripples",
+      "weapon_class": "standard",
+      "owner_character": "",
+      "owner_tier": "",
+      "confidence": "high",
+      "source": "public_permanent_banner",
+      "appearance_count_in_200": 65
+    },
+    {
+      "weapon_name": "停驻之烟",
+      "english_name": "Static Mist",
+      "weapon_class": "standard",
+      "owner_character": "",
+      "owner_tier": "",
+      "confidence": "high",
+      "source": "public_permanent_banner",
+      "appearance_count_in_200": 54
+    },
+    {
+      "weapon_name": "浩境粼光",
+      "english_name": "Lustrous Razor",
+      "weapon_class": "standard",
+      "owner_character": "",
+      "owner_tier": "",
+      "confidence": "medium",
+      "source": "public_permanent_banner_plus_name_matching",
+      "appearance_count_in_200": 49
+    },
+    {
+      "weapon_name": "时和岁稔",
+      "english_name": "Unknown 5-Star Weapon",
+      "weapon_class": "standard",
+      "owner_character": "",
+      "owner_tier": "",
+      "confidence": "low",
+      "source": "cooccurrence_only",
+      "appearance_count_in_200": 46
+    },
+    {
+      "weapon_name": "擎渊怒涛",
+      "english_name": "Abyss Surges",
+      "weapon_class": "standard",
+      "owner_character": "",
+      "owner_tier": "",
+      "confidence": "high",
+      "source": "public_permanent_banner",
+      "appearance_count_in_200": 31
+    },
+    {
+      "weapon_name": "相位涟漪",
+      "english_name": "Phasic Homogenizer",
+      "weapon_class": "standard",
+      "owner_character": "",
+      "owner_tier": "",
+      "confidence": "high",
+      "source": "public_permanent_banner",
+      "appearance_count_in_200": 15
+    },
+    {
+      "weapon_name": "镭射切变",
+      "english_name": "Laser Shearer",
+      "weapon_class": "standard",
+      "owner_character": "",
+      "owner_tier": "",
+      "confidence": "high",
+      "source": "public_permanent_banner",
+      "appearance_count_in_200": 9
+    },
+    {
+      "weapon_name": "源能机锋",
+      "english_name": "Radiance Cleaver",
+      "weapon_class": "standard",
+      "owner_character": "",
+      "owner_tier": "",
+      "confidence": "medium",
+      "source": "public_permanent_banner_plus_name_matching",
+      "appearance_count_in_200": 7
+    },
+    {
+      "weapon_name": "脉冲协臂",
+      "english_name": "Pulsation Bracer",
+      "weapon_class": "standard",
+      "owner_character": "",
+      "owner_tier": "",
+      "confidence": "high",
+      "source": "public_permanent_banner",
+      "appearance_count_in_200": 5
+    },
+    {
+      "weapon_name": "玻色星仪",
+      "english_name": "Boson Astrolabe",
+      "weapon_class": "standard",
+      "owner_character": "",
+      "owner_tier": "",
+      "confidence": "high",
+      "source": "public_permanent_banner",
+      "appearance_count_in_200": 4
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "category_query": "奥林巴斯 TG7 相机",
+    "category_slug": "om-system-tg7",
+    "captured_at": "2026-06-30",
+    "capture_method": "SMZDM search + official specs + review cross-check",
+    "pages_scanned": [
+      "https://search.smzdm.com/?c=home&s=TG-7"
+    ],
+    "default_scenario_assumption": "用户关注 OM SYSTEM Tough TG-7 / 奥林巴斯 TG-7 的近期好价与真实口碑",
+    "notes": [
+      "SMZDM 关键词 TG-7 会混入大量与相机无关的 TG 编号商品，已人工过滤。",
+      "当前可见的 TG-7 爆料数量不多，历史样本偏少，本轮更适合判断近期可买价而不是精确历史底价。"
+    ]
+  },
+  "raw_items": [
+    {
+      "title": "OM System 4K视频 数码相机 单机身 红色",
+      "normalized_model": "om-system-tough-tg7",
+      "price": 2838.0,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "06-17 21:52",
+      "source_url": "https://www.smzdm.com/p/176910518/",
+      "tags": ["好价", "需用券", "京东自营"],
+      "heat_signals": {
+        "related_articles": 5,
+        "comments": 0
+      }
+    },
+    {
+      "title": "OM System TG-7 数码相机 多功能运动相机 微距潜水 4K视频",
+      "normalized_model": "om-system-tough-tg7",
+      "price": 2839.0,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "06-17 21:50",
+      "source_url": "https://www.smzdm.com/p/176910551/",
+      "tags": ["好价", "需用券", "京东自营"],
+      "heat_signals": {
+        "related_articles": 4,
+        "comments": 0
+      }
+    },
+    {
+      "title": "移动端、京东百亿补贴：OM System 4K视频 数码相机 单机身 红色",
+      "normalized_model": "om-system-tough-tg7",
+      "price": 2546.0,
+      "currency": "CNY",
+      "mall": "京东",
+      "posted_at": "06-12 18:53",
+      "source_url": "https://www.smzdm.com/p/176503664/",
+      "tags": ["好价", "百亿补贴", "国补", "价格低于双11"],
+      "heat_signals": {
+        "related_articles": 5,
+        "comments": 1
+      }
+    }
+  ],
+  "normalized_groups": [
+    {
+      "normalized_model": "om-system-tough-tg7",
+      "brand": "OM SYSTEM / Olympus",
+      "series": "Tough TG-7",
+      "aliases": ["OM System TG-7", "奥林巴斯 TG-7", "TG7", "Tough TG-7"],
+      "observed_prices": [2546.0, 2838.0, 2839.0],
+      "current_best_visible_price": 2546.0,
+      "price_band_summary": "2546-2839",
+      "recent_frequency_signal": "low",
+      "positioning": "全天候三防微距卡片机"
+    }
+  ],
+  "quick_takeaways": [
+    "当前 SMZDM 可见的 TG-7 真正好价约 2546 元，常规近期活动价约 2838-2839 元。",
+    "TG-7 的核心卖点是防水抗摔和 1cm 微距，不是大底画质；适合户外、水下、工地、亲子和随身记录。",
+    "如果你是从手机升级想要明显更强夜景和虚化，TG-7 不一定值；如果你需要能下水、耐摔、能拍微距的专用机，它仍然有独特性。"
+  ]
+}

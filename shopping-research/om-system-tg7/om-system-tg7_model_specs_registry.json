@@ -1,0 +1,66 @@
+[
+  {
+    "brand": "OM SYSTEM / Olympus",
+    "model": "Tough TG-7",
+    "series": "TG",
+    "normalized_model": "om-system-tough-tg7",
+    "aliases": ["奥林巴斯 TG-7", "OM System TG-7", "TG7"],
+    "lookup_tokens": ["olympus", "om system", "tg-7", "tough", "相机"],
+    "key_specs": {
+      "sensor": "12MP 1/2.33-inch BSI CMOS",
+      "processor": "TruePic VIII",
+      "lens": "25-100mm equivalent f/2.0-4.9 4x optical zoom",
+      "macro_focus_distance_cm": 1,
+      "stabilization": "sensor-shift image stabilization",
+      "video": "4K 30p, Full HD up to 120p",
+      "screen": "3.0-inch 1.04M-dot LCD",
+      "battery_shots": 330,
+      "waterproof_m": 15,
+      "shockproof_m": 2.1,
+      "crushproof_kg": 100,
+      "freezeproof_c": -10,
+      "connectivity": ["USB-C", "Wi-Fi", "Bluetooth", "GPS"]
+    },
+    "public_feedback_summary": {
+      "common_praise": [
+        "防水抗摔抗冻能力强，真的适合海边、浮潜、雨雪和粗放使用",
+        "1cm 微距和显微模式非常强，是这类卡片机里最有辨识度的能力",
+        "机身体积小、按钮直接、拿起来就拍，户外场景比很多大机器更愿意带"
+      ],
+      "common_complaints": [
+        "1/2.33 英寸小底决定了低光、动态范围和纯画质上限一般",
+        "和 TG-6 相比升级不大，老用户未必有强升级理由",
+        "价格不算便宜，在安全环境下很多人会觉得高端手机更省事"
+      ],
+      "best_for": "浮潜、徒步、露营、亲子玩水、工地巡检、昆虫植物微距和恶劣环境记录",
+      "not_ideal_for": "追求夜景纯净度、背景虚化和大底高画质的用户"
+    },
+    "warnings": [
+      "这不是画质型相机，而是功能型、环境适应型相机。",
+      "如果你已经有 TG-6，除非想要 USB-C、竖拍视频或新小功能，否则升级收益有限。"
+    ],
+    "confidence": "high",
+    "sources": [
+      {
+        "type": "官网介绍页",
+        "site": "OM SYSTEM",
+        "url": "https://explore.omsystem.com/c/en/tg-7"
+      },
+      {
+        "type": "官网产品页",
+        "site": "OM SYSTEM US",
+        "url": "https://explore.omsystem.com/us/en/tg-7-red"
+      },
+      {
+        "type": "产品历史页",
+        "site": "OM Digital Solutions",
+        "url": "https://www.om-digitalsolutions.com/en/product-history/om_system_tough_tg-7/"
+      },
+      {
+        "type": "评测",
+        "site": "Amateur Photographer",
+        "url": "https://amateurphotographer.com/review/om-system-tough-tg-7-review-raw-makes-it/"
+      }
+    ]
+  }
+]

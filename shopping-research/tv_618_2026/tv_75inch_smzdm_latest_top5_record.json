@@ -1,0 +1,969 @@
+{
+  "meta": {
+    "source": "什么值得买搜索页",
+    "query_url": "https://search.smzdm.com/?c=home&s=75+%E5%AF%B8+%E7%94%B5%E8%A7%86&order=time&max_price=3000&zhifa_tag_id=0&v=b",
+    "capture_date": "2026-06-18",
+    "capture_scope": "严格基于用户当前已打开并设置为最新排序的页面，连续抓取前5页，不刷新不改筛选",
+    "pages": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "raw_items": 100,
+    "filtered_75inch_tv_items": 68,
+    "excluded_noise": [
+      "电视挂架/支架/推车",
+      "教学一体机/会议屏",
+      "明显非75寸条目"
+    ],
+    "value_rate_formula": "值率 = 值 / (值 + 不值) * 100；若值与不值都为0，则记为 null"
+  },
+  "overview": {
+    "rated_items": 31,
+    "unrated_items": 37,
+    "average_value_rate": 76.36,
+    "median_value_rate": 100,
+    "value_rate_buckets": {
+      "ge_90": 17,
+      "ge_70_lt_90": 1,
+      "ge_50_lt_70": 9,
+      "gt_0_lt_50": 1,
+      "eq_0": 3
+    },
+    "observation": [
+      "前5页里真正有值/不值投票沉淀的条目不到一半，很多新发或冷门链接暂时没有投票，不能只凭 null 判定不值。",
+      "高值率集中在 2K-2.4K 档的性价比机型和少数口碑成熟的中高端机型。",
+      "讨论热度最高的不一定值率最高，酷开 75P5H Pro、酷开 75P8F 讨论很多，但投票分歧也更明显。"
+    ]
+  },
+  "top_rated_items": [
+    {
+      "title": "小米 A Pro系列 L75RC-AP",
+      "page": 1,
+      "price_text": "2046.37元（需用券）",
+      "value_rate": 100,
+      "comments": 17,
+      "fav": 8,
+      "detail_url": "https://www.smzdm.com/p/176931596/"
+    },
+    {
+      "title": "海尔 H5C系列 75H5C",
+      "page": 4,
+      "price_text": "2314.15元",
+      "value_rate": 100,
+      "comments": 10,
+      "fav": 6,
+      "detail_url": "https://www.smzdm.com/p/176731653/"
+    },
+    {
+      "title": "雷鸟 鹏6 26款 75S68A",
+      "page": 3,
+      "price_text": "2295元（需用券）",
+      "value_rate": 100,
+      "comments": 8,
+      "fav": 13,
+      "detail_url": "https://www.smzdm.com/p/176806624/"
+    },
+    {
+      "title": "酷开 K6 Mini 75P5F",
+      "page": 3,
+      "price_text": "2368.57元",
+      "value_rate": 100,
+      "comments": 5,
+      "fav": 13,
+      "detail_url": "https://www.smzdm.com/p/176769723/"
+    },
+    {
+      "title": "TCL 75Q9K",
+      "page": 1,
+      "price_text": "2974.15元",
+      "value_rate": 90,
+      "comments": 20,
+      "fav": 13,
+      "detail_url": "https://www.smzdm.com/p/176902784/"
+    }
+  ],
+  "most_discussed_items": [
+    {
+      "title": "酷开 75P5H Pro MiniLED柔光电视",
+      "page": 5,
+      "price_text": "2516元",
+      "value_rate": 66.67,
+      "comments": 24,
+      "fav": 16,
+      "detail_url": "https://www.smzdm.com/p/176634127/"
+    },
+    {
+      "title": "TCL 75Q9K",
+      "page": 1,
+      "price_text": "2974.15元",
+      "value_rate": 90,
+      "comments": 20,
+      "fav": 13,
+      "detail_url": "https://www.smzdm.com/p/176902784/"
+    },
+    {
+      "title": "酷开 K6 Ultra 75P8F",
+      "page": 4,
+      "price_text": "2589.49元",
+      "value_rate": 57.14,
+      "comments": 18,
+      "fav": 27,
+      "detail_url": "https://www.smzdm.com/p/176725723/"
+    },
+    {
+      "title": "小米 A Pro系列 L75RC-AP",
+      "page": 1,
+      "price_text": "2046.37元（需用券）",
+      "value_rate": 100,
+      "comments": 17,
+      "fav": 8,
+      "detail_url": "https://www.smzdm.com/p/176931596/"
+    },
+    {
+      "title": "雷鸟 鹏7系 75英寸",
+      "page": 2,
+      "price_text": "2089.3元",
+      "value_rate": 66.67,
+      "comments": 15,
+      "fav": 8,
+      "detail_url": "https://www.smzdm.com/p/176814623/"
+    }
+  ],
+  "model_groups": [
+    {
+      "group": "雷鸟 75S68A",
+      "aliases": [
+        "雷鸟 鹏6 26款 75S68A",
+        "雷鸟 鹏6 75英寸 144Hz",
+        "雷鸟鹏6 75S68A"
+      ],
+      "smzdm_stats": {
+        "occurrences": 5,
+        "pages": [
+          3,
+          4
+        ],
+        "lowest_price_text": "2295元（需用券）",
+        "avg_value_rate": 90,
+        "total_zhi": 7,
+        "total_buzhi": 1,
+        "total_comments": 16,
+        "total_fav": 25
+      },
+      "public_reputation": {
+        "pros": [
+          "便宜大屏，日常追剧和客厅家用够用",
+          "高刷/MEMC/色彩在同价位有竞争力",
+          "系统相对简洁，上手门槛低"
+        ],
+        "cons": [
+          "入门定位，亮度、暗场、音响上限一般",
+          "更适合综艺电视，不适合重度HDR电影党",
+          "售后体验更依赖购买渠道"
+        ],
+        "source_domains": [
+          "jd.com",
+          "zol.com.cn",
+          "baicaio.com",
+          "guangdiu.com"
+        ],
+        "confidence": "中高"
+      }
+    },
+    {
+      "group": "雷鸟 75S78A Plus / 鹏7",
+      "aliases": [
+        "75S78A Plus",
+        "雷鸟 鹏7 Plus",
+        "雷鸟 75英寸鹏7系"
+      ],
+      "smzdm_stats": {
+        "occurrences": 3,
+        "pages": [
+          2,
+          3,
+          4
+        ],
+        "lowest_price_text": "2089.3元",
+        "avg_value_rate": 53.34,
+        "total_zhi": 6,
+        "total_buzhi": 5,
+        "total_comments": 20,
+        "total_fav": 12
+      },
+      "public_reputation": {
+        "pros": [
+          "高对比VA屏和高刷规格很讨游戏党喜欢",
+          "性价比甜点位，音响和系统完成度比入门款更好",
+          "适合想兼顾游戏和日常观影的人"
+        ],
+        "cons": [
+          "同价位里仍有参数口径混杂，需认准具体SKU",
+          "公开真实机主样本不如75R69A多",
+          "部分版本运行内存不算大，重度装App不占优"
+        ],
+        "source_domains": [
+          "sohu.com",
+          "taobao.com",
+          "manmanbuy.com"
+        ],
+        "confidence": "中"
+      }
+    },
+    {
+      "group": "雷鸟 75R69A",
+      "aliases": [
+        "雷鸟 鹤6 26款 75R69A"
+      ],
+      "smzdm_stats": {
+        "occurrences": 1,
+        "pages": [
+          1
+        ],
+        "lowest_price_text": "2947.66元（需用券）",
+        "avg_value_rate": 50,
+        "total_zhi": 2,
+        "total_buzhi": 2,
+        "total_comments": 7,
+        "total_fav": 15
+      },
+      "public_reputation": {
+        "pros": [
+          "Mini LED、亮度、控光和音响规格都很完整",
+          "更像能认真看片也能打游戏的全能型产品",
+          "4+64GB 配置更耐用"
+        ],
+        "cons": [
+          "价格比入门高一档，只看综艺会觉得溢出",
+          "如果只要低价大屏，性价比没有S68A那么直观"
+        ],
+        "source_domains": [
+          "bilibili.com",
+          "jd.com",
+          "sohu.com"
+        ],
+        "confidence": "高"
+      }
+    },
+    {
+      "group": "雷鸟 75F295C",
+      "aliases": [
+        "雷鸟 鹏6 SE 75F295C",
+        "75F295C"
+      ],
+      "smzdm_stats": {
+        "occurrences": 2,
+        "pages": [
+          2,
+          5
+        ],
+        "lowest_price_text": "2328.98元",
+        "avg_value_rate": 100,
+        "total_zhi": 6,
+        "total_buzhi": 0,
+        "total_comments": 3,
+        "total_fav": 8
+      },
+      "public_reputation": {
+        "pros": [
+          "入门价位里有144Hz、MEMC、Wi-Fi 6这类实用卖点",
+          "普通家庭看剧、投屏、看球够用",
+          "价格通常压得比较低"
+        ],
+        "cons": [
+          "整体更偏够用，不是画质型产品",
+          "内存和长期保鲜能力一般",
+          "原生刷新率和营销口径容易被混淆"
+        ],
+        "source_domains": [
+          "jd.com",
+          "sina.cn",
+          "taobao.com",
+          "sohu.com"
+        ],
+        "confidence": "中"
+      }
+    },
+    {
+      "group": "雷鸟 75F56A",
+      "aliases": [
+        "雷鸟 雀5 75F56A"
+      ],
+      "smzdm_stats": {
+        "occurrences": 1,
+        "pages": [
+          4
+        ],
+        "lowest_price_text": "2207.25元",
+        "avg_value_rate": null,
+        "total_zhi": 0,
+        "total_buzhi": 0,
+        "total_comments": 0,
+        "total_fav": 0
+      },
+      "public_reputation": {
+        "pros": [
+          "延续雷鸟的低价高配路线",
+          "适合预算敏感用户看基础规格"
+        ],
+        "cons": [
+          "公开真实口碑样本偏少",
+          "更容易混入泛雷鸟口碑，不适合盲买"
+        ],
+        "source_domains": [
+          "taobao.com",
+          "znds.com",
+          "kuguli.com"
+        ],
+        "confidence": "低"
+      }
+    },
+    {
+      "group": "TCL 75Q9K",
+      "aliases": [
+        "TCL 75Q9K"
+      ],
+      "smzdm_stats": {
+        "occurrences": 1,
+        "pages": [
+          1
+        ],
+        "lowest_price_text": "2974.15元",
+        "avg_value_rate": 90,
+        "total_zhi": 9,
+        "total_buzhi": 1,
+        "total_comments": 20,
+        "total_fav": 13
+      },
+      "public_reputation": {
+        "pros": [
+          "Mini LED画质、控光、亮度、色彩和音响都很稳",
+          "中高端75寸里口碑非常硬",
+          "很多人把它当同价位标杆"
+        ],
+        "cons": [
+          "预算门槛更高",
+          "价格波动会让值不值取决于到手价",
+          "少量反馈集中在安装配件和支架体验"
+        ],
+        "source_domains": [
+          "zol.com.cn",
+          "bilibili.com",
+          "smzdm.com",
+          "znds.com"
+        ],
+        "confidence": "高"
+      }
+    },
+    {
+      "group": "TCL 75V8M / V8M Pro",
+      "aliases": [
+        "TCL 75V8M",
+        "TCL V8M Pro 75"
+      ],
+      "smzdm_stats": {
+        "occurrences": 2,
+        "pages": [
+          3,
+          4
+        ],
+        "lowest_price_text": "2295元",
+        "avg_value_rate": 50,
+        "total_zhi": 2,
+        "total_buzhi": 1,
+        "total_comments": 0,
+        "total_fav": 5
+      },
+      "public_reputation": {
+        "pros": [
+          "便宜的大屏QLED/高刷方案，日常观影和主机游戏都能覆盖",
+          "色彩、流畅度、Wi-Fi 6 这些体验不错",
+          "Pro版完成度通常更高"
+        ],
+        "cons": [
+          "和Mini LED机型相比，暗场和控光差一档",
+          "部分用户会介意广告和会员体系",
+          "不同版本间规格要核对清楚"
+        ],
+        "source_domains": [
+          "bilibili.com",
+          "sohu.com"
+        ],
+        "confidence": "中"
+      }
+    },
+    {
+      "group": "TCL 75V68 Pro",
+      "aliases": [
+        "TCL 75V68 Pro",
+        "TCL 75英寸360Hz高刷华星屏电视"
+      ],
+      "smzdm_stats": {
+        "occurrences": 2,
+        "pages": [
+          2,
+          4
+        ],
+        "lowest_price_text": "2216.8元",
+        "avg_value_rate": 66.67,
+        "total_zhi": 2,
+        "total_buzhi": 1,
+        "total_comments": 3,
+        "total_fav": 1
+      },
+      "public_reputation": {
+        "pros": [
+          "高刷、大内存、高色域这些纸面参数很能打",
+          "预算内做大屏家用比较划算"
+        ],
+        "cons": [
+          "公开口碑少，且V68不同后缀SKU很容易混淆",
+          "购买前必须核对完整型号和具体配置"
+        ],
+        "source_domains": [
+          "baike.com",
+          "taobao.com",
+          "nga.cn"
+        ],
+        "confidence": "低中"
+      }
+    },
+    {
+      "group": "小米 A Pro 75 L75RC-AP",
+      "aliases": [
+        "L75RC-AP",
+        "小米 A Pro 75"
+      ],
+      "smzdm_stats": {
+        "occurrences": 3,
+        "pages": [
+          1,
+          5
+        ],
+        "lowest_price_text": "2046.37元（需用券）",
+        "avg_value_rate": 100,
+        "total_zhi": 7,
+        "total_buzhi": 0,
+        "total_comments": 30,
+        "total_fav": 32
+      },
+      "public_reputation": {
+        "pros": [
+          "3+64GB 相比入门款更从容",
+          "追剧、投屏、米家联动和小爱语音体验成熟",
+          "2K出头价位非常有吸引力"
+        ],
+        "cons": [
+          "公开真实口碑仍偏少",
+          "音响和HDR冲击力只是够用",
+          "更适合家用，不适合极致画质党"
+        ],
+        "source_domains": [
+          "jd.com",
+          "sohu.com",
+          "zol.com.cn"
+        ],
+        "confidence": "中高"
+      }
+    },
+    {
+      "group": "红米 A 2025 L75MA-RAE",
+      "aliases": [
+        "L75MA-RAE",
+        "红米 A 2025 75寸"
+      ],
+      "smzdm_stats": {
+        "occurrences": 4,
+        "pages": [
+          1,
+          2,
+          5
+        ],
+        "lowest_price_text": "2047.31元（需用券）",
+        "avg_value_rate": 100,
+        "total_zhi": 4,
+        "total_buzhi": 0,
+        "total_comments": 0,
+        "total_fav": 4
+      },
+      "public_reputation": {
+        "pros": [
+          "价格低、屏幕大、日常看剧足够",
+          "米家生态和投屏易用性好"
+        ],
+        "cons": [
+          "2+32GB 是明显短板",
+          "音质、亮度、控光都偏入门",
+          "更适合预算优先，不适合重度用户"
+        ],
+        "source_domains": [
+          "bilibili.com",
+          "jd.com",
+          "sohu.com"
+        ],
+        "confidence": "中高"
+      }
+    },
+    {
+      "group": "红米 A Pro 75 L75RB-AP/APE",
+      "aliases": [
+        "L75RB-AP",
+        "L75RB-APE",
+        "红米 A Pro 75 节能版"
+      ],
+      "smzdm_stats": {
+        "occurrences": 2,
+        "pages": [
+          1,
+          3
+        ],
+        "lowest_price_text": "2651.19元",
+        "avg_value_rate": null,
+        "total_zhi": 0,
+        "total_buzhi": 0,
+        "total_comments": 0,
+        "total_fav": 1
+      },
+      "public_reputation": {
+        "pros": [
+          "3+64GB、高刷、大屏组合性价比突出",
+          "安装和配送效率口碑不错",
+          "日常家用和轻办公都适合"
+        ],
+        "cons": [
+          "零星吐槽集中在开机广告、音响一般和安装收费",
+          "不是高画质路线"
+        ],
+        "source_domains": [
+          "zol.com.cn",
+          "chiphell.com",
+          "cnmydigit.com"
+        ],
+        "confidence": "中高"
+      }
+    },
+    {
+      "group": "红米 X 2026 L75RC-RX",
+      "aliases": [
+        "L75RC-RX",
+        "红米 X 2026款",
+        "REDMI X 75"
+      ],
+      "smzdm_stats": {
+        "occurrences": 3,
+        "pages": [
+          1,
+          3,
+          5
+        ],
+        "lowest_price_text": "2681.21元",
+        "avg_value_rate": 50,
+        "total_zhi": 1,
+        "total_buzhi": 1,
+        "total_comments": 6,
+        "total_fav": 7
+      },
+      "public_reputation": {
+        "pros": [
+          "更偏游戏和接口党，X线定位明显高于A系",
+          "高刷、接口配置和系统流畅度更强"
+        ],
+        "cons": [
+          "新款真实口碑仍在沉淀",
+          "开机广告和宣传高刷口径仍是常见槽点"
+        ],
+        "source_domains": [
+          "jd.com",
+          "zol.com.cn",
+          "bilibili.com"
+        ],
+        "confidence": "中"
+      }
+    },
+    {
+      "group": "酷开 75P3F / 75P5F / 75K6 Mini",
+      "aliases": [
+        "75P3F",
+        "75P5F",
+        "75K6 Mini",
+        "酷开柔光K6 75"
+      ],
+      "smzdm_stats": {
+        "occurrences": 5,
+        "pages": [
+          1,
+          3
+        ],
+        "lowest_price_text": "2327.64元（需用券）",
+        "avg_value_rate": 50,
+        "total_zhi": 2,
+        "total_buzhi": 2,
+        "total_comments": 11,
+        "total_fav": 19
+      },
+      "public_reputation": {
+        "pros": [
+          "主打家用均衡、护眼和性价比",
+          "P5F 与 K6 Mini 的接受度明显高于最入门款",
+          "低反/柔光在明亮客厅更讨喜"
+        ],
+        "cons": [
+          "P3F 的2GB运存偏紧",
+          "不是追求极致分区和亮度的路线",
+          "同系列不同机型配置跨度较大，要分开看"
+        ],
+        "source_domains": [
+          "suning.com",
+          "jd.com",
+          "pconline.com.cn",
+          "bilibili.com",
+          "sohu.com"
+        ],
+        "confidence": "中高"
+      }
+    },
+    {
+      "group": "酷开 75P5H / P5H Pro",
+      "aliases": [
+        "75P5H",
+        "75P5H Pro",
+        "酷开 K6 2026 75P5H"
+      ],
+      "smzdm_stats": {
+        "occurrences": 4,
+        "pages": [
+          2,
+          5
+        ],
+        "lowest_price_text": "2024.23元",
+        "avg_value_rate": 66.67,
+        "total_zhi": 8,
+        "total_buzhi": 4,
+        "total_comments": 36,
+        "total_fav": 50
+      },
+      "public_reputation": {
+        "pros": [
+          "柔光/护眼、低反和高刷对家庭使用很友好",
+          "Pro版更偏游戏和综合体验",
+          "讨论热度高，说明关注度很强"
+        ],
+        "cons": [
+          "比基础家用款更贵，值不值取决于你是否真需要高规格",
+          "真实负面样本不算多，口碑还在继续沉淀"
+        ],
+        "source_domains": [
+          "bilibili.com",
+          "jd.com",
+          "sohu.com",
+          "zol.com.cn"
+        ],
+        "confidence": "中高"
+      }
+    },
+    {
+      "group": "酷开 75P8F",
+      "aliases": [
+        "酷开 K6 Ultra 75P8F"
+      ],
+      "smzdm_stats": {
+        "occurrences": 1,
+        "pages": [
+          4
+        ],
+        "lowest_price_text": "2589.49元",
+        "avg_value_rate": 57.14,
+        "total_zhi": 4,
+        "total_buzhi": 3,
+        "total_comments": 18,
+        "total_fav": 27
+      },
+      "public_reputation": {
+        "pros": [
+          "2304分区QD-Mini LED、288Hz、接口完整度都很强",
+          "适合主机游戏和重画质用户"
+        ],
+        "cons": [
+          "讨论虽热，但投票分歧明显",
+          "如果只是普通追剧，会觉得配置和功耗都偏重"
+        ],
+        "source_domains": [
+          "sohu.com",
+          "suning.com",
+          "qq.com"
+        ],
+        "confidence": "中高"
+      }
+    },
+    {
+      "group": "创维 75A3F / 75A4F Pro / 75A5F / 75A28F",
+      "aliases": [
+        "75A3F",
+        "75A4F Pro",
+        "75A5F",
+        "75A28F"
+      ],
+      "smzdm_stats": {
+        "occurrences": 6,
+        "pages": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "lowest_price_text": "2379元",
+        "avg_value_rate": 44.45,
+        "total_zhi": 2,
+        "total_buzhi": 2,
+        "total_comments": 6,
+        "total_fav": 13
+      },
+      "public_reputation": {
+        "pros": [
+          "A4F Pro 的低反+Mini LED、A5F 的音效与大内存、A3F 的基础高刷都各有卖点",
+          "创维系在家用大屏里属于稳妥方案"
+        ],
+        "cons": [
+          "不同型号差异很大，不能只看A系列标签",
+          "系统广告、安装附加费、售后波动是共通顾虑",
+          "A28F 公开独立样本还偏少"
+        ],
+        "source_domains": [
+          "sohu.com",
+          "smzdm.com",
+          "jd.com",
+          "bilibili.com",
+          "zol.com.cn"
+        ],
+        "confidence": "中"
+      }
+    },
+    {
+      "group": "Vidda 75V1Q-R / R75",
+      "aliases": [
+        "75V1Q-R",
+        "Vidda R75",
+        "海信电视 R75 75英寸"
+      ],
+      "smzdm_stats": {
+        "occurrences": 5,
+        "pages": [
+          2,
+          3,
+          4
+        ],
+        "lowest_price_text": "2200.76元（需用券）",
+        "avg_value_rate": 100,
+        "total_zhi": 1,
+        "total_buzhi": 0,
+        "total_comments": 1,
+        "total_fav": 5
+      },
+      "public_reputation": {
+        "pros": [
+          "低价大屏高刷路线清晰",
+          "投屏、家用、会议场景都很友好",
+          "亮厅和普通家庭日常使用接受度高"
+        ],
+        "cons": [
+          "亮度、内存和画质上限不算强",
+          "更像入门高刷，不是硬核电影机"
+        ],
+        "source_domains": [
+          "sohu.com",
+          "zol.com.cn",
+          "taobao.com"
+        ],
+        "confidence": "中高"
+      }
+    },
+    {
+      "group": "Vidda R Pro 75 / 75VR1S-PRO / 75VX1S",
+      "aliases": [
+        "75VR1S-PRO",
+        "75VX1S",
+        "Vidda R Pro 75"
+      ],
+      "smzdm_stats": {
+        "occurrences": 6,
+        "pages": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "lowest_price_text": "2267.65元",
+        "avg_value_rate": 100,
+        "total_zhi": 6,
+        "total_buzhi": 0,
+        "total_comments": 1,
+        "total_fav": 9
+      },
+      "public_reputation": {
+        "pros": [
+          "低反屏、亮厅友好、游戏兼容性好",
+          "音效和整体均衡性普遍评价不错",
+          "75VX1S 作为入门Mini LED也有一定性价比"
+        ],
+        "cons": [
+          "更偏抗反光和综合均衡，不是卷分区和峰值亮度的路子",
+          "不同子型号之间定位差异较大"
+        ],
+        "source_domains": [
+          "zol.com.cn",
+          "jd.com",
+          "sohu.com",
+          "bilibili.com",
+          "smzdm.com"
+        ],
+        "confidence": "中高"
+      }
+    },
+    {
+      "group": "海信 E3 系",
+      "aliases": [
+        "75E3NH-PRO",
+        "75E3Q",
+        "75E3QH Pro",
+        "E3S Pro+"
+      ],
+      "smzdm_stats": {
+        "occurrences": 4,
+        "pages": [
+          1,
+          4
+        ],
+        "lowest_price_text": "2569.4元",
+        "avg_value_rate": 66.67,
+        "total_zhi": 4,
+        "total_buzhi": 2,
+        "total_comments": 8,
+        "total_fav": 21
+      },
+      "public_reputation": {
+        "pros": [
+          "亮厅看球、高刷、抗反光和家用大屏体验都不错",
+          "性价比普遍不差，尤其在2.5K-3K档"
+        ],
+        "cons": [
+          "暗场和HDR天花板不是强项",
+          "广告、挂墙厚度、安装收费是常见吐槽",
+          "不同E3子型号定位差异明显"
+        ],
+        "source_domains": [
+          "hisense.com",
+          "smzdm.com",
+          "pconline.com.cn",
+          "taobao.com",
+          "zol.com.cn",
+          "sohu.com"
+        ],
+        "confidence": "中高"
+      }
+    },
+    {
+      "group": "长虹 75D55H / 75D68F-G1 / D66H / 75Z60H",
+      "aliases": [
+        "75D55H",
+        "75D68F-G1",
+        "D66H",
+        "75Z60H"
+      ],
+      "smzdm_stats": {
+        "occurrences": 6,
+        "pages": [
+          2,
+          5
+        ],
+        "lowest_price_text": "2221.42元（需用券）",
+        "avg_value_rate": 100,
+        "total_zhi": 6,
+        "total_buzhi": 0,
+        "total_comments": 4,
+        "total_fav": 5
+      },
+      "public_reputation": {
+        "pros": [
+          "高刷、大屏、语音和家用实用功能比较齐",
+          "D68F-G1 与 D66H 更像功能均衡款",
+          "价格通常有竞争力"
+        ],
+        "cons": [
+          "深度用户长评不算多",
+          "低价长虹机型常见顾虑仍是系统流畅度和售后稳定性",
+          "Z60H 偏老平台"
+        ],
+        "source_domains": [
+          "sohu.com",
+          "jd.com",
+          "108qi.com",
+          "aivote.com",
+          "zol.com.cn",
+          "taobao.com"
+        ],
+        "confidence": "中"
+      }
+    },
+    {
+      "group": "海尔 75H5C / 75H5D",
+      "aliases": [
+        "75H5C",
+        "75H5D"
+      ],
+      "smzdm_stats": {
+        "occurrences": 2,
+        "pages": [
+          3,
+          4
+        ],
+        "lowest_price_text": "2295.12元",
+        "avg_value_rate": 100,
+        "total_zhi": 2,
+        "total_buzhi": 0,
+        "total_comments": 10,
+        "total_fav": 7
+      },
+      "public_reputation": {
+        "pros": [
+          "高刷、护眼、易用性和家用观影体验比较稳",
+          "H5D 更强调轻薄和165Hz"
+        ],
+        "cons": [
+          "更偏家用稳妥型，不是卷旗舰暗场控光的方向",
+          "明显负面样本不多，仍需持续观察"
+        ],
+        "source_domains": [
+          "sohu.com",
+          "zol.com.cn",
+          "taobao.com"
+        ],
+        "confidence": "中"
+      }
+    }
+  ],
+  "quick_takeaways": {
+    "best_value_rate_and_reputation": [
+      "小米 A Pro 75 L75RC-AP",
+      "雷鸟 75S68A",
+      "海尔 75H5C / 75H5D",
+      "TCL 75Q9K",
+      "Vidda R Pro 75 / 75VR1S-PRO / 75VX1S"
+    ],
+    "high_heat_but_mixed_votes": [
+      "酷开 75P5H / P5H Pro",
+      "酷开 75P8F",
+      "雷鸟 75S78A Plus / 鹏7",
+      "雷鸟 75R69A"
+    ],
+    "need_more_real_feedback": [
+      "雷鸟 75F56A",
+      "TCL 75V68 Pro",
+      "创维 75A28F",
+      "红米 X 2026 L75RC-RX"
+    ],
+    "low_vote_warning": "许多条目值率为 null，本质是投票样本不足，不等于不值。建议结合价格、促销路径和外站口碑一起看。"
+  }
+}

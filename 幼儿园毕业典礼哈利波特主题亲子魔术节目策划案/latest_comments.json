@@ -1,0 +1,696 @@
+{
+  "code": 0,
+  "data": {
+    "has_more": false,
+    "items": [
+      {
+        "comment_id": "7654057943922396789",
+        "create_time": 1782099238,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "新生，请告诉我，你准备好了吗？",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "加个让弟弟的自我介绍"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099238,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654057943939223161",
+              "update_time": 1782099238,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782099238,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654058030350290548",
+        "create_time": 1782099257,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "手持自己的魔杖或",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "自己的魔杖还没拿出来吧，这种错误别犯了，整体检查下"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099257,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654058030371196536",
+              "update_time": 1782099257,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782099258,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654058354760306296",
+        "create_time": 1782099333,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "变一个真正的魔术",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "都是施展魔法，不是变魔术，全文检查一下"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099333,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654058354775445109",
+              "update_time": 1782099333,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782099334,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654058559331634805",
+        "create_time": 1782099381,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "每拿一个都稍微举高一点给观众看",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "增加变完之后的情况，要把纸袋和盒子整体交给妈妈放在旁边，防止穿帮正面朝前"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099381,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654058559348412021",
+              "update_time": 1782099381,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782099382,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654058999544811129",
+        "create_time": 1782099483,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "语气认真，像真的下定决心。",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "增加魔杖和魔法书互动的环节"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099483,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654058999561621109",
+              "update_time": 1782099483,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782099484,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654059061176176248",
+        "create_time": 1782099498,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "慢慢翻页，看到线稿后脸上露出惊喜，再继续翻到彩色页。",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "一样，变完之后的道具给谁？怎么放？都检查一下，下同"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099498,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654059061192691320",
+              "update_time": 1782099498,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782099498,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654059911633981049",
+        "create_time": 1782099695,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "转向观众，抬手带节奏。",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "这一章整体有问题。 首先要有拿出分院帽的环节。然后让弟弟戴上分院帽\n\n\n然后互动环节，是让小朋友们喊，是哪个学院。同时这里要避免一下小朋友们万一不知道哈利波特，要怎么突出随机？\n\n然后预言信封是提前藏在帽子里的，打开之后，里面展示的就是格兰芬多的标记（这里的魔术我觉得可以是  一张纸的正反面分别印了 4 个学院名字和徽章，然后展示的时候，按照对应的方式展示开就行。 比如 A 面上面是格兰芬多，下面的赫奇帕奇，B 面也是 2 个。然后纸对折，这样拿出来的时候就能看到对应的学院里）\n\n\n注意这里需要打印好的学院信息+信封。放在物料准备章节里。 这个章节还是需要的"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099695,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654059911663357557",
+              "update_time": 1782099695,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782099696,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654060120292249205",
+        "create_time": 1782099744,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "认真挥杖，完成变花后看向手中的花，再看观众，露出惊喜。",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "这里弟弟一直拿的都是变花的魔杖？还是什么时候偷偷换成变花魔杖？"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099744,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654060120310681209",
+              "update_time": 1782099744,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782099745,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654060643996323445",
+        "create_time": 1782099866,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "今天，你已经通过了霍格沃茨的新生考验。你学会了勇敢，学会了认真，也学会了把美好分享给别人。",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "加个串场。 经过一学年的学习，小魔法师们也都要毕业了 xxxx"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099866,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654060644014050933",
+              "update_time": 1782099866,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782099867,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654060844312972917",
+        "create_time": 1782099913,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "让我们一起看看，这个魔法袋里会不会出现惊喜。",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "这些道具都是怎么到弟弟手里的？ 前面几个章节也是一样，要增加道具的转移，怎么上场，怎么离场，谁给谁"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099913,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654060844329733748",
+              "update_time": 1782099913,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782099913,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654060985468096121",
+        "create_time": 1782099945,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "真的变出来了！",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "魔术表演的部分的动作具体一些，用 bulletpoint 标注一下。"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099945,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654060985484840569",
+              "update_time": 1782099945,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            },
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "比如这个，要写下展示了空袋子 xxxx"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099994,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654061193421655669",
+              "update_time": 1782099994,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782099994,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654061206973484665",
+        "create_time": 1782099997,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "以后不管我们去哪里上学，我都希望我们记得老师的爱，记得朋友的陪伴，也记得在幼儿园学会的勇敢和快乐。祝大家毕业快乐！",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "这个太长了，让妈妈来说，妈妈先来点题发言\n\n\n然后最后，让小魔法师把礼物送给大家吧\n\n然后弟弟拿着去送礼物"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782099997,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654061206994423416",
+              "update_time": 1782099997,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782099998,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654063069374533241",
+        "create_time": 1782100431,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "妈妈顺手接过空盒和变出来的物品，放到桌面左侧，再把舞台让出来。",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "这些都是动作啊。 都写在动作里。\n\n动作和表情分开，动作更多的用 bulletpoint\n\n整篇都这么改"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782100431,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654063069391294069",
+              "update_time": 1782100431,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782100431,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654063262245342836",
+        "create_time": 1782100476,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "转场与收道具规则",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "不用单独写，融合在台本里。  台本里明确动作，把对应的动作单独列一下\n\n然后分类也叫做 魔术准备/收场"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782100476,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654063262262201972",
+              "update_time": 1782100476,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782100476,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654063368034094708",
+        "create_time": 1782100500,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "一、演出前准备",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "前面加一章节，列举所有需要准备的物料。注意是所有"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782100500,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654063368050871924",
+              "update_time": 1782100500,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782100501,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654063459484208761",
+        "create_time": 1782100521,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "二、5 分钟节奏总表",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "不需要了"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782100521,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654063459499298421",
+              "update_time": 1782100521,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782100522,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654063909338353269",
+        "create_time": 1782100627,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "目标时长：约 40 秒 魔术时间：约 8 秒 串场说话时间：约 32 秒",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "太啰嗦了，不用这么细节。大概说下这一章节多久就行"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782100627,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654063909356768888",
+              "update_time": 1782100627,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782100627,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654064200634420856",
+        "create_time": 1782100694,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "动作 / 表情 台词",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "动作表情和台词合在一起\n\n台词用 bulLet point\n动作表情有引用。 参照我写的例子"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782100694,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654064200649592437",
+              "update_time": 1782100694,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782100695,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      },
+      {
+        "comment_id": "7654064354601504373",
+        "create_time": 1782100730,
+        "is_solved": false,
+        "is_whole": false,
+        "quote": "[quote] 音乐起后稳稳上场，步子不要急。脸上带一点庄重感，先看弟弟，再看观众。 【慷慨激昂】欢迎来到霍格沃茨。我是今天负责新生考验的教授。",
+        "reply_list": {
+          "replies": [
+            {
+              "content": {
+                "elements": [
+                  {
+                    "docs_link": null,
+                    "person": null,
+                    "text_run": {
+                      "text": "这是例子，按照这个写，下同。合并动作和台词列"
+                    },
+                    "type": "text_run"
+                  }
+                ]
+              },
+              "create_time": 1782100730,
+              "extra": {
+                "image_list": []
+              },
+              "reply_id": "7654064354618265205",
+              "update_time": 1782100730,
+              "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+            }
+          ]
+        },
+        "solver_user_id": null,
+        "update_time": 1782100731,
+        "user_id": "ou_ed16cd3e236b2c7b6f1c4f18a09919a3"
+      }
+    ],
+    "page_token": "7654064354601504373"
+  },
+  "msg": "Success"
+}

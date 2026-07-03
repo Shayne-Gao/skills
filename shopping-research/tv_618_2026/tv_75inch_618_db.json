@@ -1,0 +1,476 @@
+{
+  "meta": {
+    "topic": "618 75寸电视选购数据库",
+    "generated_at": "2026-06-18",
+    "source_scope": [
+      "什么值得买搜索结果页",
+      "品牌官网/官方电商参数页",
+      "主流参数站与媒体交叉验证"
+    ],
+    "notes": [
+      "价格为抓取时可见的爆料/到手价，实际下单受地区国补、会员券、直播间和以旧换新影响。",
+      "存在部分型号命名口径不一致的问题，以下按公开在售常见型号或系列进行归一化。",
+      "对无法稳定核实的参数使用 null，并在 warnings 中说明。"
+    ]
+  },
+  "fields": [
+    "brand",
+    "model",
+    "series",
+    "normalized_model",
+    "price_618_cny",
+    "price_note",
+    "panel_or_backlight",
+    "local_dimming_zones",
+    "peak_brightness_nits",
+    "native_refresh_hz",
+    "high_refresh_mode_hz",
+    "color_gamut",
+    "memory_ram_gb",
+    "storage_gb",
+    "hdmi_21_ports",
+    "audio",
+    "anti_reflection",
+    "energy_efficiency",
+    "positioning",
+    "pros",
+    "cons",
+    "recommended_for",
+    "confidence",
+    "warnings",
+    "sources"
+  ],
+  "items": [
+    {
+      "brand": "酷开",
+      "model": "75P5H",
+      "series": "K6 2026",
+      "normalized_model": "75P5H",
+      "price_618_cny": 2024.23,
+      "price_note": "什么值得买爆料价，含返利口径；更保守的到手价口径约 2294 元",
+      "panel_or_backlight": "常规液晶，主打柔光/低反",
+      "local_dimming_zones": null,
+      "peak_brightness_nits": null,
+      "native_refresh_hz": 144,
+      "high_refresh_mode_hz": 180,
+      "color_gamut": null,
+      "memory_ram_gb": null,
+      "storage_gb": 64,
+      "hdmi_21_ports": 1,
+      "audio": null,
+      "anti_reflection": "有，主打护眼低反",
+      "energy_efficiency": null,
+      "positioning": "超低预算大屏",
+      "pros": [
+        "价格极低，适合先解决尺寸需求",
+        "有一定高刷和低反卖点",
+        "适合白天追剧、给长辈或出租房"
+      ],
+      "cons": [
+        "不是 Mini LED，画面对比度和控光上限有限",
+        "参数公开口径不够统一",
+        "更适合日常看剧，不适合对画质要求高的用户"
+      ],
+      "recommended_for": "预算极紧，只想低价买 75 寸",
+      "confidence": "中",
+      "warnings": [
+        "刷新率和运行内存公开口径存在差异，下单前需二次核对商品详情页"
+      ],
+      "sources": [
+        "https://search.smzdm.com/?c=home&s=75+%E5%AF%B8+%E7%94%B5%E8%A7%86&v=b",
+        "https://club.jd.com/repay/10215319094690_T6NbOMZzgJktdRKEWK-fwXaF_1.html",
+        "https://www.bilibili.com/video/BV1zVLk6tEPP/"
+      ]
+    },
+    {
+      "brand": "雷鸟",
+      "model": "鹏7系 75寸",
+      "series": "鹏7 26款",
+      "normalized_model": "75S78A",
+      "price_618_cny": 2089.3,
+      "price_note": "拼多多万人团+国补爆料价",
+      "panel_or_backlight": "高阶 VA，非 Mini LED",
+      "local_dimming_zones": null,
+      "peak_brightness_nits": null,
+      "native_refresh_hz": 144,
+      "high_refresh_mode_hz": 288,
+      "color_gamut": "94% DCI-P3",
+      "memory_ram_gb": 3,
+      "storage_gb": 64,
+      "hdmi_21_ports": 4,
+      "audio": null,
+      "anti_reflection": null,
+      "energy_efficiency": "一级",
+      "positioning": "高刷游戏甜点机",
+      "pros": [
+        "2K 出头能买到 288Hz 模式和 4 路 HDMI 2.1，接口很强",
+        "更适合接主机、Switch、轻度 PC 游戏",
+        "相比纯入门机型，系统和内存配置更完整"
+      ],
+      "cons": [
+        "不是 Mini LED，暗场控光和 HDR 冲击力一般",
+        "白天强光客厅表现不如更高端低反机型"
+      ],
+      "recommended_for": "预算 2000-2500，优先游戏和高刷",
+      "confidence": "中高",
+      "warnings": [
+        "页面爆料未直接给出标准型号，按鹏7 75寸主流公开型号 75S78A 归一化"
+      ],
+      "sources": [
+        "https://search.smzdm.com/?c=home&s=75+%E5%AF%B8+%E7%94%B5%E8%A7%86&v=b",
+        "https://detail.zol.com.cn/2145/2144990/param.shtml"
+      ]
+    },
+    {
+      "brand": "雷鸟",
+      "model": "75F295C",
+      "series": "鹏6 SE 26款",
+      "normalized_model": "75F295C",
+      "price_618_cny": 2328.98,
+      "price_note": "京东国补爆料价",
+      "panel_or_backlight": "常规液晶",
+      "local_dimming_zones": null,
+      "peak_brightness_nits": null,
+      "native_refresh_hz": 144,
+      "high_refresh_mode_hz": null,
+      "color_gamut": null,
+      "memory_ram_gb": 2,
+      "storage_gb": 32,
+      "hdmi_21_ports": null,
+      "audio": null,
+      "anti_reflection": null,
+      "energy_efficiency": null,
+      "positioning": "入门高刷大屏",
+      "pros": [
+        "价格低，品牌和售后相对稳定",
+        "基础 144Hz 对日常看球和轻度游戏够用"
+      ],
+      "cons": [
+        "2+32G 偏小，长期使用余量一般",
+        "画质和亮度上限明显低于 Mini LED 档"
+      ],
+      "recommended_for": "想买稳妥品牌入门款，不追求进阶画质",
+      "confidence": "中",
+      "warnings": [],
+      "sources": [
+        "https://search.smzdm.com/?c=home&s=75+%E5%AF%B8+%E7%94%B5%E8%A7%86&v=b",
+        "https://www.jd.com/hprm/73713eb3cff3fba1ae9.html"
+      ]
+    },
+    {
+      "brand": "雷鸟",
+      "model": "75S68A",
+      "series": "鹏6 26款",
+      "normalized_model": "75S68A",
+      "price_618_cny": 2295.0,
+      "price_note": "天猫 88VIP 券后 + 国补爆料价；另一路京东爆料约 2487.98 元",
+      "panel_or_backlight": "高阶 VA，非 Mini LED",
+      "local_dimming_zones": null,
+      "peak_brightness_nits": null,
+      "native_refresh_hz": 144,
+      "high_refresh_mode_hz": null,
+      "color_gamut": "94% DCI-P3",
+      "memory_ram_gb": 3,
+      "storage_gb": 64,
+      "hdmi_21_ports": null,
+      "audio": "2.1 声道安桥（系列公开口径）",
+      "anti_reflection": null,
+      "energy_efficiency": null,
+      "positioning": "2.5K 档均衡型",
+      "pros": [
+        "比入门款更均衡，3+64G 更耐用",
+        "144Hz + 高色域，适合追剧、看球、轻度游戏"
+      ],
+      "cons": [
+        "不是 Mini LED，HDR 表现有限",
+        "如果和 2K 出头的鹏7价格接近，接口优势反而不如鹏7"
+      ],
+      "recommended_for": "更重视日常均衡体验，不极端追求 Mini LED",
+      "confidence": "中高",
+      "warnings": [],
+      "sources": [
+        "https://search.smzdm.com/?c=home&s=75+%E5%AF%B8+%E7%94%B5%E8%A7%86&v=b",
+        "https://detail.zol.com.cn/2145/2144956/param.shtml"
+      ]
+    },
+    {
+      "brand": "酷开",
+      "model": "75P5F",
+      "series": "K6 Mini",
+      "normalized_model": "75P5F",
+      "price_618_cny": 2368.57,
+      "price_note": "天猫消费券 + 国补爆料价",
+      "panel_or_backlight": "Mini LED",
+      "local_dimming_zones": 100,
+      "peak_brightness_nits": null,
+      "native_refresh_hz": 144,
+      "high_refresh_mode_hz": null,
+      "color_gamut": "102%",
+      "memory_ram_gb": 2,
+      "storage_gb": 64,
+      "hdmi_21_ports": 2,
+      "audio": null,
+      "anti_reflection": null,
+      "energy_efficiency": null,
+      "positioning": "入门 Mini LED",
+      "pros": [
+        "2K 多就能上 Mini LED，画质明显优于普通液晶",
+        "适合预算有限但不想完全放弃控光"
+      ],
+      "cons": [
+        "百级分区属于入门级 Mini LED",
+        "2G 运存一般，系统长期流畅度不如更高档机型"
+      ],
+      "recommended_for": "预算 2300-2700，优先画质而不是极致接口配置",
+      "confidence": "中高",
+      "warnings": [],
+      "sources": [
+        "https://search.smzdm.com/?c=home&s=75+%E5%AF%B8+%E7%94%B5%E8%A7%86&v=b",
+        "https://m.suning.com/product/0000000000/12444718484.html"
+      ]
+    },
+    {
+      "brand": "酷开",
+      "model": "75P8F",
+      "series": "K6 Ultra",
+      "normalized_model": "75P8F",
+      "price_618_cny": 2589.49,
+      "price_note": "京东组合优惠 + 国补爆料价",
+      "panel_or_backlight": "Mini LED",
+      "local_dimming_zones": 2304,
+      "peak_brightness_nits": 4000,
+      "native_refresh_hz": 144,
+      "high_refresh_mode_hz": 288,
+      "color_gamut": null,
+      "memory_ram_gb": 4,
+      "storage_gb": 64,
+      "hdmi_21_ports": 3,
+      "audio": null,
+      "anti_reflection": null,
+      "energy_efficiency": "一级",
+      "positioning": "越级性价比 Mini LED",
+      "pros": [
+        "分区和接口规格非常激进，性价比突出",
+        "4+64G 够用，兼顾日常与主机",
+        "如果价格稳定在 2.6K 左右，几乎是价格带最强画质卡位"
+      ],
+      "cons": [
+        "品牌高端算法口碑不如 TCL/小米顶配线稳",
+        "亮度与分区多来自参数页和媒体口径，下单前最好再次核实"
+      ],
+      "recommended_for": "预算 2500-3000，想以最低成本上高规格 Mini LED",
+      "confidence": "中高",
+      "warnings": [
+        "高刷模式和峰值亮度口径存在不同页面差异"
+      ],
+      "sources": [
+        "https://search.smzdm.com/?c=home&s=75+%E5%AF%B8+%E7%94%B5%E8%A7%86&v=b",
+        "https://www.suning.com/itemcanshu/0000000000/000000012439402113.html",
+        "https://wap.zol.com.cn/2118/2117096/param.html"
+      ]
+    },
+    {
+      "brand": "雷鸟",
+      "model": "75R69A",
+      "series": "鹤6 26款",
+      "normalized_model": "75R69A-A",
+      "price_618_cny": 2947.66,
+      "price_note": "京东券后爆料低价；同页另一路约 3035.75 / 3090.26 元",
+      "panel_or_backlight": "QD-Mini LED + 高阶 HVA",
+      "local_dimming_zones": 312,
+      "peak_brightness_nits": 1300,
+      "native_refresh_hz": 144,
+      "high_refresh_mode_hz": 288,
+      "color_gamut": null,
+      "memory_ram_gb": 3,
+      "storage_gb": 64,
+      "hdmi_21_ports": null,
+      "audio": "2.1 声道安桥",
+      "anti_reflection": null,
+      "energy_efficiency": "一级",
+      "positioning": "3K 档高性价比 Mini LED",
+      "pros": [
+        "价格、品牌、Mini LED 规格平衡得很好",
+        "对大多数家庭来说，这档已经明显进入值得买区间",
+        "兼顾观影、看球、游戏"
+      ],
+      "cons": [
+        "分区和亮度不算旗舰级",
+        "如果客厅采光很强，更高端低反机型会更舒服"
+      ],
+      "recommended_for": "大多数家庭的默认推荐款",
+      "confidence": "高",
+      "warnings": [],
+      "sources": [
+        "https://search.smzdm.com/?c=home&s=75+%E5%AF%B8+%E7%94%B5%E8%A7%86&v=b",
+        "https://detail.zol.com.cn/2145/2144986/param.shtml"
+      ]
+    },
+    {
+      "brand": "小米",
+      "model": "S Pro 2025 75",
+      "series": "S Pro 2025",
+      "normalized_model": "L75MB-SP",
+      "price_618_cny": 3459.29,
+      "price_note": "京东国补 + 券后爆料价",
+      "panel_or_backlight": "Mini LED",
+      "local_dimming_zones": 2304,
+      "peak_brightness_nits": 3200,
+      "native_refresh_hz": 144,
+      "high_refresh_mode_hz": 288,
+      "color_gamut": null,
+      "memory_ram_gb": 4,
+      "storage_gb": 64,
+      "hdmi_21_ports": 3,
+      "audio": null,
+      "anti_reflection": null,
+      "energy_efficiency": null,
+      "positioning": "中高端性价比 Mini LED",
+      "pros": [
+        "官方参数透明，2304 分区 + 3200nits 很能打",
+        "4+64G 和 A73 平台够主流",
+        "预算加一点，画质会明显强于 3K 档中端机"
+      ],
+      "cons": [
+        "系统生态更偏小米全家桶用户",
+        "强光客厅抗反射卖点不如部分 Ultra/Pro 低反机型突出"
+      ],
+      "recommended_for": "预算 3300-3800，想买规格清晰、闭眼程度高的 Mini LED",
+      "confidence": "高",
+      "warnings": [],
+      "sources": [
+        "https://search.smzdm.com/?c=home&s=75+%E5%AF%B8+%E7%94%B5%E8%A7%86&v=b",
+        "https://www.mi.com/xiaomi-tvs/s-pro-75-miniled/specs"
+      ]
+    },
+    {
+      "brand": "雷鸟",
+      "model": "75R69A Ultra",
+      "series": "鹤6 Ultra 26/25款口径混用",
+      "normalized_model": "75R69A Ultra / 75S595C Ultra-A",
+      "price_618_cny": 3610.8,
+      "price_note": "拼多多国补 + 会员券爆料价；同页另一条约 4159.99 元",
+      "panel_or_backlight": "QD-Mini LED",
+      "local_dimming_zones": 760,
+      "peak_brightness_nits": 2000,
+      "native_refresh_hz": 144,
+      "high_refresh_mode_hz": 288,
+      "color_gamut": null,
+      "memory_ram_gb": 4,
+      "storage_gb": 64,
+      "hdmi_21_ports": null,
+      "audio": null,
+      "anti_reflection": "0.5% LR 低反",
+      "energy_efficiency": null,
+      "positioning": "进阶 Mini LED",
+      "pros": [
+        "比普通鹤6更强的低反、亮度和控光",
+        "适合白天客厅和对画面通透感更敏感的用户"
+      ],
+      "cons": [
+        "公开型号命名略乱，需确认最终 SKU",
+        "价格进入 3.6K-4.1K 后，会与小米 S Pro、高阶雷鸟形成竞争"
+      ],
+      "recommended_for": "强光客厅、想提升观感通透度的人群",
+      "confidence": "中",
+      "warnings": [
+        "分区和亮度存在 704/760、2000+/2400 等不同口径，下单前需看官方详情页"
+      ],
+      "sources": [
+        "https://search.smzdm.com/?c=home&s=75+%E5%AF%B8+%E7%94%B5%E8%A7%86&v=b",
+        "https://m.suning.com/product/0000000000/000000012443668293.html",
+        "http://tv.zol.com.cn/1184/11845890.html"
+      ]
+    },
+    {
+      "brand": "雷鸟",
+      "model": "75R79A Pro",
+      "series": "鹤7 Pro",
+      "normalized_model": "75R79A Pro / 75R795C",
+      "price_618_cny": 5329.72,
+      "price_note": "京东旗舰店直播间 + 国补爆料价",
+      "panel_or_backlight": "QD-Mini LED",
+      "local_dimming_zones": 2176,
+      "peak_brightness_nits": 4200,
+      "native_refresh_hz": 144,
+      "high_refresh_mode_hz": 288,
+      "color_gamut": null,
+      "memory_ram_gb": 4,
+      "storage_gb": 64,
+      "hdmi_21_ports": null,
+      "audio": null,
+      "anti_reflection": "0.5% LR 低反",
+      "energy_efficiency": null,
+      "positioning": "高端画质型",
+      "pros": [
+        "高分区高亮度，明显偏高端",
+        "低反能力更适合明亮客厅",
+        "适合既看电影又玩主机的重度用户"
+      ],
+      "cons": [
+        "性价比不如 3K-4K 档甜点机型直观",
+        "部分参数来自同系公开机型映射，需核对最终 SKU"
+      ],
+      "recommended_for": "预算充足，想直接上高端画质",
+      "confidence": "中",
+      "warnings": [
+        "75R79A Pro 公开完整参数不如 75R795C 稳定，存在命名映射"
+      ],
+      "sources": [
+        "https://search.smzdm.com/?c=home&s=75+%E5%AF%B8+%E7%94%B5%E8%A7%86&v=b",
+        "https://www.suning.com/item/0000000000/000000012443668288.html",
+        "https://c.m.163.com/news/a/JSPDAACP05118EDB.html?from=subscribe"
+      ]
+    },
+    {
+      "brand": "TCL",
+      "model": "75Q9M Pro",
+      "series": "Q9M Pro",
+      "normalized_model": "75Q9M Pro",
+      "price_618_cny": 5687.12,
+      "price_note": "京东券后 + 国补爆料价；同页另一路约 5934.98 元",
+      "panel_or_backlight": "SQD-Mini LED",
+      "local_dimming_zones": 2160,
+      "peak_brightness_nits": 5000,
+      "native_refresh_hz": 150,
+      "high_refresh_mode_hz": 300,
+      "color_gamut": "100% BT.2020",
+      "memory_ram_gb": 4,
+      "storage_gb": 128,
+      "hdmi_21_ports": 4,
+      "audio": "安桥 2.1.2",
+      "anti_reflection": null,
+      "energy_efficiency": null,
+      "positioning": "轻旗舰/客厅影院",
+      "pros": [
+        "画质、音响、接口、存储都给得足",
+        "预算足够时，这是一台少妥协的全能型客厅主机"
+      ],
+      "cons": [
+        "价格明显高于主流性价比段",
+        "75 英寸分区数不同来源有冲突，需以实际详情页为准"
+      ],
+      "recommended_for": "预算 5500+，想一步到位",
+      "confidence": "中高",
+      "warnings": [
+        "3552 分区更像全系列最大尺寸口径，75 寸建议按约 2160 分区保守看待"
+      ],
+      "sources": [
+        "https://search.smzdm.com/?c=home&s=75+%E5%AF%B8+%E7%94%B5%E8%A7%86&v=b",
+        "https://www.notebookcheck.net/New-TCL-Q9M-Pro-SQD-Mini-LED-TV-with-up-to-300Hz-arrives.1252450.0.html",
+        "https://post.m.smzdm.com/p/a2634g72/"
+      ]
+    }
+  ],
+  "recommendation_rules": {
+    "best_overall_value": "雷鸟 75R69A",
+    "best_budget_option": "雷鸟 鹏7系 75寸",
+    "best_entry_mini_led": "酷开 75P8F",
+    "best_mid_high_end": "小米 S Pro 2025 75",
+    "best_no_compromise": "TCL 75Q9M Pro",
+    "not_recommended_without_special_reason": [
+      "75P5H",
+      "75F295C"
+    ]
+  }
+}

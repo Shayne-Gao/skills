@@ -59,6 +59,7 @@ Use this skill when the user wants to:
 - 抓到多少条候选
 - 归一后有哪些主力型号
 - 每个主力型号的关键参数和口碑摘要
+- 一张本轮主力型号参数对比表
 - 不同预算/场景下的推荐结论
 - 明确回答：
   - `最推荐买哪个型号`
@@ -66,11 +67,15 @@ Use this skill when the user wants to:
   - `当前有哪些型号性价比不错`
   - `现在是否建议下单，还是继续等`
 
+参数对比表不是可选项。  
+只要本轮抓了新数据，就必须输出对比表；不能只给纯文字结论。
+
 ## Persistence Rule
 
 每个品类都应在 `shopping-research/<category_slug>/` 下持续沉淀，至少保留：
 - `*_latest_capture.json`
 - `*_model_specs_registry.json`
+- `*_compare_table.md` 或 `*_compare_table.html`
 - `*_buying_advice.md` 或 `*.html`
 
 如已存在历史文件：
@@ -165,9 +170,20 @@ Use this skill when the user wants to:
 - 当前价相对近期最低价的差额
 - 如果 exact 数据不足，再退化为系列组口径，并明确标注置信度下降
 
+同时必须产出一张可读的型号对比表，至少包含：
+- 型号
+- 当前价
+- 近期最低价
+- 价格位置判断
+- 关键参数
+- 口碑摘要
+- 推荐级别
+- 现在是否建议下单
+
 ### 7. Persist artifacts
 
 把本轮结果落盘，方便后续只刷新价格或补充新型号。
+其中对比表也必须落盘，不能只在对话里临时展示。
 
 ## Example Triggers
 

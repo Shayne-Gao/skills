@@ -1,0 +1,936 @@
+{
+  "api": "mwp.kjs_product.product.detail",
+  "v": "1.0",
+  "ret": "SUCCESS",
+  "data": {
+    "status": 0,
+    "success": true,
+    "message": "成功",
+    "data": {
+      "statusDesc": "已上架",
+      "isBargaining": 0,
+      "highlight": "",
+      "collectedCount": "0",
+      "descUnderTitle": "该账号信息为商品上架时获取，实际请以最终验号结果为准。",
+      "isFreeEnsure": 0,
+      "transferChannel": 0,
+      "isIndemnity": 1,
+      "price": "157",
+      "isBargain": 0,
+      "isEnableBargain": 1,
+      "isShowKf": 1,
+      "polishTimeDesc": "3天内上架",
+      "failReason": "",
+      "general": {
+        "buyerGuide": "买前必看！！！\r\n1、账号截图及描述中的战力、称号、排名、等级及段位、货币资源等信息可能因日常操作发生变化，不作为实时依据。如有疑问，请在下单前联系客服确认。订单生成后，将无法因上述信息变动申请无责取消。\r\n2、因平台交易规则升级调整，发送账密前双方均可以无责取消，发送账密后即为确定交易，不再接受单方面无责取消，如因个人原因取消交易，需支付相应违约金，具体内容以交易内客服规则为准，如有问题可咨询专属客服。\r\n验号必看！！！\r\n1、买家验号时需注意账号情况是否与描述一致或封号、冻结、禁言等其他情况，买家验号回复无误后不得以上述理由为由取消订单。\r\n2、交易期间请勿私自修改账号资料和打开新设备验证，以免造成锁定、冻结、无法登录等异常情况，否则造成的损失须由您个人承担。\r\n3、买家验号期间禁止动用账号内任何物品和进行游玩，动用物品或进行游玩默认账号无误，账号描述不一致需卖家确认账号无误后方可取消。如上号验证账号期间出现毁号、行骗等一切不利于账号的行为，需卖方同意后方可退款。若出现纠纷，按买卖双方协商一致结果处理。\r\n4、买家在验号时，请仔细核对账号内的武器、角色、时装及其他物品信息。若物品带有钟表图标，则表示该物品为体验卡道具，属于限时体验物品。验号完成后，体验卡道具失效导致物品缺少，此情况不属于账号描述不一致，因此不支持以此为由取消订单或进行退款，请务必确认无误后再完成交易。\r\n5、因游戏运营商问题，部分账号会出现挂绑时间完毕后无法换绑或实名修改机会异常等其他问题，特此规定：在挂绑等待期间内买家不能有上号游玩、排位或恶意开挂等一切不利于账号后续交易的行为，如因买家行为导致的冻结、封号和无法正常换绑所产生的纠纷，需卖方同意后方可退款。\r\n更多交易中需注意事项可前往帮助中心-买家相关查看~\r\n售后必看！！！\r\n因虚拟物品交易特殊性，交易完成的订单不支持退换。换绑完成视为交易结束，无法取消，若买卖任意一方想取消交易，需双方私下协商，与平台无关。\r\n当在氪金兽购买的账号出现账号密码错误，并且绑定的手机不是自己的，这个时候及时联系平台售后客服进行处理，一定要在发生找回30天内联系平台客服。（实锤包赔订单申报时间可放宽至最多90天，以售后判定为准）\r\n其他售后相关内容可前往帮助中心-售后问题查看~"
+      },
+      "groups": [
+        {
+          "h5Link": "https://qm.qq.com/cgi-bin/qm/qr?k=dKl0WRxJ6USP2ump8lxez9PRar6GnMxW&jump_from=webapi&authKey=UnOv3kgu0dOOCe8uEb7aw7fLeqpF3a5Is7ej8i1MOicShVWX36woNpegchz1jiDF",
+          "title": "氪金兽の鸣潮交流群2",
+          "type": "qq",
+          "uid": "619725684",
+          "key": "9j1Kb6uMKFwomQD42ShRa_PgfznRrIJx"
+        }
+      ],
+      "serverName": "",
+      "gameChannel": "kuro",
+      "accountId": 8297867,
+      "gameImage": "https://file.kejinxia.com/default/202502/19/18/2400YQX7wnK7.png",
+      "isTransfer": 0,
+      "sellerIsOnline": 0,
+      "upperAt": "2026-06-03",
+      "source": 1,
+      "areaName": "官服",
+      "status": 8,
+      "isSincere": 1,
+      "intentionPrice": "0",
+      "tagsNote": {
+        "indemnityNote": "包赔服务是在购买账号时额外购买的一项服务。购买包赔服务后，当账号出现找回或因卖家原因导致的主动冻结/永久封禁/加入家庭模式等情况时平台会进行处理，核实无误后如7日内没有追回账号，会在第8天先行赔付，赔付金额为号款加包赔费。\r\n单倍包赔服务的收费标准为：收取号款的10%，最低收取10元。\r\n双倍包赔服务的收费标准为：收取号款的20%，最低收取20元。",
+        "liabilityNote": "该商品不支持包赔，无法购买包赔服务，未来出现找回纠纷时，氪金兽平台不会进行垫付赔偿，强烈建议您购买支持包赔的账号!",
+        "preferredNote": "优选账号权益是由氪金兽平台为回馈购买了高级鉴定服务的用户的一项免费附加权益，不单独售卖。优选账号均为当前市场价格相对持平或者较低的账号，商品详情内包含氪金兽专业鉴定师对账号的详细评估以帮助您更好的了解账号详细情况。",
+        "sincereNote": "卖家购买了放心购增值服务后商品会拥有“放心购”标签，如因卖家个人原因导致账号无法出售，买家可获得平台补贴5元。",
+        "transferNote": "账号转移是将卖家游戏账号下该款游戏的所有角色和道具转移到您提供的渠道服账号中，付款后直接交易，无需等待卖家配合换绑；且账号不会被找回，交易更安全。\r\n注意：小米渠道新上架账号有12小时公示期，您可以先收藏账号，待标识的公示期结束后再行购买；其他渠道服上架暂无公示期，上架成功即可被购买。",
+        "installmentNote": "平台目前支持支付宝和微信支付，可以使用支付宝的花呗分期服务或者支付宝、微信绑定的信用卡分期付款，分期玩无压力！"
+      },
+      "propertyDetail": {
+        "propertiesInfo": {
+          "title": "账号信息",
+          "order": 1,
+          "fps": [
+            {
+              "total": 47,
+              "hasNum": 15,
+              "imageType": "SMALL",
+              "countType": "ALL",
+              "sps": [
+                {
+                  "pvs": [
+                    {
+                      "id": 5315,
+                      "title": "五星",
+                      "total": 35,
+                      "hasNum": 15
+                    }
+                  ],
+                  "id": 88,
+                  "title": "星级"
+                },
+                {
+                  "pvs": [
+                    {
+                      "hasNum": 1,
+                      "id": 5293,
+                      "title": "2鸣",
+                      "total": 47
+                    },
+                    {
+                      "total": 47,
+                      "hasNum": 4,
+                      "id": 5292,
+                      "title": "1鸣"
+                    },
+                    {
+                      "id": 5291,
+                      "title": "0鸣",
+                      "total": 47,
+                      "hasNum": 10
+                    }
+                  ],
+                  "id": 84,
+                  "title": "角色共鸣"
+                },
+                {
+                  "id": 86,
+                  "title": "角色类型",
+                  "pvs": [
+                    {
+                      "title": "热熔",
+                      "total": 10,
+                      "hasNum": 4,
+                      "id": 5303
+                    },
+                    {
+                      "id": 5304,
+                      "title": "衍射",
+                      "total": 7,
+                      "hasNum": 3
+                    },
+                    {
+                      "id": 5305,
+                      "title": "气动",
+                      "total": 9,
+                      "hasNum": 1
+                    },
+                    {
+                      "id": 5306,
+                      "title": "导电",
+                      "total": 7,
+                      "hasNum": 2
+                    },
+                    {
+                      "id": 5307,
+                      "title": "湮灭",
+                      "total": 7,
+                      "hasNum": 2
+                    },
+                    {
+                      "id": 5308,
+                      "title": "冷凝",
+                      "total": 7,
+                      "hasNum": 3
+                    }
+                  ]
+                },
+                {
+                  "id": 83,
+                  "title": "武器",
+                  "pvs": [
+                    {
+                      "total": 1,
+                      "hasNum": 1,
+                      "id": 54996,
+                      "title": "驭冕铸雷之权"
+                    },
+                    {
+                      "total": 1,
+                      "hasNum": 1,
+                      "id": 16849,
+                      "title": "死与舞"
+                    },
+                    {
+                      "id": 14881,
+                      "title": "裁春",
+                      "total": 1,
+                      "hasNum": 1
+                    },
+                    {
+                      "total": 1,
+                      "hasNum": 1,
+                      "id": 8092,
+                      "title": "诸方玄枢"
+                    },
+                    {
+                      "hasNum": 1,
+                      "id": 5283,
+                      "title": "时和岁稔",
+                      "total": 1
+                    },
+                    {
+                      "hasNum": 1,
+                      "id": 5290,
+                      "title": "漪澜浮录",
+                      "total": 1
+                    }
+                  ]
+                }
+              ],
+              "ups": [
+                {
+                  "id": 5274,
+                  "title": "维里奈",
+                  "imageUrl": "https://file.kejinxia.com/default/202405/27/17/2313CflM87PZ.png",
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/141749795508319128224.png",
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 86,
+                      "pvId": 5304
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5293
+                    }
+                  ]
+                },
+                {
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/14174979551411328586.png",
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 83,
+                      "pvId": 5283
+                    },
+                    {
+                      "spId": 86,
+                      "pvId": 5304
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5292
+                    }
+                  ],
+                  "id": 5280,
+                  "title": "今汐",
+                  "imageUrl": "https://file.kejinxia.com/default/202406/28/15/2123aJixYPq6.png"
+                },
+                {
+                  "id": 5277,
+                  "title": "鉴心",
+                  "imageUrl": "https://file.kejinxia.com/default/202405/27/17/2253CcSHJQCw.png",
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/14174979551411328586.png",
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 86,
+                      "pvId": 5305
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5292
+                    }
+                  ]
+                },
+                {
+                  "id": 5275,
+                  "title": "安可",
+                  "imageUrl": "https://file.kejinxia.com/default/202405/27/17/2306So7vBP6m.png",
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/14174979551411328586.png",
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 83,
+                      "pvId": 5290
+                    },
+                    {
+                      "spId": 86,
+                      "pvId": 5303
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5292
+                    }
+                  ]
+                },
+                {
+                  "id": 5273,
+                  "title": "凌阳",
+                  "imageUrl": "https://file.kejinxia.com/default/202405/27/17/2320DJ0EZgO8.png",
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/14174979551411328586.png",
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 86,
+                      "pvId": 5308
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5292
+                    }
+                  ]
+                },
+                {
+                  "imageUrl": "https://file.kejinxia.com/facade/2026/2/4/ade1a182024140278c08b73c0b2680329357.png",
+                  "position": "LP",
+                  "cornerMarker": "",
+                  "relations": [
+                    {
+                      "spId": 86,
+                      "pvId": 5303
+                    },
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5291
+                    }
+                  ],
+                  "id": 69453,
+                  "title": "爱弥斯"
+                },
+                {
+                  "cornerMarker": "",
+                  "relations": [
+                    {
+                      "spId": 86,
+                      "pvId": 5303
+                    },
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5291
+                    }
+                  ],
+                  "id": 60907,
+                  "title": "嘉贝莉娜",
+                  "imageUrl": "https://file.kejinxia.com/uploads/202510/9/131759988507292921296.png",
+                  "position": "LP"
+                },
+                {
+                  "id": 54995,
+                  "title": "奥古斯塔",
+                  "imageUrl": "https://file.kejinxia.com/uploads/20258/27/101756261836824104152.png",
+                  "position": "LP",
+                  "cornerMarker": "",
+                  "relations": [
+                    {
+                      "spId": 83,
+                      "pvId": 54996
+                    },
+                    {
+                      "spId": 86,
+                      "pvId": 5306
+                    },
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5291
+                    }
+                  ]
+                },
+                {
+                  "position": "LP",
+                  "cornerMarker": "",
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 86,
+                      "pvId": 5304
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5291
+                    }
+                  ],
+                  "id": 17609,
+                  "title": "菲比",
+                  "imageUrl": "https://file.kejinxia.com/uploads/20252/28/13174072219652497923.png"
+                },
+                {
+                  "position": "LP",
+                  "cornerMarker": "",
+                  "relations": [
+                    {
+                      "pvId": 5315,
+                      "spId": 88
+                    },
+                    {
+                      "spId": 86,
+                      "pvId": 5307
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5291
+                    }
+                  ],
+                  "id": 16820,
+                  "title": "洛可可",
+                  "imageUrl": "https://file.kejinxia.com/default/202412/26/17/4940nRMyNUKB.png"
+                },
+                {
+                  "imageUrl": "https://file.kejinxia.com/default/202412/26/17/5058IeGt83Qx.png",
+                  "position": "LP",
+                  "cornerMarker": "",
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "pvId": 16849,
+                      "spId": 83
+                    },
+                    {
+                      "spId": 86,
+                      "pvId": 5308
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5291
+                    }
+                  ],
+                  "id": 16819,
+                  "title": "珂莱塔"
+                },
+                {
+                  "id": 14879,
+                  "title": "椿",
+                  "imageUrl": "https://file.kejinxia.com/default/202411/14/11/4459BpGwtlxj.png",
+                  "position": "LP",
+                  "cornerMarker": "",
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 83,
+                      "pvId": 14881
+                    },
+                    {
+                      "spId": 86,
+                      "pvId": 5307
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5291
+                    }
+                  ]
+                },
+                {
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 83,
+                      "pvId": 8092
+                    },
+                    {
+                      "spId": 86,
+                      "pvId": 5306
+                    },
+                    {
+                      "pvId": 5291,
+                      "spId": 84
+                    }
+                  ],
+                  "id": 8091,
+                  "title": "相里要",
+                  "imageUrl": "https://file.kejinxia.com/uploads/20249/6/171725615711938988816.png",
+                  "position": "LP",
+                  "cornerMarker": ""
+                },
+                {
+                  "id": 5769,
+                  "title": "折枝",
+                  "imageUrl": "https://file.kejinxia.com/default/202408/12/10/0858EJDugmXb.png",
+                  "position": "LP",
+                  "cornerMarker": "",
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "pvId": 5308,
+                      "spId": 86
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5291
+                    }
+                  ]
+                },
+                {
+                  "id": 5281,
+                  "title": "长离",
+                  "imageUrl": "https://file.kejinxia.com/default/202407/22/09/3012LuS13U8i.png",
+                  "position": "LP",
+                  "cornerMarker": "",
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 86,
+                      "pvId": 5303
+                    },
+                    {
+                      "spId": 84,
+                      "pvId": 5291
+                    }
+                  ]
+                }
+              ],
+              "id": 82,
+              "title": "共鸣者"
+            },
+            {
+              "title": "武器",
+              "total": 41,
+              "hasNum": 9,
+              "imageType": "SMALL",
+              "countType": "HAS",
+              "sps": [
+                {
+                  "id": 88,
+                  "title": "星级",
+                  "pvs": [
+                    {
+                      "hasNum": 9,
+                      "id": 5315,
+                      "title": "五星",
+                      "total": 41
+                    }
+                  ]
+                },
+                {
+                  "id": 85,
+                  "title": "武器共鸣",
+                  "pvs": [
+                    {
+                      "total": 41,
+                      "hasNum": 1,
+                      "id": 5299,
+                      "title": "2鸣"
+                    },
+                    {
+                      "title": "1鸣",
+                      "total": 41,
+                      "hasNum": 8,
+                      "id": 5298
+                    }
+                  ]
+                },
+                {
+                  "title": "武器类型",
+                  "pvs": [
+                    {
+                      "id": 5312,
+                      "title": "臂铠",
+                      "total": 8,
+                      "hasNum": 1
+                    },
+                    {
+                      "total": 9,
+                      "hasNum": 1,
+                      "id": 5313,
+                      "title": "音感仪"
+                    },
+                    {
+                      "id": 5309,
+                      "title": "长刃",
+                      "total": 8,
+                      "hasNum": 3
+                    },
+                    {
+                      "id": 5310,
+                      "title": "迅刀",
+                      "total": 10,
+                      "hasNum": 3
+                    },
+                    {
+                      "id": 5311,
+                      "title": "佩枪",
+                      "total": 6,
+                      "hasNum": 1
+                    }
+                  ],
+                  "id": 87
+                }
+              ],
+              "ups": [
+                {
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/141749795633175767468.png",
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 87,
+                      "pvId": 5310
+                    },
+                    {
+                      "spId": 85,
+                      "pvId": 5299
+                    }
+                  ],
+                  "id": 5287,
+                  "title": "千古洑流",
+                  "imageUrl": "https://file.kejinxia.com/default/202405/29/10/4231A4yEpwd5.png"
+                },
+                {
+                  "relations": [
+                    {
+                      "spId": 87,
+                      "pvId": 5309
+                    },
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 85,
+                      "pvId": 5298
+                    }
+                  ],
+                  "id": 54996,
+                  "title": "驭冕铸雷之权",
+                  "imageUrl": "https://file.kejinxia.com/uploads/20258/27/101756262228455446342.png",
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/141749795637449846840.png"
+                },
+                {
+                  "imageUrl": "https://file.kejinxia.com/default/202412/30/14/3641AkFQ0g9O.png",
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/141749795637449846840.png",
+                  "relations": [
+                    {
+                      "spId": 87,
+                      "pvId": 5311
+                    },
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 85,
+                      "pvId": 5298
+                    }
+                  ],
+                  "id": 16849,
+                  "title": "死与舞"
+                },
+                {
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/141749795637449846840.png",
+                  "relations": [
+                    {
+                      "spId": 87,
+                      "pvId": 5310
+                    },
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 85,
+                      "pvId": 5298
+                    }
+                  ],
+                  "id": 14881,
+                  "title": "裁春",
+                  "imageUrl": "https://file.kejinxia.com/default/202411/14/11/4937G0UwpvbZ.png"
+                },
+                {
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/141749795637449846840.png",
+                  "relations": [
+                    {
+                      "spId": 87,
+                      "pvId": 5312
+                    },
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 85,
+                      "pvId": 5298
+                    }
+                  ],
+                  "id": 8092,
+                  "title": "诸方玄枢",
+                  "imageUrl": "https://file.kejinxia.com/uploads/20249/6/171725615831570188089.png"
+                },
+                {
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/141749795637449846840.png",
+                  "relations": [
+                    {
+                      "spId": 87,
+                      "pvId": 5309
+                    },
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 85,
+                      "pvId": 5298
+                    }
+                  ],
+                  "id": 5283,
+                  "title": "时和岁稔",
+                  "imageUrl": "https://file.kejinxia.com/default/202406/28/14/2421eiQOYRyV.png"
+                },
+                {
+                  "imageUrl": "https://file.kejinxia.com/default/202503/27/13/5537oV4r4Hrc.png",
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/141749795637449846840.png",
+                  "relations": [
+                    {
+                      "spId": 87,
+                      "pvId": 5310
+                    },
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 85,
+                      "pvId": 5298
+                    }
+                  ],
+                  "id": 18039,
+                  "title": "血誓盟约"
+                },
+                {
+                  "id": 5286,
+                  "title": "浩境粼光",
+                  "imageUrl": "https://file.kejinxia.com/default/202405/29/10/4222GbVJCFJS.png",
+                  "position": "LP",
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/141749795637449846840.png",
+                  "relations": [
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "pvId": 5309,
+                      "spId": 87
+                    },
+                    {
+                      "pvId": 5298,
+                      "spId": 85
+                    }
+                  ]
+                },
+                {
+                  "cornerMarker": "https://file.kejinxia.com/uploads/20256/13/141749795637449846840.png",
+                  "relations": [
+                    {
+                      "spId": 87,
+                      "pvId": 5313
+                    },
+                    {
+                      "spId": 88,
+                      "pvId": 5315
+                    },
+                    {
+                      "spId": 85,
+                      "pvId": 5298
+                    }
+                  ],
+                  "id": 5290,
+                  "title": "漪澜浮录",
+                  "imageUrl": "https://file.kejinxia.com/default/202405/29/10/4304tw2O5nFr.png",
+                  "position": "LP"
+                }
+              ],
+              "id": 83
+            },
+            {
+              "countType": "ALL",
+              "sps": [
+                {
+                  "id": 82,
+                  "title": "共鸣者",
+                  "pvs": []
+                }
+              ],
+              "ups": [],
+              "id": 184,
+              "title": "角色时装",
+              "total": 6,
+              "hasNum": 0,
+              "imageType": "SMALL"
+            },
+            {
+              "sps": [
+                {
+                  "title": "皮肤类型",
+                  "pvs": [],
+                  "id": 3287
+                }
+              ],
+              "ups": [],
+              "id": 3285,
+              "title": "载具涂装",
+              "total": 3,
+              "hasNum": 0,
+              "imageType": "SMALL",
+              "countType": "ALL"
+            },
+            {
+              "total": 1,
+              "hasNum": 0,
+              "imageType": "SMALL",
+              "countType": "ALL",
+              "sps": [
+                {
+                  "id": 3287,
+                  "title": "皮肤类型",
+                  "pvs": []
+                }
+              ],
+              "ups": [],
+              "id": 3286,
+              "title": "声骸换影皮肤"
+            }
+          ]
+        },
+        "baseInfos": {
+          "星声数量": "130",
+          "唤声涡纹数量": "2",
+          "男/女主": "男",
+          "总黄数": "32",
+          "联觉等级": "75"
+        },
+        "basePropertyPairs": [
+          {
+            "name": "男/女主",
+            "value": "男"
+          },
+          {
+            "name": "总黄数",
+            "value": "32"
+          },
+          {
+            "name": "联觉等级",
+            "value": "75"
+          },
+          {
+            "value": "130",
+            "name": "星声数量"
+          },
+          {
+            "name": "唤声涡纹数量",
+            "value": "2"
+          }
+        ],
+        "safeInfos": {
+          "是否有换绑CD": "无换绑CD"
+        },
+        "safePropertyPairs": [
+          {
+            "name": "是否有换绑CD",
+            "value": "无换绑CD"
+          }
+        ],
+        "gameImage": {
+          "title": "游戏截图",
+          "order": 2,
+          "firstImage": "https://file.kejinshou.com/facade/home_image/73bb7afe9729fef65d7d05ca571d13ce.jpeg",
+          "screenshots": [
+            "https://file.hswlkj.com/ff8081819e253c9d019e267fac2409ba.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a9744f040a.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a97770040b.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a97a20040c.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a97c3e040d.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a97ed9040e.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a981c6040f.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a983990410.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a986370411.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a9882e0412.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a98b5c0413.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a98db70414.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a9904c0415.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a9922e0416.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a993e90417.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a996110418.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a998250419.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a99a8f041a.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a99d58041b.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a9a531041c.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a9a9af041d.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a9af88041e.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a9b210041f.jpg",
+            "https://file.hswlkj.com/ff8081819e253c9d019e25a9b38b0420.jpg"
+          ]
+        }
+      },
+      "serverId": 0,
+      "gameName": "鸣潮",
+      "isPreferred": 0,
+      "isSelectWithCare": 1,
+      "id": 35818411,
+      "gameId": 7265,
+      "gameUid": "mingchao",
+      "areaId": 7267,
+      "isInstallment": 0,
+      "payPrice": "157",
+      "isCollect": 0,
+      "subTitle": "75级/32黄/男主/15个五星角色/10个五星武器\n未绑定,爱弥斯,奥古斯塔,嘉贝莉娜,菲比,椿,今汐,珂莱塔,长离,洛可可,相里要,折枝,维里奈,鉴心,安可,凌阳,驭冕铸雷之权,血誓盟约,死与舞,裁春,诸方玄枢,时和岁稔,浩境粼光,千古洑流,漪澜浮录,2命维里奈,1命今汐,1命鉴心,1命安可,1命凌阳,0命爱弥斯,0命奥古斯塔,0命嘉贝莉娜,0命菲比,0命椿,0命珂莱塔,0命长离,0命洛可可,0命相里要,0命折枝,精2千古洑流,精1驭冕铸雷之权,精1血誓盟约,精1死与舞,精1裁春,精1诸方玄枢,精1时和岁稔,精1浩境粼光,精1漪澜浮录",
+      "gameAlias": "鸣潮,MC,明朝,明潮,鸣chao,鸣cha,鸣c,鸣超,鸣草,鸣朝",
+      "homeImage": "https://file.kejinshou.com/facade/home_image/73bb7afe9729fef65d7d05ca571d13ce.jpeg"
+    }
+  },
+  "needHeaderCookie": false
+}

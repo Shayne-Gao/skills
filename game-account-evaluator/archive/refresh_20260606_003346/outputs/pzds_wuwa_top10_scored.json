@@ -1,0 +1,1948 @@
+{
+  "items": [
+    {
+      "product_id": "MC2Z71",
+      "price": 160,
+      "level": 74,
+      "total_yellow": 42,
+      "pulls_total": 1.73,
+      "role_score_total": 928.5,
+      "weapon_score_total": 364.0,
+      "strength_score": 1294.22,
+      "value_score": 8.089,
+      "url": "https://www.pzds.com/goodsDetails/MC2Z71/6?from=%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8",
+      "roles": [
+        {
+          "name": "绯雪",
+          "resonance": 0,
+          "tier": "T0",
+          "score": 120.0
+        },
+        {
+          "name": "千咲",
+          "resonance": 1,
+          "tier": "T0.5",
+          "score": 126.0
+        },
+        {
+          "name": "琳奈",
+          "resonance": 0,
+          "tier": "T0",
+          "score": 120.0
+        },
+        {
+          "name": "仇远",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "尤诺",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 85.0
+        },
+        {
+          "name": "卡提希娅",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 95.0
+        },
+        {
+          "name": "珂莱塔",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "长离",
+          "resonance": 1,
+          "tier": "T2",
+          "score": 35.0
+        },
+        {
+          "name": "维里奈",
+          "resonance": 3,
+          "tier": "T1",
+          "score": 97.5
+        },
+        {
+          "name": "折枝",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "卡卡罗",
+          "resonance": 2,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "今汐",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "忌炎",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "鉴心",
+          "resonance": 2,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "赞妮",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "凌阳",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "安可",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "相里要",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        }
+      ],
+      "weapons": [
+        {
+          "name": "宙算仪轨",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "莫宁",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "赫奕流明",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "长离",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "昙切",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "千咲",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "死与舞",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "珂莱塔",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "琼枝冰绡",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "折枝",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "停驻之烟",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "裁竹",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "仇远",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "万物持存的注释",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "尤诺",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "镭射切变",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "灼霜",
+          "refine": 1,
+          "score": 60.0,
+          "weapon_class": "signature",
+          "owner_character": "绯雪",
+          "owner_tier": "T0"
+        },
+        {
+          "name": "血誓盟约",
+          "refine": 3,
+          "score": 34.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        }
+      ],
+      "value_rank": 1,
+      "strength_rank": 1
+    },
+    {
+      "product_id": "MCB4RP",
+      "price": 160,
+      "level": 80,
+      "total_yellow": 41,
+      "pulls_total": 12.08,
+      "role_score_total": 972.5,
+      "weapon_score_total": 283.0,
+      "strength_score": 1267.58,
+      "value_score": 7.922,
+      "url": "https://www.pzds.com/goodsDetails/MCB4RP/6?from=%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8",
+      "roles": [
+        {
+          "name": "绯雪",
+          "resonance": 0,
+          "tier": "T0",
+          "score": 120.0
+        },
+        {
+          "name": "尤诺",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 85.0
+        },
+        {
+          "name": "千咲",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "奥古斯塔",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "赞妮",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "菲比",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "珂莱塔",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "守岸人",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "折枝",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "今汐",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "吟霖",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "卡卡罗",
+          "resonance": 4,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "维里奈",
+          "resonance": 3,
+          "tier": "T1",
+          "score": 97.5
+        },
+        {
+          "name": "陆·赫斯",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 85.0
+        },
+        {
+          "name": "凌阳",
+          "resonance": 3,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "弗洛洛",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "鉴心",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "安可",
+          "resonance": 0,
+          "tier": "",
+          "score": 0.0
+        }
+      ],
+      "weapons": [
+        {
+          "name": "白昼之脊",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "陆·赫斯",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "浩境粼光",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "驭冕铸雷之权",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "奥古斯塔",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "万物持存的注释",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "尤诺",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "焰光裁定",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "赞妮",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "千古洑流",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "今汐",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "死与舞",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "珂莱塔",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "血誓盟约",
+          "refine": 5,
+          "score": 43.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        }
+      ],
+      "value_rank": 2,
+      "strength_rank": 2
+    },
+    {
+      "product_id": "MC9V6K",
+      "price": 160,
+      "level": 80,
+      "total_yellow": 38,
+      "pulls_total": 1.59,
+      "role_score_total": 1007.5,
+      "weapon_score_total": 180.0,
+      "strength_score": 1189.09,
+      "value_score": 7.432,
+      "url": "https://www.pzds.com/goodsDetails/MC9V6K/6?from=%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8",
+      "roles": [
+        {
+          "name": "奥古斯塔",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "尤诺",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 85.0
+        },
+        {
+          "name": "守岸人",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "弗洛洛",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "卡提希娅",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 95.0
+        },
+        {
+          "name": "赞妮",
+          "resonance": 1,
+          "tier": "T1",
+          "score": 70.0
+        },
+        {
+          "name": "坎特蕾拉",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "布兰特",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "菲比",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "珂莱塔",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "椿",
+          "resonance": 1,
+          "tier": "T1",
+          "score": 70.0
+        },
+        {
+          "name": "相里要",
+          "resonance": 1,
+          "tier": "T2",
+          "score": 35.0
+        },
+        {
+          "name": "折枝",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "吟霖",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "忌炎",
+          "resonance": 1,
+          "tier": "T2",
+          "score": 35.0
+        },
+        {
+          "name": "卡卡罗",
+          "resonance": 2,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "维里奈",
+          "resonance": 3,
+          "tier": "T1",
+          "score": 97.5
+        },
+        {
+          "name": "鉴心",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "安可",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "凌阳",
+          "resonance": 0,
+          "tier": "",
+          "score": 0.0
+        }
+      ],
+      "weapons": [
+        {
+          "name": "焰光裁定",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "赞妮",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "血誓盟约",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "万物持存的注释",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "尤诺",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "浩境粼光",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "停驻之烟",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "千古洑流",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "今汐",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "裁春",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "椿",
+          "owner_tier": "T1"
+        }
+      ],
+      "value_rank": 3,
+      "strength_rank": 3
+    },
+    {
+      "product_id": "MC8NQ1",
+      "price": 140,
+      "level": 77,
+      "total_yellow": 35,
+      "pulls_total": 13.29,
+      "role_score_total": 835.0,
+      "weapon_score_total": 188.0,
+      "strength_score": 1036.29,
+      "value_score": 7.402,
+      "url": "https://www.pzds.com/goodsDetails/MC8NQ1/6?from=%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8",
+      "roles": [
+        {
+          "name": "尤诺",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 85.0
+        },
+        {
+          "name": "琳奈",
+          "resonance": 0,
+          "tier": "T0",
+          "score": 120.0
+        },
+        {
+          "name": "莫宁",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "仇远",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "奥古斯塔",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "珂莱塔",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "守岸人",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "长离",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "露帕",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "椿",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "相里要",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "维里奈",
+          "resonance": 2,
+          "tier": "T1",
+          "score": 85.0
+        },
+        {
+          "name": "吟霖",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "鉴心",
+          "resonance": 3,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "卡卡罗",
+          "resonance": 5,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "凌阳",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        }
+      ],
+      "weapons": [
+        {
+          "name": "裁春",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "椿",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "死与舞",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "珂莱塔",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "浩境粼光",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "千古洑流",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "今汐",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "血誓盟约",
+          "refine": 2,
+          "score": 28.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "镭射切变",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "万物持存的注释",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "尤诺",
+          "owner_tier": "T0.5"
+        }
+      ],
+      "value_rank": 4,
+      "strength_rank": 5
+    },
+    {
+      "product_id": "MC55R2",
+      "price": 155,
+      "level": 78,
+      "total_yellow": 36,
+      "pulls_total": 9.65,
+      "role_score_total": 805.0,
+      "weapon_score_total": 243.0,
+      "strength_score": 1057.65,
+      "value_score": 6.824,
+      "url": "https://www.pzds.com/goodsDetails/MC55R2/6?from=%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8",
+      "roles": [
+        {
+          "name": "卡提希娅",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 95.0
+        },
+        {
+          "name": "夏空",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "千咲",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "嘉贝莉娜",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 85.0
+        },
+        {
+          "name": "奥古斯塔",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "坎特蕾拉",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "珂莱塔",
+          "resonance": 1,
+          "tier": "T1",
+          "score": 70.0
+        },
+        {
+          "name": "守岸人",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "折枝",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "今汐",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "吟霖",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "忌炎",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "维里奈",
+          "resonance": 2,
+          "tier": "T1",
+          "score": 85.0
+        },
+        {
+          "name": "卡卡罗",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "鉴心",
+          "resonance": 0,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "凌阳",
+          "resonance": 3,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "安可",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        }
+      ],
+      "weapons": [
+        {
+          "name": "光影双生",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "嘉贝莉娜",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "停驻之烟",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "浩境粼光",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "林间的咏叹调",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "坎特蕾拉",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "血誓盟约",
+          "refine": 5,
+          "score": 43.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "死与舞",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "珂莱塔",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "不屈命定之冠",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "卡提希娅",
+          "owner_tier": "T0.5"
+        }
+      ],
+      "value_rank": 5,
+      "strength_rank": 4
+    },
+    {
+      "product_id": "MCCU7X",
+      "price": 149,
+      "level": 80,
+      "total_yellow": 35,
+      "pulls_total": 0.53,
+      "role_score_total": 725.0,
+      "weapon_score_total": 244.0,
+      "strength_score": 969.53,
+      "value_score": 6.507,
+      "url": "https://www.pzds.com/goodsDetails/MCCU7X/6?from=%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8",
+      "roles": [
+        {
+          "name": "赞妮",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "菲比",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "守岸人",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "西格莉卡",
+          "resonance": 0,
+          "tier": "T0",
+          "score": 120.0
+        },
+        {
+          "name": "仇远",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "弗洛洛",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "坎特蕾拉",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "椿",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "折枝",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "长离",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "吟霖",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "忌炎",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "维里奈",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "鉴心",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "相里要",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "卡卡罗",
+          "resonance": 2,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "凌阳",
+          "resonance": 2,
+          "tier": "",
+          "score": 0.0
+        }
+      ],
+      "weapons": [
+        {
+          "name": "幽冥的忘忧章",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "弗洛洛",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "千古洑流",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "今汐",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "千古洑流",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "今汐",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "和光回唱",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "菲比",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "苍鳞千嶂",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "忌炎",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "浩境粼光",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "琼枝冰绡",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "折枝",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "千古洑流",
+          "refine": 2,
+          "score": 14.0,
+          "weapon_class": "signature",
+          "owner_character": "今汐",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "焰光裁定",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "赞妮",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "血誓盟约",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "漪澜浮录",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "漪澜浮录",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        }
+      ],
+      "value_rank": 6,
+      "strength_rank": 7
+    },
+    {
+      "product_id": "MCH4TN",
+      "price": 160,
+      "level": 79,
+      "total_yellow": 29,
+      "pulls_total": 6.86,
+      "role_score_total": 735.0,
+      "weapon_score_total": 250.0,
+      "strength_score": 991.86,
+      "value_score": 6.199,
+      "url": "https://www.pzds.com/goodsDetails/MCH4TN/6?from=%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8",
+      "roles": [
+        {
+          "name": "卡提希娅",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 95.0
+        },
+        {
+          "name": "千咲",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "夏空",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "尤诺",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 85.0
+        },
+        {
+          "name": "弗洛洛",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "坎特蕾拉",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "守岸人",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "相里要",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "折枝",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "长离",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "忌炎",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "维里奈",
+          "resonance": 2,
+          "tier": "T1",
+          "score": 85.0
+        },
+        {
+          "name": "安可",
+          "resonance": 0,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "卡卡罗",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "鉴心",
+          "resonance": 0,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "凌阳",
+          "resonance": 0,
+          "tier": "",
+          "score": 0.0
+        }
+      ],
+      "weapons": [
+        {
+          "name": "幽冥的忘忧章",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "弗洛洛",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "昙切",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "千咲",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "千古洑流",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "今汐",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "漪澜浮录",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "赫奕流明",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "长离",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "琼枝冰绡",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "折枝",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "血誓盟约",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "诸方玄枢",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "相里要",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "不屈命定之冠",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "卡提希娅",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "玻色星仪",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        }
+      ],
+      "value_rank": 7,
+      "strength_rank": 6
+    },
+    {
+      "product_id": "MCEHQ4",
+      "price": 150,
+      "level": 73,
+      "total_yellow": 35,
+      "pulls_total": 10.93,
+      "role_score_total": 685.0,
+      "weapon_score_total": 233.0,
+      "strength_score": 928.92,
+      "value_score": 6.193,
+      "url": "https://www.pzds.com/goodsDetails/MCEHQ4/6?from=%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8",
+      "roles": [
+        {
+          "name": "椿",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "坎特蕾拉",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "维里奈",
+          "resonance": 1,
+          "tier": "T1",
+          "score": 70.0
+        },
+        {
+          "name": "仇远",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "卡提希娅",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 95.0
+        },
+        {
+          "name": "夏空",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "赞妮",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "菲比",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "长离",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "今汐",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "相里要",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "折枝",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "卡卡罗",
+          "resonance": 0,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "鉴心",
+          "resonance": 0,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "凌阳",
+          "resonance": 2,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "安可",
+          "resonance": 2,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "绯雪",
+          "resonance": 0,
+          "tier": "T0",
+          "score": 120.0
+        }
+      ],
+      "weapons": [
+        {
+          "name": "焰光裁定",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "赞妮",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "漪澜浮录",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "千古洑流",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "今汐",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "时和岁稔",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "不屈命定之冠",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "卡提希娅",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "血誓盟约",
+          "refine": 5,
+          "score": 43.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "镭射切变",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "赫奕流明",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "长离",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "裁春",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "椿",
+          "owner_tier": "T1"
+        }
+      ],
+      "value_rank": 8,
+      "strength_rank": 8
+    },
+    {
+      "product_id": "MC0QQV",
+      "price": 150,
+      "level": 80,
+      "total_yellow": 44,
+      "pulls_total": 16.61,
+      "role_score_total": 667.5,
+      "weapon_score_total": 240.0,
+      "strength_score": 924.11,
+      "value_score": 6.161,
+      "url": "https://www.pzds.com/goodsDetails/MC0QQV/6?from=%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8",
+      "roles": [
+        {
+          "name": "椿",
+          "resonance": 2,
+          "tier": "T1",
+          "score": 85.0
+        },
+        {
+          "name": "守岸人",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "赞妮",
+          "resonance": 1,
+          "tier": "T1",
+          "score": 70.0
+        },
+        {
+          "name": "坎特蕾拉",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "菲比",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "珂莱塔",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "相里要",
+          "resonance": 2,
+          "tier": "T2",
+          "score": 42.5
+        },
+        {
+          "name": "折枝",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "长离",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "今汐",
+          "resonance": 1,
+          "tier": "T2",
+          "score": 35.0
+        },
+        {
+          "name": "吟霖",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "维里奈",
+          "resonance": 1,
+          "tier": "T1",
+          "score": 70.0
+        },
+        {
+          "name": "安可",
+          "resonance": 4,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "卡卡罗",
+          "resonance": 4,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "仇远",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "凌阳",
+          "resonance": 2,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "鉴心",
+          "resonance": 0,
+          "tier": "",
+          "score": 0.0
+        }
+      ],
+      "weapons": [
+        {
+          "name": "时和岁稔",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "千古洑流",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "今汐",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "裁竹",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "仇远",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "琼枝冰绡",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "折枝",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "裁春",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "椿",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "血誓盟约",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "掣傀之手",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "吟霖",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "死与舞",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "珂莱塔",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "星序协响",
+          "refine": 1,
+          "score": 50.0,
+          "weapon_class": "signature",
+          "owner_character": "守岸人",
+          "owner_tier": "T0.5"
+        },
+        {
+          "name": "焰光裁定",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "赞妮",
+          "owner_tier": "T1"
+        }
+      ],
+      "value_rank": 9,
+      "strength_rank": 9
+    },
+    {
+      "product_id": "MCH6MD",
+      "price": 160,
+      "level": 80,
+      "total_yellow": 40,
+      "pulls_total": 0.33,
+      "role_score_total": 690.0,
+      "weapon_score_total": 174.0,
+      "strength_score": 864.33,
+      "value_score": 5.402,
+      "url": "https://www.pzds.com/goodsDetails/MCH6MD/6?from=%E5%95%86%E5%93%81%E5%88%97%E8%A1%A8",
+      "roles": [
+        {
+          "name": "今汐",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "长离",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "守岸人",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 90.0
+        },
+        {
+          "name": "赞妮",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "珂莱塔",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "椿",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "相里要",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "折枝",
+          "resonance": 1,
+          "tier": "T2",
+          "score": 35.0
+        },
+        {
+          "name": "维里奈",
+          "resonance": 2,
+          "tier": "T1",
+          "score": 85.0
+        },
+        {
+          "name": "卡提希娅",
+          "resonance": 0,
+          "tier": "T0.5",
+          "score": 95.0
+        },
+        {
+          "name": "忌炎",
+          "resonance": 1,
+          "tier": "T2",
+          "score": 35.0
+        },
+        {
+          "name": "坎特蕾拉",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "菲比",
+          "resonance": 0,
+          "tier": "T1",
+          "score": 50.0
+        },
+        {
+          "name": "鉴心",
+          "resonance": 4,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "吟霖",
+          "resonance": 0,
+          "tier": "T2",
+          "score": 25.0
+        },
+        {
+          "name": "卡卡罗",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "安可",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        },
+        {
+          "name": "凌阳",
+          "resonance": 1,
+          "tier": "",
+          "score": 0.0
+        }
+      ],
+      "weapons": [
+        {
+          "name": "镭射切变",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "琼枝冰绡",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "折枝",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "时和岁稔",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "漪澜浮录",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "千古洑流",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "今汐",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "千古洑流",
+          "refine": 1,
+          "score": 10.0,
+          "weapon_class": "signature",
+          "owner_character": "今汐",
+          "owner_tier": "T2"
+        },
+        {
+          "name": "焰光裁定",
+          "refine": 1,
+          "score": 30.0,
+          "weapon_class": "signature",
+          "owner_character": "赞妮",
+          "owner_tier": "T1"
+        },
+        {
+          "name": "血誓盟约",
+          "refine": 3,
+          "score": 34.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        },
+        {
+          "name": "停驻之烟",
+          "refine": 1,
+          "score": 20.0,
+          "weapon_class": "standard",
+          "owner_character": "",
+          "owner_tier": ""
+        }
+      ],
+      "value_rank": 10,
+      "strength_rank": 10
+    }
+  ]
+}
