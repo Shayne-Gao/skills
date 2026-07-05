@@ -205,21 +205,16 @@ export default function FactionShoppingPage() {
     () => ["全部", ...Array.from(new Set(shoppingItems.map((item) => item.faction))).sort()],
     [shoppingItems],
   );
-  const factionBuildOwnedMap = useMemo(() => {
-    const grouped = new Map<string, ShoppingItem[]>();
-    shoppingItems
-      .filter((item) => item.buildIds.length > 0)
-      .forEach((item) => {
-        if (!grouped.has(item.faction)) grouped.set(item.faction, []);
-        grouped.get(item.faction)!.push(item);
-      });
+  const incompleteFactionMap = useMemo(() => {
     return Object.fromEntries(
-      Array.from(grouped.entries()).map(([faction, items]) => [
-        faction,
-        items.length > 0 && items.every((item) => !!ownedMap[item.itemKey]),
-      ]),
+      factionTabs
+        .filter((faction) => faction !== "全部")
+        .map((faction) => {
+          const buildItems = shoppingItems.filter((item) => item.faction === faction && item.buildIds.length > 0);
+          return [faction, buildItems.some((item) => !ownedMap[item.itemKey])];
+        }),
     ) as Record<string, boolean>;
-  }, [ownedMap, shoppingItems]);
+  }, [factionTabs, ownedMap, shoppingItems]);
   const categoryTabs = useMemo(() => {
     const categories = new Set(shoppingItems.map((item) => item.category));
     const ordered = ROW_DEFS.flatMap((def) => def.categories).filter((category) => categories.has(category));
@@ -329,32 +324,24 @@ export default function FactionShoppingPage() {
             <span className="mr-1 rounded-sm bg-[#caa75a] px-2 py-1 text-[13px] text-[#1a1812]">门派</span>
             {factionTabs.map((faction) => {
               const active = faction === activeFaction;
-              const buildOwnedDone = faction !== "全部" && !!factionBuildOwnedMap[faction];
+              const incomplete = faction !== "全部" && !!incompleteFactionMap[faction];
               return (
                 <button
                   key={faction}
                   type="button"
                   onClick={() => setActiveFaction(faction)}
-                  className={`inline-flex items-center gap-1.5 rounded-sm border px-2.5 py-1 text-[13px] transition ${
+                  title={incomplete ? "这个门派还有 Build 相关功法未获得" : undefined}
+                  className={`rounded-sm border px-2.5 py-1 text-[13px] transition ${
                     active
-                      ? "border-[#caa75a]/70 bg-[#caa75a]/15 text-[#f4ecd8]"
-                      : "border-[#caa75a]/15 bg-[#15140f] text-[#c9c2af] hover:border-[#caa75a]/40 hover:text-[#f4ecd8]"
+                      ? incomplete
+                        ? "border-white/75 bg-[#caa75a]/15 text-[#f4ecd8]"
+                        : "border-[#caa75a]/70 bg-[#caa75a]/15 text-[#f4ecd8]"
+                      : incomplete
+                        ? "border-white/70 bg-[#15140f] text-[#f4ecd8] hover:border-white hover:text-white"
+                        : "border-[#caa75a]/15 bg-[#15140f] text-[#c9c2af] hover:border-[#caa75a]/40 hover:text-[#f4ecd8]"
                   }`}
                 >
-                  <span>{faction}</span>
-                  {buildOwnedDone ? (
-                    <span
-                      className="flex h-4 w-4 items-center justify-center rounded-full border text-[10px]"
-                      style={{
-                        borderColor: "#6DB75F",
-                        background: "rgba(17,35,17,0.9)",
-                        color: "#9EE08A",
-                      }}
-                      title="这个门派的 Build 相关功法已全部获得"
-                    >
-                      ✓
-                    </span>
-                  ) : null}
+                  {faction}
                 </button>
               );
             })}
