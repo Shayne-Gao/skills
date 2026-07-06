@@ -28,7 +28,6 @@
 - `agent-onboarding-site/`：`agent-onboarding` 的站点化或展示化产物目录。
 - `game-account-evaluator/`：通用游戏账号评估脚本与数据工作区，是 `wuwa-account-evaluator/` 的底层业务项目之一。
 - `repo_tools/`：仓库级维护脚本，负责软链接重建、全局 Trae 统一和结构检查。
-- `shopping-research/`：购物研究资料、对比表、价格历史与选购输出。
 - `taiwu_builder/`：太吾绘卷相关构筑器或配装研究项目目录。
 - `workspace_projects/`：各类底层工作项目与抓取工程目录。
 - `哈利波特魔术策划案设计师/`：哈利波特主题亲子魔术策划案项目资料目录，沉淀剧本、执行稿、飞书文档草稿与验证记录。

@@ -12,3 +12,4 @@ taiwu_builder/*.tsbuildinfo
 .DS_Store
 __pycache__/
 html_demo/
+shopping-research/
