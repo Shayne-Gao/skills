@@ -11,3 +11,4 @@ taiwu_builder/*.tsbuildinfo
 !taiwu_builder/index.html
 .DS_Store
 __pycache__/
+html_demo/
