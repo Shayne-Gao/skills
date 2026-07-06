@@ -70,7 +70,38 @@ shopping-research/rice-cooker/
 
 字段名按品类定制，但必须稳定。
 
-### 3. Buying advice
+### 3. Price history cache
+
+```text
+<category_slug>_price_history_cache.json
+```
+
+用途：
+- 聚合本地所有已抓价格记录
+- 让每天的新价格都能放进“全历史上下文”里判断
+- 支撑四档输出中的价格证据，但不把历史低价当成唯一结论依据
+
+建议字段：
+- `normalized_model`
+- `aliases`
+- `current_focus_link`
+- `deal_links`
+- `all_time_low_price`
+- `all_time_low_date`
+- `recent_low_price`
+- `latest_seen_price`
+- `latest_seen_date`
+- `price_samples`
+- `status_band`
+- `status_reason`
+- `value_for_money_summary`
+- `fit_summary`
+- `info_completeness`
+- `decision_confidence`
+- `decision_factors`
+- `source_files`
+
+### 4. Buying advice
 
 ```text
 <category_slug>_buying_advice.md
@@ -86,7 +117,7 @@ shopping-research/rice-cooker/
 - 人读结论页
 - 记录推荐顺位、好价带、购买建议、替代项
 
-### 4. Compare table
+### 5. Compare table
 
 ```text
 <category_slug>_compare_table.md
@@ -105,12 +136,18 @@ shopping-research/rice-cooker/
 
 建议列：
 - `model_group`
+- `deal_link`
 - `current_price`
+- `all_time_low_price`
 - `recent_low_price`
 - `price_position`
+- `decision_band`
 - `key_specs`
+- `config_details`
 - `public_feedback_summary`
+- `value_for_money`
 - `fit_for`
+- `info_completeness`
 - `recommendation_level`
 - `buy_now_decision`
 
@@ -119,6 +156,7 @@ shopping-research/rice-cooker/
 价格与参数分开维护：
 - 价格记录更新 `latest_capture`
 - 型号参数更新 `model_specs_registry`
+- 历史价格汇总更新 `price_history_cache`
 - 本轮横向比较更新 `compare_table`
 
 不要在每次刷新价格时重写整份参数库，除非：

@@ -76,7 +76,10 @@ item 最低字段：
   "price": "69元",
   "mall": "天猫精选",
   "link": "https://www.smzdm.com/p/123456789/",
-  "captured_at": "2026-06-29 10:45:27"
+  "captured_at": "2026-06-29 10:45:27",
+  "smzdm_info_tags": [],
+  "smzdm_zhi": 0,
+  "smzdm_buzhi": 0
 }
 ```
 
@@ -84,7 +87,12 @@ item 最低字段：
 - `price_value`
 - `normalized_title`
 - `availability_label`
+- `smzdm_title_tags`
+- `product_tags`
 - `tag_labels`
+- `tag_sources`
+- `smzdm_vote_total`
+- `smzdm_vote_ratio`
 
 ### 3. `all_items_flat.tsv`
 
@@ -98,6 +106,13 @@ source	page	captured_at	mall	price	link	title
 ```
 
 不要擅自调整列顺序。
+
+如需扩展平铺表，推荐追加在末尾，而不是改动前 7 列顺序。
+推荐追加列：
+
+```text
+smzdm_info_tags	smzdm_title_tags	product_tags	smzdm_zhi	smzdm_buzhi
+```
 
 ### 4. `top20.md`
 
@@ -152,3 +167,27 @@ source	page	captured_at	mall	price	link	title
 - `history_price_index.json`
 
 不要把这三类职责混在一个文件里。
+
+## Signal Separation Rule
+
+推荐相关字段必须区分来源，不要把所有标签混成一个数组：
+
+1. `SMZDM 平台标签`
+- 标题标签：`绝对值`、`今日必买`、`手慢无`、`值友专享`
+- 信息标签：`xx天新低`、`比上次发布低xx%`、`价格低于618`、`低于常卖价`
+- 辅助标签：`热度Top`、`商品好评率`
+
+2. `商品自身活动标签`
+- `百亿补贴`
+- `88VIP`
+- `PLUS会员`
+- `国家补贴`
+- `淘金币`
+
+3. `社区反馈信号`
+- `smzdm_zhi`
+- `smzdm_buzhi`
+- `smzdm_vote_total`
+- `smzdm_vote_ratio`
+
+后续推荐排序必须优先使用 `SMZDM 平台标签`，再结合历史和社区反馈，最后才使用商品自身活动标签。
